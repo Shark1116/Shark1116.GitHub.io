@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="coderwhy-JavaScript高级系列（二）" />
+    <meta name="hexo-theme-A4" content="v1.8.9" />
+    <link rel="alternate icon" type="image/webp" href="/images/cat.svg">
+    <title>Blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery.min.css">
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
+    
+    <body>
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/cat.svg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Blog</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+
+    
+        <div class="post-main-title">
+            coderwhy-JavaScript高级系列（二）
+        </div>
+      
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#JavaScript%E9%AB%98%E7%BA%A7%E7%B3%BB%E5%88%97%EF%BC%88%E4%BA%8C%EF%BC%89-V8%E5%BC%95%E6%93%8E%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="post-toc-text">JavaScript高级系列（二） - V8引擎的运行原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80-%E8%AE%A4%E8%AF%86JavaScript%E5%BC%95%E6%93%8E"><span class="post-toc-text">一. 认识JavaScript引擎</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-1-%E4%BB%80%E4%B9%88%E6%98%AFJavaScript%E5%BC%95%E6%93%8E"><span class="post-toc-text">1.1. 什么是JavaScript引擎</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-2-%E6%B5%8F%E8%A7%88%E5%99%A8%E5%86%85%E6%A0%B8%E5%92%8CJS%E5%BC%95%E6%93%8E%E5%85%B3%E7%B3%BB"><span class="post-toc-text">1.2. 浏览器内核和JS引擎关系</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C-V8%E5%BC%95%E6%93%8E%E7%9A%84%E8%BF%90%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="post-toc-text">二. V8引擎的运行原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-1-V8%E5%BC%95%E6%93%8E%E7%9A%84%E5%AE%98%E6%96%B9%E5%AE%9A%E4%B9%89"><span class="post-toc-text">2.1. V8引擎的官方定义</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-2-V8%E5%BC%95%E6%93%8E%E5%A6%82%E4%BD%95%E5%B7%A5%E4%BD%9C%E5%91%A2%EF%BC%9F"><span class="post-toc-text">2.2. V8引擎如何工作呢？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-1-V8%E5%BC%95%E6%93%8E%E7%9A%84%E5%B7%A5%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="post-toc-text">2.2.1. V8引擎的工作过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-2-V8%E5%BC%95%E6%93%8E%E7%9A%84%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="post-toc-text">2.2.2. V8引擎的架构设计</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-3-V8%E7%9A%84%E8%BD%AC%E5%8C%96%E4%BB%A3%E7%A0%81%E8%BF%87%E7%A8%8B"><span class="post-toc-text">2.3. V8的转化代码过程</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-1-%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="post-toc-text">2.3.1. 词法分析的过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-2-%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="post-toc-text">2.3.2. 语法分析的过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-3-%E8%BD%AC%E5%8C%96%E7%9A%84%E5%AD%97%E8%8A%82%E7%A0%81%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="post-toc-text">2.3.3. 转化的字节码（了解）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-3-4-%E7%94%9F%E6%88%90%E7%9A%84%E6%9C%BA%E5%99%A8%E7%A0%81%EF%BC%88%E4%BA%86%E8%A7%A3%EF%BC%89"><span class="post-toc-text">2.3.4. 生成的机器码（了解）</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89-V8%E5%BC%95%E6%93%8E%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="post-toc-text">三. V8引擎的内存管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-1-%E8%AE%A4%E8%AF%86%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="post-toc-text">3.1. 认识内存管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-2-JS%E7%9A%84%E5%86%85%E5%AD%98%E7%AE%A1%E7%90%86"><span class="post-toc-text">3.2. JS的内存管理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-3-%E5%B8%B8%E8%A7%81%E7%9A%84GC%E7%AE%97%E6%B3%95"><span class="post-toc-text">3.3. 常见的GC算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-1-%E5%BC%95%E7%94%A8%E8%AE%A1%E6%95%B0%EF%BC%88Reference-counting%EF%BC%89"><span class="post-toc-text">3.3.1. 引用计数（Reference counting）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-2-%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4%EF%BC%88mark-Sweep%EF%BC%89"><span class="post-toc-text">3.3.2. 标记清除（mark-Sweep）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-3-%E5%85%B6%E4%BB%96%E7%AE%97%E6%B3%95%E4%BC%98%E5%8C%96%E8%A1%A5%E5%85%85"><span class="post-toc-text">3.3.3. 其他算法优化补充</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-3-4-V8%E5%BC%95%E6%93%8E%E7%9A%84%E5%86%85%E5%AD%98%E5%9B%BE"><span class="post-toc-text">3.3.4. V8引擎的内存图</span></a></li></ol></li></ol></li></ol></li></ol>
+            
+        
+        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="JavaScript高级系列（二）-V8引擎的运行原理"><a href="#JavaScript高级系列（二）-V8引擎的运行原理" class="headerlink" title="JavaScript高级系列（二） - V8引擎的运行原理"></a>JavaScript高级系列（二） - V8引擎的运行原理</h1><p>原创 作者:coderwhy 公号:coderwhy 发布时间:2023-09-08 17:58 发表于广东</p>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/vUyAMn8uM00AkX5nIj73aw">JavaScript高级系列（二） - V8引擎的运行原理</a></p>
+<h2 id="一-认识JavaScript引擎"><a href="#一-认识JavaScript引擎" class="headerlink" title="一. 认识JavaScript引擎"></a>一. 认识JavaScript引擎</h2><h3 id="1-1-什么是JavaScript引擎"><a href="#1-1-什么是JavaScript引擎" class="headerlink" title="1.1. 什么是JavaScript引擎"></a>1.1. 什么是JavaScript引擎</h3><p>当我们编写JavaScript代码时，它实际上是一种高级语言，这种语言并不是机器语言。</p>
+<ul>
+<li><p>高级语言是设计给开发人员使用的，它包括了更多的抽象和可读性。</p>
+</li>
+<li><p>但是，计算机的CPU只能理解特定的机器语言，它不理解JavaScript语言。</p>
+</li>
+<li><p>这意味着，在计算机上执行JavaScript代码之前，必须将其转换为机器语言。</p>
+</li>
+</ul>
+<p>这就是JavaScript引擎的作用：</p>
+<ul>
+<li><p>事实上我们编写的JavaScript无论你交给浏览器或者Node执行，最后都是需要被CPU执行的；</p>
+</li>
+<li><p>但是CPU只认识自己的指令集，实际上是机器语言，才能被CPU所执行；</p>
+</li>
+<li><p>所以我们需要JavaScript引擎帮助我们将JavaScript代码翻译成CPU指令来执行；</p>
+</li>
+</ul>
+<p>比较常见的JavaScript引擎有哪些呢？</p>
+<ul>
+<li><p>SpiderMonkey：第一款JavaScript引擎，由Brendan Eich开发（也就是JavaScript作者）；</p>
+</li>
+<li><p>Chakra：微软开发，用于IT浏览器；</p>
+</li>
+<li><p>JavaScriptCore：WebKit中的JavaScript引擎，Apple公司开发；</p>
+</li>
+<li><p>V8：Google开发的强大JavaScript引擎，也帮助Chrome从众多浏览器中脱颖而出；</p>
+</li>
+<li><p>等等…</p>
+</li>
+</ul>
+<h3 id="1-2-浏览器内核和JS引擎关系"><a href="#1-2-浏览器内核和JS引擎关系" class="headerlink" title="1.2. 浏览器内核和JS引擎关系"></a>1.2. 浏览器内核和JS引擎关系</h3><p>我们前面学习了浏览器内核，那么浏览器内核和JavaScript引擎之间是什么样的关系呢？</p>
+<ul>
+<li><p>浏览器内核和JavaScript引擎之间有紧密的关系，因为JavaScript引擎是浏览器内核中的一个组件。</p>
+</li>
+<li><p>浏览器内核负责渲染网页，并在渲染过程中执行JavaScript代码。</p>
+</li>
+<li><p>JavaScript引擎则是负责解析、编译和执行JavaScript代码的核心组件。</p>
+</li>
+</ul>
+<p>以WebKit为例，它是一种开源的浏览器内核，最初由Apple公司开发，并被用于Safari浏览器中。</p>
+<ul>
+<li>WebKit包含了一个JavaScript引擎，名为JavaScriptCore，它负责解析、编译和执行JavaScript代码。</li>
+</ul>
+<p>WebKit事实上由两部分组成的：</p>
+<ul>
+<li><p>WebCore：负责HTML解析、布局、渲染等等相关的工作。</p>
+</li>
+<li><p>JavaScriptCore：解析、执行JavaScript代码。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0vX81TlApJZTepk8ryI7MicjmhdvO4aud4NvduwoJE4Fqj88XuCZtgIA/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0vX81TlApJZTepk8ryI7MicjmhdvO4aud4NvduwoJE4Fqj88XuCZtgIA/640?wx_fmt=png"></a></p>
+<p>WebKit内核</p>
+<p>看到这里，学过小程序的同学有没有感觉非常的熟悉呢？</p>
+<ul>
+<li>在小程序中编写的JavaScript代码就是被JSCore执行的；</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0pSpqsKSlHnibnA9bsFD5DibTCowXIlT01areQfHzfLciapWpreNQHBI8g/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0pSpqsKSlHnibnA9bsFD5DibTCowXIlT01areQfHzfLciapWpreNQHBI8g/640?wx_fmt=png"></a></p>
+<p>小程序的架构设计</p>
+<p>另外一个非常强大的JavaScript引擎就是V8引擎，也是我们今天要学习的重点。</p>
+<h2 id="二-V8引擎的运行原理"><a href="#二-V8引擎的运行原理" class="headerlink" title="二. V8引擎的运行原理"></a>二. V8引擎的运行原理</h2><h3 id="2-1-V8引擎的官方定义"><a href="#2-1-V8引擎的官方定义" class="headerlink" title="2.1. V8引擎的官方定义"></a>2.1. V8引擎的官方定义</h3><p>V8引擎是一款Google开源的高性能JavaScript和WebAssembly引擎，它是使用C++编写的。</p>
+<ul>
+<li><p>V8引擎的主要目标是提高JavaScript代码的性能和执行速度。</p>
+</li>
+<li><p>V8引擎可以在多种操作系统上运行，包括Windows 7或更高版本、macOS 10.12+以及使用x64、IA-32、ARM或MIPS处理器的Linux系统。</p>
+</li>
+</ul>
+<p>V8引擎可以作为一个独立的应用程序运行，也可以嵌入到其他C++应用程序中，例如Node.js。</p>
+<ul>
+<li>由于V8引擎的开源性和高性能，许多现代浏览器都使用了V8引擎或其修改版本，以提供更快、更高效的JavaScript执行体验。</li>
+</ul>
+<h3 id="2-2-V8引擎如何工作呢？"><a href="#2-2-V8引擎如何工作呢？" class="headerlink" title="2.2. V8引擎如何工作呢？"></a>2.2. V8引擎如何工作呢？</h3><h4 id="2-2-1-V8引擎的工作过程"><a href="#2-2-1-V8引擎的工作过程" class="headerlink" title="2.2.1. V8引擎的工作过程"></a>2.2.1. V8引擎的工作过程</h4><p>我这里先给出一副V8引擎的工作图：</p>
+<ul>
+<li>后续我们会一点点解析它的工作过程</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0EL68Jf5OR8Qh3NPlxfKo5cePDRJw3ROCxNL44ictgnYGhuC1hyTAIcA/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0EL68Jf5OR8Qh3NPlxfKo5cePDRJw3ROCxNL44ictgnYGhuC1hyTAIcA/640?wx_fmt=png"></a></p>
+<p>V8引擎的工作图</p>
+<p>整体流程如下：（先简单了解）</p>
+<ol>
+<li>词法分析：</li>
+</ol>
+<ul>
+<li><p>首先，V8引擎将JavaScript代码分成一个个标记或词法单元，这些标记是程序语法的最小单元。</p>
+</li>
+<li><p>例如，变量名、关键字、运算符等都是词法单元。</p>
+</li>
+<li><p>V8引擎使用词法分析器来完成这个任务。</p>
+</li>
+</ul>
+<ol start="3">
+<li>语法分析：</li>
+</ol>
+<ul>
+<li><p>在将代码分成标记或词法单元之后，V8引擎将使用语法分析器将这些标记转换为抽象语法树（AST）。</p>
+</li>
+<li><p>语法树是代码的抽象表示，它捕捉了代码中的结构和关系。</p>
+</li>
+<li><p>V8引擎会检查代码是否符合JavaScript语言规范，并将其转换为抽象语法树。</p>
+</li>
+</ul>
+<ol start="5">
+<li>字节码生成：</li>
+</ol>
+<ul>
+<li><p>接下来，V8引擎将从语法树生成字节码。</p>
+</li>
+<li><p>字节码是一种中间代码，它包含了执行代码所需的指令序列。</p>
+</li>
+<li><p>字节码是一种抽象的机器代码，它比源代码更接近机器语言，但仍需要进一步编译成机器指令。</p>
+</li>
+</ul>
+<ol start="7">
+<li>机器码生成：</li>
+</ol>
+<ul>
+<li><p>最后，V8引擎将生成机器码，这是一种计算机可以直接执行的二进制代码。</p>
+</li>
+<li><p>V8引擎使用即时编译器（JIT）来将字节码编译成机器码。</p>
+</li>
+<li><p>JIT编译器将字节码分析为代码的热点部分，并生成高效的机器码，以提高代码的性能。</p>
+</li>
+</ul>
+<h4 id="2-2-2-V8引擎的架构设计"><a href="#2-2-2-V8引擎的架构设计" class="headerlink" title="2.2.2. V8引擎的架构设计"></a>2.2.2. V8引擎的架构设计</h4><p>V8引擎本身的源码非常复杂，大概有超过100w行C++代码，通过了解它的架构，我们可以知道它是如何对JavaScript执行的：</p>
+<p>Parse模块会将JavaScript代码转换成AST（抽象语法树），这是因为解释器并不直接认识JavaScript代码；</p>
+<ul>
+<li><p>如果函数没有被调用，那么是不会被转换成AST的；</p>
+</li>
+<li><p>Parse的V8官方文档：<a target="_blank" rel="noopener" href="https://v8.dev/blog/scanner">https://v8.dev/blog/scanner</a></p>
+</li>
+</ul>
+<p>Ignition是一个解释器，会将AST转换成ByteCode（字节码）</p>
+<ul>
+<li><p>同时会收集TurboFan优化所需要的信息（比如函数参数的类型信息，有了类型才能进行真实的运算）；</p>
+</li>
+<li><p>如果函数只调用一次，Ignition会执行解释执行ByteCode；</p>
+</li>
+<li><p>Ignition的V8官方文档：<a target="_blank" rel="noopener" href="https://v8.dev/blog/ignition-interpreter">https://v8.dev/blog/ignition-interpreter</a></p>
+</li>
+</ul>
+<p>TurboFan是一个编译器，可以将字节码编译为CPU可以直接执行的机器码；</p>
+<ul>
+<li><p>如果一个函数被多次调用，那么就会被标记为热点函数，那么就会经过TurboFan转换成优化的机器码，提高代码的执行性能；</p>
+</li>
+<li><p>但是，机器码实际上也会被还原为ByteCode，这是因为如果后续执行函数的过程中，类型发生了变化（比如sum函数原来执行的是number类型，后来执行变成了string类型），之前优化的机器码并不能正确的处理运算，就会逆向的转换成字节码；</p>
+</li>
+<li><p>TurboFan的V8官方文档：<a target="_blank" rel="noopener" href="https://v8.dev/blog/turbofan-jit">https://v8.dev/blog/turbofan-jit</a></p>
+</li>
+</ul>
+<p>另外，V8引擎还包括了垃圾回收机制，用于自动管理内存的分配和释放。V8引擎使用了一种名为“分代式垃圾回收”（Generational Garbage Collection）的技术，它将堆区分成新生代和老年代两个部分，分别使用不同的垃圾回收策略，以提高垃圾回收的效率。</p>
+<ul>
+<li>内存管理我们后续再单独来讨论学习。</li>
+</ul>
+<h3 id="2-3-V8的转化代码过程"><a href="#2-3-V8的转化代码过程" class="headerlink" title="2.3. V8的转化代码过程"></a>2.3. V8的转化代码过程</h3><p>比如我们有如下一段代码，V8引擎是如何一步步帮我们转化的呢？</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const name = &quot;coderwhy&quot;</span><br><span class="line">console.log(name)function sayHi(name) &#123;</span><br><span class="line">  console.log(&quot;Hi &quot; + name)</span><br><span class="line">&#125;sayHi(name)</span><br></pre></td></tr></table></figure>
+
+<p>下面是官方给出的一个图解：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick02a4qyYY69Ijy32X4v9dWEw211TN71UD9OTUPuJS198jSnQMx5gvqnA/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick02a4qyYY69Ijy32X4v9dWEw211TN71UD9OTUPuJS198jSnQMx5gvqnA/640?wx_fmt=png"></a></p>
+<p>官方图例</p>
+<h4 id="2-3-1-词法分析的过程"><a href="#2-3-1-词法分析的过程" class="headerlink" title="2.3.1. 词法分析的过程"></a>2.3.1. 词法分析的过程</h4><p>词法分析是将JavaScript代码转换成一系列标记的过程，它是编译过程的第一步。</p>
+<ul>
+<li>在V8引擎中，词法分析器会将JavaScript代码分解成一系列标识符、关键字、操作符和字面量等基本元素，以供后续的语法分析和代码生成等步骤使用。</li>
+</ul>
+<p>这里仅仅举一个例子，作为参考即可</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">Token(type=&#x27;const&#x27;, value=&#x27;const&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;name&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;=&#x27;)</span><br><span class="line">Token(type=&#x27;string&#x27;, value=&#x27;&quot;coderwhy&quot;&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;;&#x27;)</span><br><span class="line">Token(type=&#x27;console&#x27;, value=&#x27;console&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;.&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;log&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;(&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;name&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;)&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;;&#x27;)</span><br><span class="line">Token(type=&#x27;function&#x27;, value=&#x27;function&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;sayHi&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;(&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;name&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;)&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;&#123;&#x27;)</span><br><span class="line">Token(type=&#x27;console&#x27;, value=&#x27;console&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;.&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;log&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;(&#x27;)</span><br><span class="line">Token(type=&#x27;string&#x27;, value=&#x27;&quot;Hi &quot;&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;+&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;name&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;)&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;;&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;&#125;&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;sayHi&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;(&#x27;)</span><br><span class="line">Token(type=&#x27;identifier&#x27;, value=&#x27;name&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;)&#x27;)</span><br><span class="line">Token(type=&#x27;operator&#x27;, value=&#x27;;&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-2-语法分析的过程"><a href="#2-3-2-语法分析的过程" class="headerlink" title="2.3.2. 语法分析的过程"></a>2.3.2. 语法分析的过程</h4><p>接下来我们可以根据上面得到的tokens代码，进行语法分析，生成对应的AST树。</p>
+<p>在V8引擎中，语法分析的过程可以分为两个阶段：解析（Parsing）和预处理（Pre-parsing）。</p>
+<p>解析阶段是将tokens转换成抽象语法树（AST）的过程，而预处理阶段则是在解析阶段之前进行的，用于预处理一些代码，如函数和变量声明等。</p>
+<p>对于你提供的JavaScript代码，V8引擎的解析和预处理过程如下所示：</p>
+<p><strong>V8引擎的解析和预处理过程如下所示：</strong></p>
+<ol>
+<li>预处理阶段</li>
+</ol>
+<ul>
+<li><p>在预处理阶段，V8引擎会扫描整个代码，查找函数和变量声明，并将其添加到当前作用域的符号表中。</p>
+</li>
+<li><p>在这个过程中，V8引擎会同时进行词法分析和语法分析，生成一些中间表示，以便后续使用。</p>
+</li>
+<li><p>对于我们的代码，预处理阶段不会生成任何AST节点，因为它只包含了一个常量声明和一个函数声明，而没有变量声明（var声明的变量）。</p>
+</li>
+</ul>
+<ol start="2">
+<li>解析阶段</li>
+</ol>
+<ul>
+<li><p>在解析阶段，V8引擎会将tokens转换成AST节点，生成一棵抽象语法树（AST）。</p>
+</li>
+<li><p>AST是一种树形结构，用于表示程序的语法结构，它包含了多种类型的节点，如表达式节点、语句节点和声明节点等。</p>
+</li>
+</ul>
+<p>转化的AST树代码参考：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Program</span><br><span class="line"> └── VariableDeclaration (const name = &quot;coderwhy&quot;)</span><br><span class="line"> └── ExpressionStatement (console.log(name))</span><br><span class="line"> └── FunctionDeclaration (function sayHi(name) &#123; ... &#125;)</span><br><span class="line">     └── BlockStatement</span><br><span class="line">         └── ExpressionStatement (console.log(&quot;Hi &quot; + name))</span><br><span class="line"> └── ExpressionStatement (sayHi(name))</span><br></pre></td></tr></table></figure>
+
+<p>从AST树中可以看出，整个程序由一个Program节点和三个子节点组成。</p>
+<ul>
+<li><p>其中，第一个子节点是一个VariableDeclaration节点，表示常量声明语句；</p>
+</li>
+<li><p>第二个子节点是一个ExpressionStatement节点，表示console.log语句；</p>
+</li>
+<li><p>第三个子节点是一个FunctionDeclaration节点，表示函数声明语句。</p>
+</li>
+<li><p>FunctionDeclaration节点包含一个BlockStatement子节点，表示函数体，其中包含一个ExpressionStatement节点，表示console.log语句。</p>
+</li>
+<li><p>最后一个子节点是一个ExpressionStatement节点，表示调用函数语句。</p>
+</li>
+</ul>
+<h4 id="2-3-3-转化的字节码（了解）"><a href="#2-3-3-转化的字节码（了解）" class="headerlink" title="2.3.3. 转化的字节码（了解）"></a>2.3.3. 转化的字节码（了解）</h4><p>根据上面得到的AST树，我们可以将其转换成对应的字节码。在V8引擎中，字节码是一种中间表示，用于表示程序的执行流程和指令序列。</p>
+<p>V8引擎会将AST树转换成如下的字节码序列：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">// 字节码指令集</span><br><span class="line">[Constant name=&quot;coderwhy&quot;]</span><br><span class="line">[SetLocal name]</span><br><span class="line">[GetLocal name]</span><br><span class="line">[LoadProperty console]</span><br><span class="line">[LoadProperty log]</span><br><span class="line">[Call 1]</span><br><span class="line">[Constant Hi ]</span><br><span class="line">[GetLocal name]</span><br><span class="line">[BinaryOperation +]</span><br><span class="line">[Call 1]</span><br><span class="line">[SetLocal sayHi]</span><br><span class="line">[GetLocal name]</span><br><span class="line">[GetLocal sayHi]</span><br><span class="line">[Call 1]</span><br><span class="line">[Return]</span><br></pre></td></tr></table></figure>
+
+<p>根据上面生成的字节码，我们可以看到V8引擎生成的字节码指令集，每个指令都对应了一种操作，如Constant、SetLocal、GetLocal等等。下面是对字节码指令集的解释：</p>
+<ul>
+<li><p>Constant：将常量值压入操作数栈中。</p>
+</li>
+<li><p>SetLocal：将操作数栈中的值存储到本地变量中。</p>
+</li>
+<li><p>GetLocal：将本地变量的值压入操作数栈中。</p>
+</li>
+<li><p>LoadProperty：从对象中加载属性值，并将其压入操作数栈中。</p>
+</li>
+<li><p>Call：调用函数，并将返回值压入操作数栈中。</p>
+</li>
+<li><p>BinaryOperation：对两个操作数执行二元运算，并将结果压入操作数栈中。</p>
+</li>
+<li><p>Return：从当前函数中返回，并将返回值压入操作数栈中。</p>
+</li>
+</ul>
+<p>由于字节码是一种中间表示，它可以跨平台运行，在不同的操作系统和硬件平台上都可以执行。这种跨平台的特性，使得V8引擎成为了一款非常流行的JavaScript引擎。</p>
+<p>在Node环境中，我们可以通过如下命令查看到字节码：</p>
+<ul>
+<li>但是默认Node环境下是打印所有的字节码的，所以内容会非常多（了解即可）</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node --print-bytecode test.js</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-3-4-生成的机器码（了解）"><a href="#2-3-4-生成的机器码（了解）" class="headerlink" title="2.3.4. 生成的机器码（了解）"></a>2.3.4. 生成的机器码（了解）</h4><p>在V8引擎中，机器码是通过即时编译（Just-In-Time Compilation，JIT）技术生成的。</p>
+<ul>
+<li><p>JIT编译是一种动态编译技术，它将字节码转换成本地机器码，并将其缓存起来以提高代码的执行速度和性能。</p>
+</li>
+<li><p>JIT编译器可以根据运行时信息对代码进行优化，并且可以根据不同的平台和硬件生成对应的机器码。</p>
+</li>
+</ul>
+<p>在V8引擎中，机器码的生成过程分为两个阶段：</p>
+<ul>
+<li><p>预编译（pre-compilation）和优化（optimization）。</p>
+</li>
+<li><p>预编译阶段会生成一些简单的机器码，用于快速执行代码；</p>
+</li>
+<li><p>优化阶段则会根据代码的运行时信息生成更优化的机器码，以提高代码的执行效率和性能。</p>
+</li>
+</ul>
+<p><strong>具体的生成过程如下：</strong></p>
+<ol>
+<li>预编译阶段</li>
+</ol>
+<ul>
+<li><p>在预编译阶段，V8引擎会生成一些简单的机器码，用于快速执行代码。</p>
+</li>
+<li><p>这些机器码是基于字节码生成的，它们可以直接执行，并且具有一定的优化效果。</p>
+</li>
+<li><p>在这个阶段，V8引擎会根据代码的运行时信息生成一些简单的机器码，如对象和数组的存取、字符串的拼接、函数的调用等。</p>
+</li>
+</ul>
+<ol start="2">
+<li>优化阶段</li>
+</ol>
+<ul>
+<li><p>在优化阶段，V8引擎会根据代码的运行时信息生成更优化的机器码，以提高代码的执行效率和性能。</p>
+</li>
+<li><p>在这个阶段，V8引擎会通过分析代码的执行路径、类型信息、控制流程等，生成一些高效的机器码，并且可以进行多次优化，以获得更高的性能。</p>
+</li>
+</ul>
+<p>在优化阶段，V8引擎会使用TurboFan编译器来生成机器码。</p>
+<ul>
+<li>TurboFan是一个基于中间表示（Intermediate Representation，IR）的编译器，它可以将字节码转换成高效的机器码，并且可以进行多层次的优化，包括基于类型的优化、内联优化、控制流优化、垃圾回收优化等。</li>
+</ul>
+<p>通过机器码的生成过程，我们可以看到V8引擎是如何根据代码的运行时信息生成高效的机器码，并且可以多次优化，以获得更高的性能。</p>
+<ul>
+<li>在后续的执行过程中，V8引擎会将机器码缓存起来，以提高代码的执行速度和性能。</li>
+</ul>
+<h2 id="三-V8引擎的内存管理"><a href="#三-V8引擎的内存管理" class="headerlink" title="三. V8引擎的内存管理"></a>三. V8引擎的内存管理</h2><h3 id="3-1-认识内存管理"><a href="#3-1-认识内存管理" class="headerlink" title="3.1. 认识内存管理"></a>3.1. 认识内存管理</h3><p>不管什么样的编程语言，在代码的执行过程中都是需要给它分配内存的，不同的是某些编程语言需要我们自己手动的管理内存，某些编程语言会可以自动帮助我们管理内存。</p>
+<p>不管以什么样的方式来管理内存，<strong>内存的管理都会有如下的生命周期</strong>：</p>
+<ul>
+<li><p>第一步：分配申请你需要的内存（申请）；</p>
+</li>
+<li><p>第二步：使用分配的内存（存放一些东西，比如对象等）；</p>
+</li>
+<li><p>第三步：不需要使用时，对其进行释放；</p>
+</li>
+</ul>
+<p>不同的编程语言对于第一步和第三步会有不同的实现：</p>
+<ul>
+<li><p>手动管理内存：比如C、C++，包括早期的OC，都是需要手动来管理内存的申请和释放的（malloc和free函数）；</p>
+</li>
+<li><p>这种方式需要程序员手动管理内存，容易出现内存泄漏和野指针等问题，程序的稳定性和安全性有一定的风险。</p>
+</li>
+<li><p>自动管理内存：比如Java、JavaScript、Python、Swift、Dart等，它们有自动帮助我们管理内存；</p>
+</li>
+<li><p>在这些语言中，存在垃圾回收机制来自动回收不再使用的内存空间，程序员只需要正确地使用变量和对象等引用类型数据，垃圾回收器就会自动进行内存管理，释放不再被引用的内存空间。</p>
+</li>
+<li><p>这种方式可以避免内存泄漏和野指针等问题，提高了程序的稳定性和安全性。</p>
+</li>
+</ul>
+<p>对于开发者来说，JavaScript 的内存管理是自动的、无形的。</p>
+<ul>
+<li><p>我们创建的原始值、对象、函数……这一切都会占用内存；</p>
+</li>
+<li><p>但是我们并不需要手动来对它们进行管理，JavaScript引擎会帮助我们处理好它；</p>
+</li>
+</ul>
+<h3 id="3-2-JS的内存管理"><a href="#3-2-JS的内存管理" class="headerlink" title="3.2. JS的内存管理"></a>3.2. JS的内存管理</h3><p>在JavaScript中，内存分为栈内存和堆内存两种类型。</p>
+<ul>
+<li><p>栈内存用于存储基本数据类型和引用类型的地址，它具有自动分配和自动释放的特点。</p>
+</li>
+<li><p>堆内存用于存储引用类型的对象和数组等数据结构，它需要手动分配和释放内存。</p>
+</li>
+</ul>
+<p>在JavaScript中，使用var、let和const声明的变量都是存在栈内存中的。</p>
+<ul>
+<li><p>当我们声明一个变量时，JavaScript引擎会在栈内存中为其分配一块空间，并将变量的值存储在该空间中。</p>
+</li>
+<li><p>当变量不再被引用时，JavaScript引擎会自动将其释放掉，以回收其空间。</p>
+</li>
+</ul>
+<p>在JavaScript中，创建的对象和数组等引用类型数据都是存在堆内存中的。</p>
+<ul>
+<li><p>当我们创建一个对象时，JavaScript引擎会在堆内存中为其分配一块空间，并将其属性存储在该空间中。</p>
+</li>
+<li><p>当对象不再被引用时，垃圾回收器会自动将其标记为垃圾，并回收其空间。</p>
+</li>
+</ul>
+<p><strong>为内存的大小是有限的，所以当内存不再需要的时候，我们需要对其进行释放，以便腾出更多的内存空间。</strong></p>
+<p>在手动管理内存的语言中，我们需要通过一些方式自己来释放不再需要的内存，比如free函数：</p>
+<ul>
+<li><p>但是这种管理的方式其实非常的低效，影响我们编写逻辑的代码的效率；</p>
+</li>
+<li><p>并且这种方式对开发者的要求也很高，并且一不小心就会产生内存泄露和野指针的情况；</p>
+</li>
+<li><p>影响程序的稳定性和安全性，同时也会影响编写逻辑代码的效率；</p>
+</li>
+</ul>
+<p>所以大部分现代的编程语言都是有自己的垃圾回收机制：</p>
+<ul>
+<li><p>垃圾回收的英文是Garbage Collection，简称GC；</p>
+</li>
+<li><p>对于那些不再使用的对象，我们都称之为是垃圾，它需要被回收，以释放更多的内存空间；</p>
+</li>
+<li><p>而我们的语言运行环境，比如Java的运行环境JVM，JavaScript的运行环境js引擎都会内存 <strong>垃圾回收器</strong>；</p>
+</li>
+<li><p>垃圾回收器我们也会简称为GC，所以在很多地方你看到GC其实指的是垃圾回收器；</p>
+</li>
+</ul>
+<p>但是这里又出现了另外一个很关键的问题：GC怎么知道哪些对象是不再使用的呢？ 这里就要用到GC的实现以及对应的算法；</p>
+<h3 id="3-3-常见的GC算法"><a href="#3-3-常见的GC算法" class="headerlink" title="3.3. 常见的GC算法"></a>3.3. 常见的GC算法</h3><h4 id="3-3-1-引用计数（Reference-counting）"><a href="#3-3-1-引用计数（Reference-counting）" class="headerlink" title="3.3.1. 引用计数（Reference counting）"></a>3.3.1. 引用计数（Reference counting）</h4><p>引用计数（Reference counting）是一种常见的垃圾回收算法。</p>
+<ul>
+<li><p>它的基本思想是在对象中添加一个引用计数器。</p>
+</li>
+<li><p>每当有一个指针引用该对象时，引用计数器就加一。</p>
+</li>
+<li><p>当指针不再引用该对象时，引用计数器就减一。</p>
+</li>
+<li><p>当引用计数器的值为0时，表示该对象不再被引用，可以被回收。</p>
+</li>
+</ul>
+<p>引用计数算法的优点是实现简单，垃圾对象的回收及时，可以避免内存泄漏。</p>
+<p>但是引用计数算法也有一些缺点。</p>
+<ul>
+<li><p>最大的缺点是很难解决循环引用问题。</p>
+</li>
+<li><p>如果两个对象相互引用，它们的引用计数器永远不会为0，即使它们已经成为垃圾对象。</p>
+</li>
+<li><p>这种情况下，引用计数算法就无法回收它们，导致内存泄漏。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0zjzOOKFRcnhQQ2JibKM6CoCKA9a0dBNMQH9z14pEFNe62PsdvTboj4g/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0zjzOOKFRcnhQQ2JibKM6CoCKA9a0dBNMQH9z14pEFNe62PsdvTboj4g/640?wx_fmt=png"></a></p>
+<p>循环引用</p>
+<h4 id="3-3-2-标记清除（mark-Sweep）"><a href="#3-3-2-标记清除（mark-Sweep）" class="headerlink" title="3.3.2. 标记清除（mark-Sweep）"></a>3.3.2. 标记清除（mark-Sweep）</h4><p>标记清除（mark-Sweep）是一种常见的垃圾回收算法，其核心思想是可达性（Reachability）。算法的实现过程如下：</p>
+<ol>
+<li><p>设置一个根对象（root object），垃圾回收器会定期从这个根开始，找所有从根开始有引用到的对象。</p>
+</li>
+<li><p>对于每一个找到的对象，标记为可达（mark），表示该对象正在使用中。</p>
+</li>
+<li><p>对于所有没有被标记为可达的对象，即不可达对象，就认为是不可用的对象，需要被回收。</p>
+</li>
+<li><p>回收不可达对象所占用的内存空间，并将其加入空闲内存池中，以备将来重新分配使用。</p>
+</li>
+</ol>
+<p>标记清除算法可以很好地解决循环引用的问题，因为它只关注可达性，不会被循环引用的对象误判为可用对象。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0NJicnDQJ1bU00HDiaibkUkuPEJib33K1sQ3o5ibP9AFtUTjzfvUXwgvzshA/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0NJicnDQJ1bU00HDiaibkUkuPEJib33K1sQ3o5ibP9AFtUTjzfvUXwgvzshA/640?wx_fmt=png"></a></p>
+<p>标记清除算法</p>
+<p>但是这种算法也有一些缺点，最主要的是它的效率不高，因为在标记可达对象和回收不可达对象的过程中需要遍历整个对象图。</p>
+<p>此外，标记清除算法还会造成内存碎片的问题，因为回收的内存空间不一定是连续的，导致大块的内存无法被分配使用。</p>
+<h4 id="3-3-3-其他算法优化补充"><a href="#3-3-3-其他算法优化补充" class="headerlink" title="3.3.3. 其他算法优化补充"></a>3.3.3. 其他算法优化补充</h4><p>S引擎比较广泛的采用的就是可达性中的标记清除算法，当然类似于V8引擎为了进行更好的优化，它在算法的实现细节上也会结合一些其他的算法。</p>
+<p>标记整理（Mark-Compact）</p>
+<ul>
+<li><p>和“标记－清除”相似；</p>
+</li>
+<li><p>不同的是，回收期间同时会将保留的存储对象搬运汇集到连续的内存空间，从而整合空闲空间，避免内存碎片化；</p>
+</li>
+</ul>
+<p>分代收集（Generational collection）—— 对象被分成两组：“新的”和“旧的”。</p>
+<ul>
+<li><p>许多对象出现，完成它们的工作并很快死去，它们可以很快被清理；</p>
+</li>
+<li><p>那些长期存活的对象会变得“老旧”，而且被检查的频次也会减少；</p>
+</li>
+</ul>
+<p>增量收集（Incremental collection）</p>
+<ul>
+<li><p>如果有许多对象，并且我们试图一次遍历并标记整个对象集，则可能需要一些时间，并在执行过程中带来明显的延迟。</p>
+</li>
+<li><p>所以引擎试图将垃圾收集工作分成几部分来做，然后将这几部分会逐一进行处理，这样会有许多微小的延迟而不是一个大的延迟；</p>
+</li>
+</ul>
+<p>闲时收集（Idle-time collection）</p>
+<ul>
+<li><p>垃圾收集器只会在 CPU 空闲时尝试运行，以减少可能对代码执行的影响。</p>
+</li>
+<li><p>这种算法通常用于移动设备或其他资源受限的环境，以确保垃圾收集对用户体验的影响最小。</p>
+</li>
+</ul>
+<h4 id="3-3-4-V8引擎的内存图"><a href="#3-3-4-V8引擎的内存图" class="headerlink" title="3.3.4. V8引擎的内存图"></a>3.3.4. V8引擎的内存图</h4><p>事实上，V8引擎为了提供内存的管理效率，对内存进行非常详细的划分。（详细参考视频学习）</p>
+<p>这幅图展示了一个堆（heap）的内存结构，下面是对每个内存块的解释：</p>
+<ul>
+<li><p>Old Space（老生代）：分配的内存较大，存储生命周期较长的对象，比如页面或者浏览器的长时间使用对象；</p>
+</li>
+<li><p>New Space（新生代）：分配的内存较小，存储生命周期较短的对象，比如临时变量、函数局部变量等；</p>
+</li>
+<li><p>Large Object Space（大对象）：分配的内存较大，存储生命周期较长的大型对象，比如大数组、大字符串等；</p>
+</li>
+<li><p>Code Space（代码空间）：存储编译后的函数代码和 JIT 代码；</p>
+</li>
+<li><p>Map Space（映射空间）：存储对象的属性信息，比如对象的属性名称、类型等信息；</p>
+</li>
+<li><p>Cell Space（单元格空间）：存储对象的一些元信息，比如字符串长度、布尔类型等信息。</p>
+</li>
+</ul>
+<p>这些不同的内存块都有各自的特点和用途，V8 引擎会根据对象的生命周期和大小将它们分配到不同的内存块中，以优化内存的使用效率。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0mYib1hwBYa8PKiarNuCRS8f7Mnr4rlkmcwSr0VWmXGZSVS1H8iaIn4fdw/640?wx_fmt=png" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/O8xWXzAqXuvhnr0ibdSapFKPtd0U6zick0mYib1hwBYa8PKiarNuCRS8f7Mnr4rlkmcwSr0VWmXGZSVS1H8iaIn4fdw/640?wx_fmt=png"></a></p>
+<p>V8引擎的内存图</p>
+</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
+        var options = {
+            selector: '.gallery-item'
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
+        }</script>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-10-12</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    <!-- <div class="post-footer-pre-next">
+        <span>上一篇：<a href=""></a></span>
+        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
+    </div> -->
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 China 
+
+            
+                
+
+            
+        </span>
+    
+</div>
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>宇宙里有什么不是暂时</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery.min.js"></script>
+
+
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+
+
+    <!--暗黑模式-->
+    <script src="/js/darkmode-js.min.js"></script>
+    <script>
+        function addDarkmodeWidget() {
+        const options = {
+            bottom: '53px', // default: '32px'
+            right: 'unset', // default: '32px'
+            left: '42px', // default: 'unset'
+            time: '0.3s', // default: '0.3s'
+            mixColor: '#fff', // default: '#fff'
+            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+            buttonColorDark: '#100f2c',  // default: '#100f2c'
+            buttonColorLight: '#fff', // default: '#fff'
+            saveInCookies: true, // default: true,
+            label: '🌓', // default: ''
+            autoMatchOsTheme: true // default: true
+        }
+    
+        const darkmode = new Darkmode(options);
+        darkmode.showWidget();
+        
+        }
+        window.addEventListener('load', addDarkmodeWidget);
+    </script>
+  
+</html>
