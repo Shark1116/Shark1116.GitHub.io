@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            工具使用教程&amp;工作记录
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    工具使用教程&amp;工作记录
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-10</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：172</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,14 +216,9 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%B3%E4%BA%8E%E6%8E%A5%E5%8F%A3%E8%81%94%E8%B0%83"><span class="post-toc-text">关于接口联调</span></a></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>压力测试工具Java：<a href="https://blog.csdn.net/weixin_45014379/article/details/124190381" title="" target="">【jmeter教程——从入门到熟练】</a></br><br>接口测试工具：<a href="https://zhuanlan.zhihu.com/p/401385193" title="" target="">全网最全的 postman 工具使用教程</a></br><br>可用示例：<a href="https://www.bejson.com/knownjson/webInterface/" title="" target="">JSON API免费接口</a></br></p>
+        <div class=".article-gallery"><p>压力测试工具Java：<a href="https://blog.csdn.net/weixin_45014379/article/details/124190381" title="" target="">【jmeter教程——从入门到熟练】</a></br><br>接口测试工具：<a href="https://zhuanlan.zhihu.com/p/401385193" title="" target="">全网最全的 postman 工具使用教程</a></br><br>可用示例：<a href="https://www.bejson.com/knownjson/webInterface/" title="" target="">JSON API免费接口</a></br></p>
 <h2 id="关于接口联调"><a href="#关于接口联调" class="headerlink" title="关于接口联调"></a>关于接口联调</h2><p>1.一个接口需要经过数据库（Navicat）插入，其中要根据文档来插入数据并且写好表与表之间的关联关系（con_table与con_sql）;<br>2.接口要过内部路由通过postman测试，其中特高压的入参由start_date&amp;end_date改为了create_time与update_time,由两个参数确定一个区间改为两个参数各确定两个区间；<br>3.业务连接组件配置，设置好权限；<br>4.加解密测试接口(Java程序)；</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -188,10 +253,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/08/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/'>主题配置问题汇总</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/09/14/SQL%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">SQL学习记录</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
      
 </div>
@@ -211,8 +289,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -255,9 +337,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -278,31 +405,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

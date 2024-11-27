@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -129,7 +163,7 @@
         
                     
                             <br>
-<span>📌<i>tags</i></span>
+<span><span class="darkmode-ignore">📌</span><i>tags</i></span>
 <ul class="inline-ul" >
 
   
@@ -144,42 +178,12 @@
   
       
         <li class="inline-li">
-            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95">学习记录</a>
+            <a href="/tags/javascript">javascript</a>
             <span><i>1</i></span>
         </li>
     
         <li class="inline-li">
-            <a href="/tags/Canvas">Canvas</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/OS">OS</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/SQL">SQL</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/%E5%B7%A5%E5%85%B7">工具</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/markdown">markdown</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/%E5%91%BD%E5%90%8D">命名</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/mock">mock</a>
+            <a href="/tags/%E5%B7%A5%E5%85%B7%E7%AE%B1">工具箱</a>
             <span><i>1</i></span>
         </li>
     
@@ -189,13 +193,8 @@
         </li>
     
         <li class="inline-li">
-            <a href="/tags/CSS">CSS</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/%E9%87%8F%E5%AD%90%E5%89%8D%E7%AB%AF">量子前端</a>
-            <span><i>1</i></span>
+            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%97%A9%E8%AF%BB%E8%AF%BE">前端早读课</a>
+            <span><i>2</i></span>
         </li>
     
         <li class="inline-li">
@@ -204,12 +203,12 @@
         </li>
     
         <li class="inline-li">
-            <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF">前后端</a>
+            <a href="/tags/%E9%87%8F%E5%AD%90%E5%89%8D%E7%AB%AF">量子前端</a>
             <span><i>1</i></span>
         </li>
     
         <li class="inline-li">
-            <a href="/tags/%E7%BD%91%E7%BB%9C">网络</a>
+            <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%BC%80%E5%8F%91%E8%80%85">阿里云开发者</a>
             <span><i>1</i></span>
         </li>
     
@@ -219,7 +218,17 @@
         </li>
     
         <li class="inline-li">
-            <a href="/tags/%E8%BF%90%E7%BB%B4">运维</a>
+            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95">学习记录</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/mock">mock</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/%E5%89%8D%E5%90%8E%E7%AB%AF">前后端</a>
             <span><i>1</i></span>
         </li>
     
@@ -229,17 +238,52 @@
         </li>
     
         <li class="inline-li">
-            <a href="/tags/%E5%89%8D%E7%AB%AF%E6%97%A9%E8%AF%BB%E8%AF%BE">前端早读课</a>
-            <span><i>2</i></span>
+            <a href="/tags/CSS">CSS</a>
+            <span><i>1</i></span>
         </li>
     
         <li class="inline-li">
-            <a href="/tags/%E9%98%BF%E9%87%8C%E4%BA%91%E5%BC%80%E5%8F%91%E8%80%85">阿里云开发者</a>
+            <a href="/tags/markdown">markdown</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/SQL">SQL</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/%E5%91%BD%E5%90%8D">命名</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/Canvas">Canvas</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/%E8%BF%90%E7%BB%B4">运维</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/%E7%BD%91%E7%BB%9C">网络</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/OS">OS</a>
             <span><i>1</i></span>
         </li>
     
         <li class="inline-li">
             <a href="/tags/%E9%9B%86%E7%BE%A4">集群</a>
+            <span><i>1</i></span>
+        </li>
+    
+        <li class="inline-li">
+            <a href="/tags/%E5%B7%A5%E5%85%B7">工具</a>
             <span><i>1</i></span>
         </li>
     
@@ -265,8 +309,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -309,9 +357,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -332,31 +425,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

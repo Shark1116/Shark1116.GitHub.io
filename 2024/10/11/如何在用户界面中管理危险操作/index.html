@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            如何在用户界面中管理危险操作
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    如何在用户界面中管理危险操作
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：6.6k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：22分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E3%80%90%E7%AC%AC3390%E6%9C%9F%E3%80%91%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E4%B8%AD%E7%AE%A1%E7%90%86%E5%8D%B1%E9%99%A9%E6%93%8D%E4%BD%9C"><span class="post-toc-text">【第3390期】如何在用户界面中管理危险操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%B1%E9%99%A9%E8%A1%8C%E4%B8%BA%EF%BC%9F"><span class="post-toc-text">什么是危险行为？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%B1%E9%99%A9%E8%A1%8C%E4%B8%BA%E7%9A%84%E7%A1%AE%E8%AE%A4%E6%93%8D%E4%BD%9C"><span class="post-toc-text">危险行为的确认操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%A8%A1%E6%80%81%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="post-toc-text">模态对话框</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%8D%B1%E9%99%A9%E5%8C%BA%E5%9F%9F"><span class="post-toc-text">危险区域</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%85%A7%E8%81%94%E5%AE%88%E5%8D%AB"><span class="post-toc-text">內联守卫</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%8F%8C%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81%EF%BC%882FA%EF%BC%89%E7%A1%AE%E8%AE%A4"><span class="post-toc-text">双因素认证（2FA）确认</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AF%86%E9%92%A5"><span class="post-toc-text">密钥</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%BA%BA%E7%A1%AE%E8%AE%A4"><span class="post-toc-text">第二人确认</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%88%91%E4%BB%AC%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E8%AF%A2%E9%97%AE%E7%94%A8%E6%88%B7%E5%90%97%EF%BC%9F"><span class="post-toc-text">我们真的需要询问用户吗？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%BB%B6%E8%BF%9F"><span class="post-toc-text">延迟</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%92%A4%E6%B6%88"><span class="post-toc-text">撤消</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-text">结论</span></a></li></ol></li></ol></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="【第3390期】如何在用户界面中管理危险操作"><a href="#【第3390期】如何在用户界面中管理危险操作" class="headerlink" title="【第3390期】如何在用户界面中管理危险操作"></a>【第3390期】如何在用户界面中管理危险操作</h1><p>非原创 作者:ikoofe 公号:前端早读课 发布时间:2024-10-11 8:01 发表于福建</p>
+        <div class=".article-gallery"><h1 id="【第3390期】如何在用户界面中管理危险操作"><a href="#【第3390期】如何在用户界面中管理危险操作" class="headerlink" title="【第3390期】如何在用户界面中管理危险操作"></a>【第3390期】如何在用户界面中管理危险操作</h1><p>非原创 作者:ikoofe 公号:前端早读课 发布时间:2024-10-11 8:01 发表于福建</p>
 <p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Y81cd3jpaXeGFUf89xndJQ">【第3390期】如何在用户界面中管理危险操作</a></p>
 <p>前言</p>
 <p>讨论了如何在用户界面中有效管理危险操作，以防止用户误操作。今日前端早读课文章由 @ikoofe 翻译，公号:ikoofe 授权分享。</p>
@@ -382,12 +452,7 @@
 <p>关于本文<br>译者：@ikoofe<br>译文：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s//_0U4X0oIrBIU/_zzEofD3zA">https://mp.weixin.qq.com/s/\_0U4X0oIrBIU\_zzEofD3zA</a><br>作者：@Victor<br>原文：<a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2024/09/how-manage-dangerous-actions-user-interfaces/">https://www.smashingmagazine.com/2024/09/how-manage-dangerous-actions-user-interfaces/</a></p>
 <p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_jpg/meG6Vo0MevgiaJGuXA28v4rRxoibyhrCjcAWn51S1CYXu0S95uXBUZTn6z15bA8ARkzAhdqgwxSBSl3lFCFAPbGg/640?wx_fmt=jpeg" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/meG6Vo0MevgiaJGuXA28v4rRxoibyhrCjcAWn51S1CYXu0S95uXBUZTn6z15bA8ARkzAhdqgwxSBSl3lFCFAPbGg/640?wx_fmt=jpeg"></a></p>
 <p>这期前端早读课<br>对你有帮助，帮” 赞 “一下，<br>期待下一期，帮” 在看” 一下 。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -422,10 +487,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/10/11/iframe%E7%9A%84%E5%B5%8C%E5%A5%97%E4%BD%BF%E7%94%A8/'>iframe的嵌套使用</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/06/05/cesium%E4%BD%BF%E7%94%A8/">cesium使用</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -448,8 +526,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -492,9 +574,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -515,31 +642,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

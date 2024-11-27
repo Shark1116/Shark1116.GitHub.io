@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            Canvas绘制动态图
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    Canvas绘制动态图
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：3.2k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：15分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BB%98%E5%88%B6%E8%A1%8C%E6%98%9F"><span class="post-toc-text">绘制行星</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%BB%98%E5%88%B6%E8%BD%AC%E5%8A%A8%E7%9A%84%E6%97%B6%E9%92%9F"><span class="post-toc-text">绘制转动的时钟</span></a></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%B2%92%E5%AD%90%E5%8A%A8%E7%94%BB-%E9%9A%8F%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E6%94%B9%E5%8F%98%E5%BD%A2%E7%8A%B6"><span class="post-toc-text">粒子动画(随鼠标移动改变形状)</span></a></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="绘制行星"><a href="#绘制行星" class="headerlink" title="绘制行星"></a>绘制行星</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas width=&quot;1000&quot; height=&quot;1000&quot; id=&quot;canvas&quot; style=&quot;background:#000;&quot;&gt;</span><br><span class="line">	您的浏览器不支持，请升级浏览器!</span><br><span class="line">&lt;/canvas&gt;</span><br><span class="line">//如果不支持canvas，则提示信息</span><br></pre></td></tr></table></figure>
+        <div class=".article-gallery"><h1 id="绘制行星"><a href="#绘制行星" class="headerlink" title="绘制行星"></a>绘制行星</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;canvas width=&quot;1000&quot; height=&quot;1000&quot; id=&quot;canvas&quot; style=&quot;background:#000;&quot;&gt;</span><br><span class="line">	您的浏览器不支持，请升级浏览器!</span><br><span class="line">&lt;/canvas&gt;</span><br><span class="line">//如果不支持canvas，则提示信息</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br></pre></td><td class="code"><pre><span class="line">//设置2d绘图环境</span><br><span class="line">var ctx = document.getElementById(&quot;canvas&quot;).getContext(&quot;2d&quot;);</span><br><span class="line"></span><br><span class="line">//轨道</span><br><span class="line">function drawTrack()&#123;</span><br><span class="line">  for(var i = 0;i &lt; 8;i++)&#123;</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(500,500,(i+1) * 50,0,360,false);</span><br><span class="line">    ctx.strokeStyle = &quot;#fff&quot;;//设置笔触颜色</span><br><span class="line">    ctx.stroke();</span><br><span class="line">    ctx.closePath();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">//星球</span><br><span class="line"></span><br><span class="line">function Star(x,y,radius,cycle,sColor,eColor)&#123;</span><br><span class="line">  //画出星球需要的属性</span><br><span class="line">  //星球的坐标点 星球的半径 星球的颜色（开始颜色、结束颜色）</span><br><span class="line">  //公转周期</span><br><span class="line">  </span><br><span class="line">  //星球坐标点</span><br><span class="line">  this.x = x;</span><br><span class="line">  this.y = y;</span><br><span class="line">  this.radius = radius;</span><br><span class="line">  this.cycle = cycle;</span><br><span class="line">  this.eColor = eColor;</span><br><span class="line">  this.sColor = sColor;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line">  this.color = null;//渐变颜色空对象</span><br><span class="line">  this.time = 0;//设置一个计时器</span><br><span class="line">  </span><br><span class="line">  this.draw = function()&#123;</span><br><span class="line">    //save()可以这样理解 原来的画布内容不变 把save（）和restore()之间的内容画好了 在塞进来</span><br><span class="line">    ctx.save();//保存之前的画布内容</span><br><span class="line">    ctx.translate(500,500);//重置0,0坐标点</span><br><span class="line">    ctx.rotate(this.time * (360/this.cycle) * Math.PI / 180);//设置旋转角度</span><br><span class="line">    </span><br><span class="line">    //画星球</span><br><span class="line">    ctx.beginPath();</span><br><span class="line">    ctx.arc(this.x,this.y,this.radius,0,360,false);</span><br><span class="line">    ctx.closePath();</span><br><span class="line">    </span><br><span class="line">    //设置星球的填充颜色</span><br><span class="line">    </span><br><span class="line">    this.color = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.radius);</span><br><span class="line">    this.color.addColorStop(0,this.sColor);//渐变颜色开始点</span><br><span class="line">    this.color.addColorStop(0,this.eColor);//渐变颜色结束点</span><br><span class="line">    ctx.fillStyle = this.color;</span><br><span class="line">    ctx.fill();//执行填充命令</span><br><span class="line">    </span><br><span class="line">    //填充星球</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    ctx.restore();//恢复之前保存的画布内容</span><br><span class="line">    this.time +=1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> //创建一个太阳对象的构造函数</span><br><span class="line">function Sun()&#123;</span><br><span class="line">  Star.call(this,0,0,20,0,&quot;#F00&quot;,&quot;#f90&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个水星的对象构造方法</span><br><span class="line">function Mercury()&#123;</span><br><span class="line">  Star.call(this,0,-50,10,87.70,&quot;#A69697&quot;,&quot;#5C3E40&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个金星的对象构造方法</span><br><span class="line">function Venus()&#123;</span><br><span class="line">  Star.call(this,0,-100,10,224.701,&quot;#C4BBAC&quot;,&quot;#1F1315&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个地球的对象构造方法</span><br><span class="line">function Earth()&#123;</span><br><span class="line">  Star.call(this,0,-150,10,365.224,&quot;#78B1E8&quot;,&quot;#050C12&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个火星的对象构造方法</span><br><span class="line">function Mars()&#123;</span><br><span class="line">  Star.call(this,0,-200,10,686.98,&quot;#CEC9B6&quot;,&quot;#76422D&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个木星的对象构造方法</span><br><span class="line">function Jupiter()&#123;</span><br><span class="line">  Star.call(this,0,-250,10,4332.589,&quot;#C0A48E&quot;,&quot;#322222&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个土星的对象构造方法</span><br><span class="line">function Saturn()&#123;</span><br><span class="line">  Star.call(this,0,-300,10,10759.5,&quot;#F7F9E3&quot;,&quot;#5C4533&quot;);</span><br><span class="line">&#125;</span><br><span class="line"> //创建一个天王星的对象构造方法</span><br><span class="line">function Uranus()&#123;</span><br><span class="line">  Star.call(this,0,-350,10,30799.095,&quot;#A7E1E5&quot;,&quot;#19243A&quot;);</span><br><span class="line">&#125;</span><br><span class="line">//创建一个海王星的对象构造方法</span><br><span class="line">function Neptune()&#123;</span><br><span class="line">  Star.call(this,0,-400,10,60152,&quot;#0661B2&quot;,&quot;#1E3B73&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> //创建太阳对象实例</span><br><span class="line">var sun=new Sun();</span><br><span class="line"></span><br><span class="line">//创建水星对象实例</span><br><span class="line">var water=new Mercury();</span><br><span class="line"></span><br><span class="line">//创建金星对象实例</span><br><span class="line">var gold=new Venus();</span><br><span class="line"></span><br><span class="line">//创建一个地球对象实例</span><br><span class="line">var diqiu=new Earth();</span><br><span class="line"></span><br><span class="line">//创建一个火星对象实例</span><br><span class="line">var fire=new Mars();</span><br><span class="line"></span><br><span class="line">//创建一个木星对象实例</span><br><span class="line">var wood=new Jupiter();</span><br><span class="line"></span><br><span class="line">//创建一个土星对象实例</span><br><span class="line">var soil=new Saturn();</span><br><span class="line"></span><br><span class="line">//创建一个天王星对象实例</span><br><span class="line">var god=new Uranus();</span><br><span class="line"></span><br><span class="line">//创建一个海王星对象实例</span><br><span class="line">var sea=new Neptune();</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> function move()&#123;</span><br><span class="line">   //清除画布</span><br><span class="line">   ctx.clearRect(0,0,1000,1000);</span><br><span class="line">   //画出轨道</span><br><span class="line">   drawTrack();</span><br><span class="line">   //画出每个星球</span><br><span class="line">   sun.draw();</span><br><span class="line">   water.draw();</span><br><span class="line">   gold.draw();</span><br><span class="line">   diqiu.draw();</span><br><span class="line">   fire.draw();</span><br><span class="line">   wood.draw();</span><br><span class="line">   soil.draw();</span><br><span class="line">   god.draw();</span><br><span class="line">   sea.draw();</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">//使让星球进行运动</span><br><span class="line">setInterval(move,10);</span><br></pre></td></tr></table></figure>
 
@@ -163,12 +233,7 @@
 
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br></pre></td><td class="code"><pre><span class="line">window.requestAnimFrame = ( function() &#123;</span><br><span class="line">		return window.requestAnimationFrame ||</span><br><span class="line">					window.webkitRequestAnimationFrame ||</span><br><span class="line">					window.mozRequestAnimationFrame ||</span><br><span class="line">					function( callback ) &#123;</span><br><span class="line">						window.setTimeout( callback, 1000 / 60 );</span><br><span class="line">					&#125;;</span><br><span class="line">		&#125;)();</span><br><span class="line">		var can = document.getElementById(&quot;canvas&quot;);</span><br><span class="line">		var cxt = can.getContext(&quot;2d&quot;);</span><br><span class="line">		can.width = window.innerWidth;</span><br><span class="line">		can.height = window.innerHeight;</span><br><span class="line">		cxt.lineWidth = 0.3;</span><br><span class="line">		//初始链接线条显示位置</span><br><span class="line">		var mousePosition = &#123;</span><br><span class="line">			x : 30*can.width/100,</span><br><span class="line">			y : 30*can.height/100</span><br><span class="line">		&#125;</span><br><span class="line">		//圆形粒子对象参数</span><br><span class="line">		var dots = &#123;</span><br><span class="line">			n : 500,//圆形粒子个数</span><br><span class="line">			distance : 50,//圆形粒子之间的距离</span><br><span class="line">			d_radius : 100,//粒子距离鼠标点的距离</span><br><span class="line">			array : []//保存n个圆形粒子对象</span><br><span class="line">		&#125;</span><br><span class="line">		//创建随即颜色值</span><br><span class="line">		function colorValue(min)&#123;</span><br><span class="line">			return Math.floor(Math.random()*255 + min);</span><br><span class="line">		&#125;</span><br><span class="line">		function createColorStyle(r,g,b)&#123;</span><br><span class="line">			return &quot;rgba(&quot;+r+&quot;,&quot;+g+&quot;,&quot;+b+&quot;, 1)&quot;;</span><br><span class="line">		&#125;</span><br><span class="line">		//混合两个圆形粒子的颜色</span><br><span class="line">		function mixConnect(c1,r1,c2,r2)&#123;//圆的颜色 半径</span><br><span class="line">			return (c1*r1+c2*r2)/(r1+r2);</span><br><span class="line">		&#125;;</span><br><span class="line">		//生成线条的颜色</span><br><span class="line">		function lineColor(dot1,dot2)&#123;//获取具体的圆的颜色再计算</span><br><span class="line">			var color1 = dot1.color,</span><br><span class="line">				color2 = dot2.color;</span><br><span class="line">			var r = mixConnect(color1.r,dot1.radius,color2.r,dot2.radius);</span><br><span class="line">			var g = mixConnect(color1.g,dot1.radius,color2.g,dot2.radius);</span><br><span class="line">			var b = mixConnect(color1.b,dot1.radius,color2.b,dot2.radius);</span><br><span class="line">			return createColorStyle(Math.floor(r),Math.floor(g),Math.floor(b));</span><br><span class="line">		&#125;</span><br><span class="line">		//生成圆形粒子的颜色对象</span><br><span class="line">		function Color(min)&#123;</span><br><span class="line">			min = min || 0;</span><br><span class="line">			this.r = colorValue(min);</span><br><span class="line">			this.g = colorValue(min);</span><br><span class="line">			this.b = colorValue(min);</span><br><span class="line">			this.style = createColorStyle(this.r,this.g,this.b);</span><br><span class="line">		&#125;</span><br><span class="line">		//创建圆形粒子对象</span><br><span class="line">		function Dot()&#123;</span><br><span class="line">			//圆形粒子随机圆心坐标点</span><br><span class="line">			this.x = Math.random()*can.width;</span><br><span class="line">			this.y = Math.random()*can.height;</span><br><span class="line">			//x y 方向运动的速度值</span><br><span class="line">			this.vx = -0.5 + Math.random();</span><br><span class="line">			this.vy = -0.5 + Math.random();</span><br><span class="line">			this.radius = Math.random()*5;</span><br><span class="line">			//this.color = &quot;#ff3333&quot;;</span><br><span class="line">			this.color = new Color();</span><br><span class="line">		&#125;</span><br><span class="line">		//绘制出圆形粒子</span><br><span class="line">		Dot.prototype.draw = function()&#123;</span><br><span class="line">			cxt.beginPath();</span><br><span class="line">			cxt.fillStyle = this.color.style;</span><br><span class="line">			cxt.arc(this.x,this.y,this.radius,0,Math.PI*2,false);</span><br><span class="line">			cxt.fill();</span><br><span class="line">		&#125;</span><br><span class="line">		//添加圆形粒子</span><br><span class="line">		function createCircle()&#123;</span><br><span class="line">			for (var i=0;i&lt;dots.n ;i++ )</span><br><span class="line">			&#123;</span><br><span class="line">				dots.array.push(new Dot());</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//绘制出圆形粒子</span><br><span class="line">		function drawDots()&#123;</span><br><span class="line">			for (var i=0;i&lt;dots.n ;i++ )</span><br><span class="line">			&#123;</span><br><span class="line">				var dot = dots.array[i];</span><br><span class="line">				dot.draw();</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		//drawDots();</span><br><span class="line">		//移动</span><br><span class="line">		function moveDots()&#123;</span><br><span class="line">			for (var i=0;i&lt;dots.n ;i++ )&#123;</span><br><span class="line">				var dot = dots.array[i];</span><br><span class="line">				//当圆形粒子对象碰壁的时候就反弹回来</span><br><span class="line">				if (dot.y &lt; 0 || dot.y &gt; can.height)</span><br><span class="line">				&#123;</span><br><span class="line">					dot.vx = dot.vx;</span><br><span class="line">					dot.vy = -dot.vy;</span><br><span class="line">				&#125;else if (dot.x &lt; 0 || dot.x &gt; can.width)</span><br><span class="line">				&#123;</span><br><span class="line">					dot.vx = -dot.vx;</span><br><span class="line">					dot.vy = dot.vy;</span><br><span class="line">				&#125;</span><br><span class="line">				//给圆形粒子圆心坐标加上速度值移动圆形粒子</span><br><span class="line">				dot.x += dot.vx;</span><br><span class="line">				dot.y += dot.vy;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		//链接粒子对象</span><br><span class="line">		function connectDots()&#123;</span><br><span class="line">			for (var i=0;i&lt;dots.n ; i++)</span><br><span class="line">			&#123;</span><br><span class="line">				for ( var j=0;j&lt;dots.n ; j++)</span><br><span class="line">				&#123;</span><br><span class="line">					iDot = dots.array[i];</span><br><span class="line">					jDot = dots.array[j];</span><br><span class="line">					if ((iDot.x - jDot.x) &lt; dots.distance &amp;&amp; (iDot.y - jDot.y) &lt; dots.distance &amp;&amp; (iDot.x - jDot.x) &gt; -dots.distance &amp;&amp; (iDot.y - jDot.y) &gt; -dots.distance)</span><br><span class="line">					&#123;</span><br><span class="line">						if ((iDot.x - mousePosition.x) &lt; dots.d_radius &amp;&amp; (iDot.y - mousePosition.y) &lt; dots.d_radius &amp;&amp; (iDot.x - mousePosition.x) &gt; -dots.d_radius &amp;&amp; (iDot.y - mousePosition.y) &gt; -dots.d_radius)</span><br><span class="line">						&#123;</span><br><span class="line">							cxt.beginPath();</span><br><span class="line">							//cxt.strokeStyle = &quot;yellow&quot;;</span><br><span class="line">							cxt.strokeStyle = lineColor(iDot,jDot);</span><br><span class="line">							cxt.moveTo(iDot.x,iDot.y);</span><br><span class="line">							cxt.lineTo(jDot.x,jDot.y);</span><br><span class="line">							cxt.closePath();</span><br><span class="line">							cxt.stroke();</span><br><span class="line">						&#125;</span><br><span class="line">						</span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		createCircle();</span><br><span class="line">		//让圆形粒子不断的移动</span><br><span class="line">		function animateDots()&#123;</span><br><span class="line">			cxt.clearRect(0,0,can.width,can.height);</span><br><span class="line">			moveDots();</span><br><span class="line">			connectDots()</span><br><span class="line">			drawDots();</span><br><span class="line">			requestAnimFrame(animateDots);</span><br><span class="line">		&#125;</span><br><span class="line">		animateDots();</span><br><span class="line">		</span><br><span class="line">		can.onmousemove = function(ev)&#123;</span><br><span class="line">			var ev = ev || window.event;</span><br><span class="line">			mousePosition.x = ev.pageX;</span><br><span class="line">			mousePosition.y = ev.pageY;</span><br><span class="line">		&#125;</span><br><span class="line">		can.onmouseout = function()&#123;</span><br><span class="line">			mousePosition.x = can.width/2;</span><br><span class="line">			mousePosition.y = can.height/2;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
 
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -203,10 +268,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/11/name/'>命名参考</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/10/Linux%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">Linux操作手册</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -229,8 +307,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -273,9 +355,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -296,31 +423,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

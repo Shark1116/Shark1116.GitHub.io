@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            SQL学习记录
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    SQL学习记录
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：3.9k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：15分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E5%9F%BA%E7%A1%80"><span class="post-toc-text">一、基础</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E5%88%9B%E5%BB%BA%E8%A1%A8"><span class="post-toc-text">二、创建表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E4%BF%AE%E6%94%B9%E8%A1%A8"><span class="post-toc-text">三、修改表</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E6%8F%92%E5%85%A5"><span class="post-toc-text">四、插入</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81%E6%9B%B4%E6%96%B0"><span class="post-toc-text">五、更新</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AD%E3%80%81%E5%88%A0%E9%99%A4"><span class="post-toc-text">六、删除</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%83%E3%80%81%E6%9F%A5%E8%AF%A2"><span class="post-toc-text">七、查询</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#DISTINCT"><span class="post-toc-text">DISTINCT</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#LIMIT"><span class="post-toc-text">LIMIT</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AB%E3%80%81%E6%8E%92%E5%BA%8F"><span class="post-toc-text">八、排序</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B9%9D%E3%80%81%E8%BF%87%E6%BB%A4"><span class="post-toc-text">九、过滤</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E3%80%81%E9%80%9A%E9%85%8D%E7%AC%A6"><span class="post-toc-text">十、通配符</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E8%AE%A1%E7%AE%97%E5%AD%97%E6%AE%B5"><span class="post-toc-text">十一、计算字段</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E5%87%BD%E6%95%B0"><span class="post-toc-text">十二、函数</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B1%87%E6%80%BB"><span class="post-toc-text">汇总</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%87%E6%9C%AC%E5%A4%84%E7%90%86"><span class="post-toc-text">文本处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%97%A5%E6%9C%9F%E5%92%8C%E6%97%B6%E9%97%B4%E5%A4%84%E7%90%86"><span class="post-toc-text">日期和时间处理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E5%80%BC%E5%A4%84%E7%90%86"><span class="post-toc-text">数值处理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E4%B8%89%E3%80%81%E5%88%86%E7%BB%84"><span class="post-toc-text">十三、分组</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81%E5%AD%90%E6%9F%A5%E8%AF%A2"><span class="post-toc-text">十四、子查询</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E4%BA%94%E3%80%81%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">十五、连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%85%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">内连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%87%AA%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">自连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%87%AA%E7%84%B6%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">自然连接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%A4%96%E8%BF%9E%E6%8E%A5"><span class="post-toc-text">外连接</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E5%85%AD%E3%80%81%E7%BB%84%E5%90%88%E6%9F%A5%E8%AF%A2"><span class="post-toc-text">十六、组合查询</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E4%B8%83%E3%80%81%E8%A7%86%E5%9B%BE"><span class="post-toc-text">十七、视图</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E5%85%AB%E3%80%81%E5%AD%98%E5%82%A8%E8%BF%87%E7%A8%8B"><span class="post-toc-text">十八、存储过程</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E4%B9%9D%E3%80%81%E6%B8%B8%E6%A0%87"><span class="post-toc-text">十九、游标</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E5%8D%81%E3%80%81%E8%A7%A6%E5%8F%91%E5%99%A8"><span class="post-toc-text">二十、触发器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%80%E3%80%81%E4%BA%8B%E5%8A%A1%E7%AE%A1%E7%90%86"><span class="post-toc-text">二十一、事务管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E5%8D%81%E4%BA%8C%E3%80%81%E5%AD%97%E7%AC%A6%E9%9B%86"><span class="post-toc-text">二十二、字符集</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E5%8D%81%E4%B8%89%E3%80%81%E6%9D%83%E9%99%90%E7%AE%A1%E7%90%86"><span class="post-toc-text">二十三、权限管理</span></a></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h2><p>模式定义了数据如何存储、存储什么样的数据以及数据如何分解等信息，数据库和表都有模式。</p>
+        <div class=".article-gallery"><h2 id="一、基础"><a href="#一、基础" class="headerlink" title="一、基础"></a>一、基础</h2><p>模式定义了数据如何存储、存储什么样的数据以及数据如何分解等信息，数据库和表都有模式。</p>
 <p>主键的值不允许修改，也不允许复用（不能将已经删除的主键值赋给新数据行的主键）。</p>
 <p>SQL（Structured Query Language)，标准 SQL 由 ANSI 标准委员会管理，从而称为 ANSI SQL。各个 DBMS 都有自己的实现，如 PL&#x2F;SQL、Transact-SQL 等。</p>
 <p>SQL 语句不区分大小写，但是数据库表名、列名和值是否区分依赖于具体的 DBMS 以及配置。</p>
@@ -703,12 +773,7 @@
 
 <p><strong>更改密码</strong></p>
 <p>必须使用 Password() 函数进行加密。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> PASSWROD <span class="keyword">FOR</span> myuser <span class="operator">=</span> Password(<span class="string">&#x27;new_password&#x27;</span>);</span><br></pre></td></tr></table></figure></div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SET</span> PASSWROD <span class="keyword">FOR</span> myuser <span class="operator">=</span> Password(<span class="string">&#x27;new_password&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
     </div>
 
     <div class="post-meta">
@@ -743,10 +808,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/09/21/jmeter%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/'>工具使用教程&amp;工作记录</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/09/11/%E5%AD%A6%E4%B9%A0%E6%B8%85%E5%8D%95/">学习清单</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -769,8 +847,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -813,9 +895,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -836,31 +963,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

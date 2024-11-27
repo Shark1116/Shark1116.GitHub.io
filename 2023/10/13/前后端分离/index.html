@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            前后端分离
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    前后端分离
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-13</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：1.3k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：5分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB"><span class="post-toc-text">前后端分离</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%96%87%E6%A1%A3%E8%A7%84%E8%8C%83"><span class="post-toc-text">文档规范</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE"><span class="post-toc-text">模拟数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB-1"><span class="post-toc-text">前后端分离</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AEmock%E6%80%9D%E8%B7%AF"><span class="post-toc-text">数据mock思路</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%9C%AC%E5%9C%B0%E6%A8%A1%E6%8B%9F%E6%95%B0%E6%8D%AE"><span class="post-toc-text">本地模拟数据</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81%E9%87%8C%E7%9B%B4%E6%8E%A5%E6%A8%A1%E6%8B%9F"><span class="post-toc-text">业务代码里直接模拟</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%9C%AC%E5%9C%B0%E8%AF%B7%E6%B1%82json"><span class="post-toc-text">本地请求json</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#mock-js-%E8%A1%8C%E4%B8%BA%E6%9C%89%E9%99%90"><span class="post-toc-text">mock.js(行为有限)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#faker-js%EF%BC%88%E9%9A%8F%E6%9C%BA%E6%95%B0%E6%8D%AE%E7%94%9F%E6%88%90%E5%BA%93%EF%BC%89"><span class="post-toc-text">faker.js（随机数据生成库）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#API-Mocking"><span class="post-toc-text">API Mocking</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#Online-Mock-API-%E6%9C%8D%E5%8A%A1%EF%BC%9A"><span class="post-toc-text">Online Mock API 服务：</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h1><p>为了解决前后端联调的麻烦，比如前端陷入“等接口”的内耗情况，前端同学本地开发完，确认好各个接口已经按照接口文档约定的参数传参后，无需做后端同学的陪练，可以把最新代码发布到某一个开发环境，让后端同学在写完接口后，在开发环境通过页面进行联调。服务端接口如果有问题，后端同学自己修改完重新发布后，再自己从前端页面测试。如果实在需要更改或再增加参数，再去找前端同学。这样前端同学就可以从“改接口-调接口”的循环圈中解脱出来，把更多精力地放在开发工作上。</p>
+        <div class=".article-gallery"><h1 id="前后端分离"><a href="#前后端分离" class="headerlink" title="前后端分离"></a>前后端分离</h1><p>为了解决前后端联调的麻烦，比如前端陷入“等接口”的内耗情况，前端同学本地开发完，确认好各个接口已经按照接口文档约定的参数传参后，无需做后端同学的陪练，可以把最新代码发布到某一个开发环境，让后端同学在写完接口后，在开发环境通过页面进行联调。服务端接口如果有问题，后端同学自己修改完重新发布后，再自己从前端页面测试。如果实在需要更改或再增加参数，再去找前端同学。这样前端同学就可以从“改接口-调接口”的循环圈中解脱出来，把更多精力地放在开发工作上。</p>
 <h2 id="文档规范"><a href="#文档规范" class="headerlink" title="文档规范"></a>文档规范</h2><p>关于接口，不得不提到文档规范，从常见的需求文档到代码中间会经历很多环节，在冗杂的环节中就像传话游戏一样，因此，我认为在整个开发流程中，制订一份规范的书写文档格式尤其重要。其中，写word、markdown文档，更新到公司的交流库上。更好一点的话，使用swagger生成文档。</p>
 <p>参考：<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/349e130e40d5">Swagger介绍及使用 - 简书 (jianshu.com)</a></p>
 <p><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1621396">Swagger详细了解一下（长文谨慎阅读）-腾讯云开发者社区-腾讯云 (tencent.com)</a></p>
@@ -255,12 +325,7 @@
 <li><p><strong>示例</strong>（使用 JSONPlaceholder）：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javascriptCopy <span class="title function_">codefetch</span>(<span class="string">&#x27;https://jsonplaceholder.typicode.com/users&#x27;</span>)</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">response</span> =&gt;</span> response.<span class="title function_">json</span>())</span><br><span class="line">  .<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure></li>
 </ul>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -295,10 +360,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/13/mock-js/'>mock.js</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/13/%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE/">一个按钮</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -321,8 +399,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -365,9 +447,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -388,31 +515,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            前端的性能优化
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    前端的性能优化
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：12k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：44分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E7%81%B5%E9%AD%82%E6%8B%B7%E9%97%AE-%E5%89%8D%E7%AB%AF%E5%88%B0%E5%BA%95%E8%83%BD%E5%81%9A%E4%BA%9B%E4%BB%80%E4%B9%88%EF%BC%9F%E2%80%93%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%AF%87"><span class="post-toc-text">灵魂拷问-前端到底能做些什么？–性能优化篇</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-0-1-%E7%94%A8%E6%88%B7%E8%AE%BF%E9%97%AE%E9%A1%B5%E9%9D%A2CRP%EF%BC%88%E7%94%A8%E6%88%B7%E8%BE%93%E5%85%A5%E4%B8%80%E4%B8%AAURL%E5%90%8E%E4%BC%9A%E5%8F%91%E7%94%9F%E4%BB%80%E4%B9%88%EF%BC%89"><span class="post-toc-text">2.0.1 用户访问页面CRP（用户输入一个URL后会发生什么）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-0-2-%E6%B5%8F%E8%A7%88%E5%99%A8%E7%9A%84%E8%BF%9B%E7%A8%8B%E5%92%8C%E7%BA%BF%E7%A8%8B%E6%9C%BA%E5%88%B6"><span class="post-toc-text">2.0.2 浏览器的进程和线程机制</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-0-3-%E9%A1%B5%E9%9D%A2%E9%87%8D%E7%BB%98-%E9%87%8D%E6%8E%92%EF%BC%88%E5%9B%9E%E6%B5%81%EF%BC%89"><span class="post-toc-text">2.0.3 页面重绘&amp;重排（回流）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-0-%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="post-toc-text">2.1.0 优化思路</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-1-%E5%A2%9E%E5%8A%A0%E8%AF%B7%E6%B1%82%E5%B9%B6%E5%8F%91%E6%95%B0%E9%87%8F"><span class="post-toc-text">2.1.1 增加请求并发数量</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-1-1-%E4%BD%BF%E7%94%A8%E5%A4%9A%E4%B8%AA%E5%9F%9F%E5%90%8D%EF%BC%88%E5%8F%88%E7%A7%B0%E5%9F%9F%E5%90%8D%E5%88%86%E7%89%87%E3%80%81%E5%9F%9F%E5%90%8D%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%EF%BC%89"><span class="post-toc-text">2.1.1.1 使用多个域名（又称域名分片、域名负载均衡）</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-1-2-%E5%8D%87%E7%BA%A7http2"><span class="post-toc-text">2.1.1.2 升级http2</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-1-3-%E5%8D%87%E7%BA%A7http3"><span class="post-toc-text">2.1.1.3 升级http3</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-2-%E7%BC%A9%E7%9F%AD%E5%8D%95%E6%AC%A1%E8%AF%B7%E6%B1%82%E6%97%B6%E9%97%B4"><span class="post-toc-text">2.1.2 缩短单次请求时间</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-2-1-%E5%87%8F%E5%B0%91%E6%9E%84%E5%BB%BA%E4%BA%A7%E7%89%A9%E4%BD%93%E7%A7%AF"><span class="post-toc-text">2.1.2.1 减少构建产物体积</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-2-2-%E7%BD%91%E7%BB%9C%E4%BC%A0%E8%BE%93%E4%B8%AD%E5%8E%8B%E7%BC%A9"><span class="post-toc-text">2.1.2.2 网络传输中压缩</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-2-3-%E7%BC%93%E5%AD%98%E9%9D%99%E6%80%81%E8%B5%84%E6%BA%90%E5%92%8C%E5%85%B3%E9%94%AE%E6%8E%A5%E5%8F%A3"><span class="post-toc-text">2.1.2.3 缓存静态资源和关键接口</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-1-3-%E4%BC%98%E5%8C%96%E8%B5%84%E6%BA%90%E8%AF%B7%E6%B1%82%E9%A1%BA%E5%BA%8F"><span class="post-toc-text">2.1.3 优化资源请求顺序</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-3-1-%E5%85%B3%E9%94%AE%E8%B5%84%E6%BA%90%E5%B0%BD%E6%97%A9%E5%8A%A0%E8%BD%BD"><span class="post-toc-text">2.1.3.1 关键资源尽早加载</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-1-3-2-%E9%9D%9E%E5%85%B3%E9%94%AE%E8%B5%84%E6%BA%90%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD-%E6%89%A7%E8%A1%8C"><span class="post-toc-text">2.1.3.2 非关键资源延迟加载&amp;执行</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-0-%E4%BC%98%E5%8C%96%E6%80%9D%E8%B7%AF"><span class="post-toc-text">2.2.0 优化思路</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-1-%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%B8%B2%E6%9F%93SSR"><span class="post-toc-text">2.2.1 服务端渲染SSR</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-2-JS%E4%BB%A3%E7%A0%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.2 JS代码性能优化</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-2-1-DOM%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.2.1 DOM优化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-2-2-%E5%87%BD%E6%95%B0%E4%BB%BB%E5%8A%A1%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.2.2 函数任务优化</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-2-2-3-React%E4%B8%93%E9%A1%B9"><span class="post-toc-text">2.2.2.3 React专项</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-3-CSS%E4%BB%A3%E7%A0%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.3 CSS代码性能优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-4-HTML%E4%BB%A3%E7%A0%81%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.4 HTML代码性能优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-5-%E5%9B%BE%E7%89%87%E5%8A%A0%E8%BD%BD%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.5 图片加载性能优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-2-6-%E5%8A%A8%E7%94%BB%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96"><span class="post-toc-text">2.2.6 动画性能优化</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-1-performance%E9%9D%A2%E6%9D%BF"><span class="post-toc-text">3.1.1 performance面板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-2-lighthouse%E9%9D%A2%E6%9D%BF"><span class="post-toc-text">3.1.2 lighthouse面板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-3-network%E9%9D%A2%E6%9D%BF"><span class="post-toc-text">3.1.3 network面板</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-1-4-%E6%80%A7%E8%83%BD%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%E9%9D%A2%E6%9D%BF%EF%BC%88%E5%8D%B3%E5%B0%86%E8%A2%AB%E7%A7%BB%E9%99%A4%EF%BC%89"><span class="post-toc-text">3.1.4 性能数据分析面板（即将被移除）</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-1-pagespeed"><span class="post-toc-text">3.2.1 pagespeed</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-2-2-webpagetest"><span class="post-toc-text">3.2.2 webpagetest</span></a></li></ol></li></ol></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="灵魂拷问-前端到底能做些什么？–性能优化篇"><a href="#灵魂拷问-前端到底能做些什么？–性能优化篇" class="headerlink" title="灵魂拷问-前端到底能做些什么？–性能优化篇"></a>灵魂拷问-前端到底能做些什么？–性能优化篇</h1><p>原创 作者:硅步 公号:阿里云开发者 发布时间:2024-09-25 8:30 发表于浙江</p>
+        <div class=".article-gallery"><h1 id="灵魂拷问-前端到底能做些什么？–性能优化篇"><a href="#灵魂拷问-前端到底能做些什么？–性能优化篇" class="headerlink" title="灵魂拷问-前端到底能做些什么？–性能优化篇"></a>灵魂拷问-前端到底能做些什么？–性能优化篇</h1><p>原创 作者:硅步 公号:阿里云开发者 发布时间:2024-09-25 8:30 发表于浙江</p>
 <p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/HezWSAsNFWE3UyO6fGjgHQ">灵魂拷问-前端到底能做些什么？–性能优化篇</a></p>
 <p><a href="/img/0.jpeg" class="gallery-item" style="box-shadow: none;"> <img src="/img/0.jpeg"></a></p>
 <p>阿里妹导读</p>
@@ -823,12 +893,7 @@
 <p>[10]<a target="_blank" rel="noopener" href="https://www.yuque.com/kuitos/gky7yw/gs4okg">https://www.yuque.com/kuitos/gky7yw/gs4okg</a></p>
 <p>[11]<a target="_blank" rel="noopener" href="https://css-tricks.com/css-sprites/">https://css-tricks.com/css-sprites/</a></p>
 <p>[12]<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position">https://developer.mozilla.org/zh-CN/docs/Web/CSS/background-position</a></p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -863,10 +928,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/10/12/coderwhy-JavaScript%E9%AB%98%E7%BA%A7%E7%B3%BB%E5%88%97%EF%BC%88%E4%B8%80%EF%BC%89/'>coderwhy-JavaScript高级系列</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/10/11/iframe%E7%9A%84%E5%B5%8C%E5%A5%97%E4%BD%BF%E7%94%A8/">iframe的嵌套使用</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -889,8 +967,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -933,9 +1015,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -956,31 +1083,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,6 +166,8 @@
 
       <!--文章先按照时间排好序-->
       
+
+
       
       
 
@@ -151,7 +187,7 @@
       
           
           <li>
-            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP1
+            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP
             </span>
             <div class="archive-main">
                 <a class="archive-title" href="/2023/05/01/update/">update</a>
@@ -160,7 +196,7 @@
       
           
           <li>
-            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP2
+            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP
             </span>
             <div class="archive-main">
                 <a class="archive-title" href="/2024/10/24/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">持续更新</a>
@@ -169,20 +205,44 @@
       
           
           <li>
-            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP3
+            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP
+            </span>
+            <div class="archive-main">
+                <a class="archive-title" href="/2024/11/10/%E5%B7%A5%E5%85%B7%E7%AE%B1/">collection</a>
+            </div>
+          </li>
+      
+          
+          <li>
+            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP
             </span>
             <div class="archive-main">
                 <a class="archive-title" href="/2024/10/24/vue/">vue</a>
             </div>
           </li>
       
+          
+          <li>
+            <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP
+            </span>
+            <div class="archive-main">
+                <a class="archive-title" href="/2024/11/22/javascript/">javascript</a>
+            </div>
+          </li>
+      
+
+      <!--文章先按照时间排好序-->
+      
+      
+      <!--再放 最近更新 文章-->
+      
 
       <!--后放 其他 文章-->
       
         
         <li>
-          <span class="year-font-color">2024[10]
-             🍃 
+          <span class="year-font-color">2024[8]
+             <span class="darkmode-ignore">🍃</span> 
           </span>
         </li>
         
@@ -269,16 +329,6 @@
         
           
           <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;06/06 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title" href="/2024/06/06/%E6%B5%8B%E8%AF%95/">测试</a>
-            </div>
-          </li>
-        
-          
-          <li>
             <span class="archive-date">&nbsp;&nbsp;&nbsp;06/05 
             </span>
             <div class="archive-main">
@@ -297,20 +347,10 @@
             </div>
           </li>
         
-          
-          <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;04/23 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title" href="/2024/04/23/hello-world/">Hello World</a>
-            </div>
-          </li>
-        
       
         
         <li>
-          <span class="year-font-color">2023[19]
+          <span class="year-font-color">2023[18]
             
           </span>
         </li>
@@ -327,20 +367,6 @@
                 </a> | 
               
                 <a class="archive-title" href="/2023/11/15/%E5%91%BD%E4%BB%A4%E8%A1%8C/">命令行</a>
-            </div>
-          </li>
-        
-          
-          <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;11/03 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title"  href="/categories/Notes/">
-                  Notes 
-                </a> | 
-              
-                <a class="archive-title" href="/2023/11/03/1103%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">1103学习记录</a>
             </div>
           </li>
         
@@ -592,8 +618,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -636,9 +666,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -659,31 +734,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

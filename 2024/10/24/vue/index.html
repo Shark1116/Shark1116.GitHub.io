@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            vue
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    vue
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-11-22</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：197</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,16 +216,11 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ant-%E7%BB%84%E4%BB%B6%E5%BA%93"><span class="post-toc-text">Ant 组件库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#select"><span class="post-toc-text">select</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#key%E8%A6%81%E5%94%AF%E4%B8%80%E6%80%A7%EF%BC%81%EF%BC%81%EF%BC%81"><span class="post-toc-text">key要唯一性！！！</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#v-for-%E9%81%8D%E5%8E%86%E9%81%BF%E5%85%8D%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8-v-if"><span class="post-toc-text">v-for 遍历避免同时使用 v-if</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-select%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="post-toc-text">a-select默认值</span></a></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h4 id="Ant-组件库"><a href="#Ant-组件库" class="headerlink" title="Ant 组件库"></a>Ant 组件库</h4><h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>label in value属性同时获取显示值和实际值</p>
+        <div class=".article-gallery"><h4 id="Ant-组件库"><a href="#Ant-组件库" class="headerlink" title="Ant 组件库"></a>Ant 组件库</h4><h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>label in value属性同时获取显示值和实际值</p>
 <h3 id="key要唯一性！！！"><a href="#key要唯一性！！！" class="headerlink" title="key要唯一性！！！"></a>key要唯一性！！！</h3><p>公司里很多人用index作为key，为什么不好？（重新渲染）<br><a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/jiangjiang1116/wechat-img/main/newmd/20241024153819.png?token=ALRDINHSQ7KC63BJC5TELJDHDH42U" title="li3&amp;li4&amp;li5得重新渲染" class="gallery-item" style="box-shadow: none;"> <img src="https://raw.githubusercontent.com/jiangjiang1116/wechat-img/main/newmd/20241024153819.png?token=ALRDINHSQ7KC63BJC5TELJDHDH42U" alt="li3&amp;li4&amp;li5得重新渲染"></a></p>
 <h4 id="v-for-遍历避免同时使用-v-if"><a href="#v-for-遍历避免同时使用-v-if" class="headerlink" title="v-for 遍历避免同时使用 v-if"></a>v-for 遍历避免同时使用 v-if</h4><p>为什么？顺序是什么样？在vue2与vue3优先级不一样，是怎么样的？(vue2 v-for高，先遍历生成虚拟dom，再判断是否渲染)</p>
 <h4 id="a-select默认值"><a href="#a-select默认值" class="headerlink" title="a-select默认值"></a>a-select默认值</h4><p>如果在data return里写死defaultValue的参数，没有“选中”这个效果，得写成变量绑定。<br>vue组件初始化会先检查v-modal绑定的变量，并将其值与组件的内部状态同步。如果组件初始化之前被设置，同步过程可能不会立即发生，导致初始状态不对（没有“选中”这个态）</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -170,10 +235,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/11/10/%E5%B7%A5%E5%85%B7%E7%AE%B1/'>collection</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/10/24/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">持续更新</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -196,8 +274,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -240,9 +322,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -263,31 +390,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

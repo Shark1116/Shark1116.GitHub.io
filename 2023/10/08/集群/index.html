@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            集群
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    集群
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-10</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.3k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：8分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="post-toc-text">一、负载均衡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1%E7%AE%97%E6%B3%95"><span class="post-toc-text">负载均衡算法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E8%BD%AE%E8%AF%A2%EF%BC%88Round-Robin%EF%BC%89"><span class="post-toc-text">1. 轮询（Round Robin）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E5%8A%A0%E6%9D%83%E8%BD%AE%E8%AF%A2%EF%BC%88Weighted-Round-Robbin%EF%BC%89"><span class="post-toc-text">2. 加权轮询（Weighted Round Robbin）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E6%9C%80%E5%B0%91%E8%BF%9E%E6%8E%A5%EF%BC%88least-Connections%EF%BC%89"><span class="post-toc-text">3. 最少连接（least Connections）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-%E5%8A%A0%E6%9D%83%E6%9C%80%E5%B0%91%E8%BF%9E%E6%8E%A5%EF%BC%88Weighted-Least-Connection%EF%BC%89"><span class="post-toc-text">4. 加权最少连接（Weighted Least Connection）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-%E9%9A%8F%E6%9C%BA%E7%AE%97%E6%B3%95%EF%BC%88Random%EF%BC%89"><span class="post-toc-text">5. 随机算法（Random）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-%E6%BA%90%E5%9C%B0%E5%9D%80%E5%93%88%E5%B8%8C%E6%B3%95-IP-Hash"><span class="post-toc-text">6. 源地址哈希法 (IP Hash)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E8%BD%AC%E5%8F%91%E5%AE%9E%E7%8E%B0"><span class="post-toc-text">转发实现</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-HTTP-%E9%87%8D%E5%AE%9A%E5%90%91"><span class="post-toc-text">1. HTTP 重定向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-DNS-%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90"><span class="post-toc-text">2. DNS 域名解析</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="post-toc-text">3. 反向代理服务器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-%E7%BD%91%E7%BB%9C%E5%B1%82"><span class="post-toc-text">4. 网络层</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-%E9%93%BE%E8%B7%AF%E5%B1%82"><span class="post-toc-text">5. 链路层</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E9%9B%86%E7%BE%A4%E4%B8%8B%E7%9A%84-Session-%E7%AE%A1%E7%90%86"><span class="post-toc-text">二、集群下的 Session 管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Sticky-Session"><span class="post-toc-text">Sticky Session</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Session-Replication"><span class="post-toc-text">Session Replication</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Session-Server"><span class="post-toc-text">Session Server</span></a></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>最近经常听到“轮询”这个词语，”x分钟轮询一次“是表示系统将每隔5分钟执行一次轮询操作，即定期查询某个数据源或资源以获取最新的信息。用于确保系统获得实时或近实时的数据更新，而不是持续监听或推送方式。</p>
+        <div class=".article-gallery"><p>最近经常听到“轮询”这个词语，”x分钟轮询一次“是表示系统将每隔5分钟执行一次轮询操作，即定期查询某个数据源或资源以获取最新的信息。用于确保系统获得实时或近实时的数据更新，而不是持续监听或推送方式。</p>
 <p>由此，我从 <a target="_blank" rel="noopener" href="https://interview.poetries.top/fe-base-docs/compute-docs/%E9%9B%86%E7%BE%A4.html#session-replication">poetry的网站</a>了解了一些关于集群(属于系统架构)相关知识，补习了部分基础知识：</p>
 <h1 id="一、负载均衡"><a href="#一、负载均衡" class="headerlink" title="一、负载均衡"></a>一、负载均衡</h1><p>集群中的应用服务器（节点）通常被设计成无状态，用户可以请求任何一个节点。</p>
 <p>负载均衡器会根据集群中每个节点的负载情况，将用户请求转发到合适的节点上。</p>
@@ -253,12 +323,7 @@
 <li>需要去实现存取 Session 的代码。</li>
 </ul>
 <p><a target="_blank" rel="noopener" href="https://s.poetries.work/cos/202203272128274.png" title="img" class="gallery-item" style="box-shadow: none;"> <img src="https://s.poetries.work/cos/202203272128274.png" alt="img"></a></p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -293,10 +358,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/10/Linux%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/'>Linux操作手册</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/08/%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE%E9%97%AE%E9%A2%98%E6%B1%87%E6%80%BB/">主题配置问题汇总</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -319,8 +397,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -363,9 +445,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -386,31 +513,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            Linux操作手册
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    Linux操作手册
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：9.4k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：36分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E4%BB%A5%E5%8F%8A%E6%A6%82%E5%BF%B5"><span class="post-toc-text">一、常用操作以及概念</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="post-toc-text">快捷键</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%B1%82%E5%8A%A9"><span class="post-toc-text">求助</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E2%80%93help"><span class="post-toc-text">1. –help</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-man"><span class="post-toc-text">2. man</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-info"><span class="post-toc-text">3. info</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-doc"><span class="post-toc-text">4. doc</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%85%B3%E6%9C%BA"><span class="post-toc-text">关机</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-who"><span class="post-toc-text">1. who</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-sync"><span class="post-toc-text">2. sync</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-shutdown"><span class="post-toc-text">3. shutdown</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PATH"><span class="post-toc-text">PATH</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#sudo"><span class="post-toc-text">sudo</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7"><span class="post-toc-text">包管理工具</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%91%E8%A1%8C%E7%89%88"><span class="post-toc-text">发行版</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#VIM-%E4%B8%89%E4%B8%AA%E6%A8%A1%E5%BC%8F"><span class="post-toc-text">VIM 三个模式</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GNU"><span class="post-toc-text">GNU</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BC%80%E6%BA%90%E5%8D%8F%E8%AE%AE"><span class="post-toc-text">开源协议</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E7%A3%81%E7%9B%98"><span class="post-toc-text">二、磁盘</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A3%81%E7%9B%98%E6%8E%A5%E5%8F%A3"><span class="post-toc-text">磁盘接口</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-IDE"><span class="post-toc-text">1. IDE</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-SATA"><span class="post-toc-text">2. SATA</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-SCSI"><span class="post-toc-text">3. SCSI</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-SAS"><span class="post-toc-text">4. SAS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A3%81%E7%9B%98%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D"><span class="post-toc-text">磁盘的文件名</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E5%88%86%E5%8C%BA"><span class="post-toc-text">三、分区</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E5%8C%BA%E8%A1%A8"><span class="post-toc-text">分区表</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-MBR"><span class="post-toc-text">1. MBR</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-GPT"><span class="post-toc-text">2. GPT</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%BC%80%E6%9C%BA%E6%A3%80%E6%B5%8B%E7%A8%8B%E5%BA%8F"><span class="post-toc-text">开机检测程序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-BIOS"><span class="post-toc-text">1. BIOS</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-UEFI"><span class="post-toc-text">2. UEFI</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="post-toc-text">四、文件系统</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E5%8C%BA%E4%B8%8E%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F"><span class="post-toc-text">分区与文件系统</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%BB%84%E6%88%90"><span class="post-toc-text">组成</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E8%AF%BB%E5%8F%96"><span class="post-toc-text">文件读取</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%A3%81%E7%9B%98%E7%A2%8E%E7%89%87"><span class="post-toc-text">磁盘碎片</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#block"><span class="post-toc-text">block</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#inode"><span class="post-toc-text">inode</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9B%AE%E5%BD%95"><span class="post-toc-text">目录</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%97%A5%E5%BF%97"><span class="post-toc-text">日志</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8C%82%E8%BD%BD"><span class="post-toc-text">挂载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9B%AE%E5%BD%95%E9%85%8D%E7%BD%AE"><span class="post-toc-text">目录配置</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%BA%94%E3%80%81%E6%96%87%E4%BB%B6"><span class="post-toc-text">五、文件</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E5%B1%9E%E6%80%A7"><span class="post-toc-text">文件属性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E4%B8%8E%E7%9B%AE%E5%BD%95%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="post-toc-text">文件与目录的基本操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-ls"><span class="post-toc-text">1. ls</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-cd"><span class="post-toc-text">2. cd</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-mkdir"><span class="post-toc-text">3. mkdir</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-rmdir"><span class="post-toc-text">4. rmdir</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-touch"><span class="post-toc-text">5. touch</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-cp"><span class="post-toc-text">6. cp</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-rm"><span class="post-toc-text">7. rm</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#8-mv"><span class="post-toc-text">8. mv</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BF%AE%E6%94%B9%E6%9D%83%E9%99%90"><span class="post-toc-text">修改权限</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%BB%98%E8%AE%A4%E6%9D%83%E9%99%90"><span class="post-toc-text">默认权限</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%9B%AE%E5%BD%95%E7%9A%84%E6%9D%83%E9%99%90"><span class="post-toc-text">目录的权限</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E9%93%BE%E6%8E%A5"><span class="post-toc-text">链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-%E5%AE%9E%E4%BD%93%E9%93%BE%E6%8E%A5"><span class="post-toc-text">1. 实体链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5"><span class="post-toc-text">2. 符号链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%86%85%E5%AE%B9"><span class="post-toc-text">获取文件内容</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-cat"><span class="post-toc-text">1. cat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-tac"><span class="post-toc-text">2. tac</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-more"><span class="post-toc-text">3. more</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-less"><span class="post-toc-text">4. less</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#5-head"><span class="post-toc-text">5. head</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#6-tail"><span class="post-toc-text">6. tail</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#7-od"><span class="post-toc-text">7. od</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8C%87%E4%BB%A4%E4%B8%8E%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2"><span class="post-toc-text">指令与文件搜索</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-which"><span class="post-toc-text">1. which</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-whereis"><span class="post-toc-text">2. whereis</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-locate"><span class="post-toc-text">3. locate</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-find"><span class="post-toc-text">4. find</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AD%E3%80%81%E5%8E%8B%E7%BC%A9%E4%B8%8E%E6%89%93%E5%8C%85"><span class="post-toc-text">六、压缩与打包</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6%E5%90%8D"><span class="post-toc-text">压缩文件名</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8E%8B%E7%BC%A9%E6%8C%87%E4%BB%A4"><span class="post-toc-text">压缩指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-gzip"><span class="post-toc-text">1. gzip</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-bzip2"><span class="post-toc-text">2. bzip2</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-xz"><span class="post-toc-text">3. xz</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%89%93%E5%8C%85"><span class="post-toc-text">打包</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%B8%83%E3%80%81Bash"><span class="post-toc-text">七、Bash</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%89%B9%E6%80%A7"><span class="post-toc-text">特性</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%98%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="post-toc-text">变量操作</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8C%87%E4%BB%A4%E6%90%9C%E7%B4%A2%E9%A1%BA%E5%BA%8F"><span class="post-toc-text">指令搜索顺序</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%8D%E5%AE%9A%E5%90%91"><span class="post-toc-text">数据流重定向</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%85%AB%E3%80%81%E7%AE%A1%E9%81%93%E6%8C%87%E4%BB%A4"><span class="post-toc-text">八、管道指令</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8F%90%E5%8F%96%E6%8C%87%E4%BB%A4"><span class="post-toc-text">提取指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%8E%92%E5%BA%8F%E6%8C%87%E4%BB%A4"><span class="post-toc-text">排序指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%8F%8C%E5%90%91%E8%BE%93%E5%87%BA%E9%87%8D%E5%AE%9A%E5%90%91"><span class="post-toc-text">双向输出重定向</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AD%97%E7%AC%A6%E8%BD%AC%E6%8D%A2%E6%8C%87%E4%BB%A4"><span class="post-toc-text">字符转换指令</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%88%86%E5%8C%BA%E6%8C%87%E4%BB%A4"><span class="post-toc-text">分区指令</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E4%B9%9D%E3%80%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="post-toc-text">九、正则表达式</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#grep"><span class="post-toc-text">grep</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#printf"><span class="post-toc-text">printf</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#awk"><span class="post-toc-text">awk</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%8D%81%E3%80%81%E8%BF%9B%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="post-toc-text">十、进程管理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%9F%A5%E7%9C%8B%E8%BF%9B%E7%A8%8B"><span class="post-toc-text">查看进程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-ps"><span class="post-toc-text">1. ps</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2-pstree"><span class="post-toc-text">2. pstree</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#3-top"><span class="post-toc-text">3. top</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#4-netstat"><span class="post-toc-text">4. netstat</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%BF%9B%E7%A8%8B%E7%8A%B6%E6%80%81"><span class="post-toc-text">进程状态</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#SIGCHLD"><span class="post-toc-text">SIGCHLD</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#wait"><span class="post-toc-text">wait()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#waitpid"><span class="post-toc-text">waitpid()</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%AD%A4%E5%84%BF%E8%BF%9B%E7%A8%8B"><span class="post-toc-text">孤儿进程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%83%B5%E5%B0%B8%E8%BF%9B%E7%A8%8B"><span class="post-toc-text">僵尸进程</span></a></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>来源于：<a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes%E4%BB%A5%E5%8F%8Ahttps://interview.poetries.top/fe-base-docs/compute-docs">https://github.com/CyC2018/CS-Notes以及https://interview.poetries.top/fe-base-docs/compute-docs</a></p>
+        <div class=".article-gallery"><p>来源于：<a target="_blank" rel="noopener" href="https://github.com/CyC2018/CS-Notes%E4%BB%A5%E5%8F%8Ahttps://interview.poetries.top/fe-base-docs/compute-docs">https://github.com/CyC2018/CS-Notes以及https://interview.poetries.top/fe-base-docs/compute-docs</a></p>
 <h2 id="一、常用操作以及概念"><a href="#一、常用操作以及概念" class="headerlink" title="一、常用操作以及概念"></a>一、常用操作以及概念</h2><h3 id="快捷键"><a href="#快捷键" class="headerlink" title="#快捷键"></a><a target="_blank" rel="noopener" href="https://interview.poetries.top/fe-base-docs/compute-docs/Linux.html#%E5%BF%AB%E6%8D%B7%E9%94%AE">#</a>快捷键</h3><ul>
 <li>Tab：命令和文件名补全；</li>
 <li>Ctrl+C：中断正在运行的程序；</li>
@@ -794,12 +864,7 @@
 <p>僵尸进程通过 ps 命令显示出来的状态为 Z（zombie）。</p>
 <p>系统所能使用的进程号是有限的，如果产生大量僵尸进程，将因为没有可用的进程号而导致系统不能产生新的进程。</p>
 <p>要消灭系统中大量的僵尸进程，只需要将其父进程杀死，此时僵尸进程就会变成孤儿进程，从而被 init 进程所收养，这样 init 进程就会释放所有的僵尸进程所占有的资源，从而结束僵尸进程。</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -834,10 +899,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/10/Canvas%E5%AD%A6%E4%B9%A0/'>Canvas绘制动态图</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/08/%E9%9B%86%E7%BE%A4/">集群</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -860,8 +938,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -904,9 +986,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -927,31 +1054,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

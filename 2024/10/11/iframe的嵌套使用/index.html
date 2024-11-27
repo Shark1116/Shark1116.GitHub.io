@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            iframe的嵌套使用
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    iframe的嵌套使用
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-10-12</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.5k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：11分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFiframe%EF%BC%8C%E7%81%AB%E7%88%86%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%B9%E6%A1%88%EF%BC%8C%E6%95%99%E4%BD%A0%E5%BF%AB%E9%80%9F%E7%9C%8B%E6%87%82%E4%BD%BF%E7%94%A8"><span class="post-toc-text">什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%A1%88%E5%88%97%EF%BC%8C%E7%BD%91%E7%AB%99%E4%B8%AD%E5%B5%8C%E5%A5%97-Chatgpt"><span class="post-toc-text">一、简单使用案列，网站中嵌套 Chatgpt</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-%E5%AE%83%E5%85%81%E8%AE%B8%E4%BD%A0%E5%9C%A8%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%B5%8C%E5%85%A5%E5%8F%A6%E4%B8%80%E4%B8%AAHTML%E6%96%87%E6%A1%A3%E3%80%82%E4%B8%8B%E9%9D%A2%E6%98%AF%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="post-toc-text">1.它允许你在当前页面中嵌入另一个HTML文档。下面是如何在Vue中使用的基本步骤</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AE%8C%E6%95%B4vue%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B"><span class="post-toc-text">完整vue代码如下</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E8%BD%BB%E6%9D%BE%E6%89%BE%E5%88%B0%E7%95%8C%E9%9D%A2%E5%B5%8C%E5%A5%97%E7%BD%91%E5%9D%80"><span class="post-toc-text">二、轻松找到界面嵌套网址</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-%E6%89%93%E5%BC%80F12%E6%89%BE%E5%88%B0iframe%E6%A0%87%E7%AD%BE%E4%B8%AD%E7%9A%84src%E8%B7%AF%E5%BE%84"><span class="post-toc-text">1.打开F12找到iframe标签中的src路径</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-%E5%8F%B3%E9%94%AE%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%AC%E6%89%BE%E5%88%B0%E5%B5%8C%E5%A5%97%E5%86%85%E5%AE%B9%E7%95%8C%E9%9D%A2%EF%BC%8C%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%86%85%E8%B7%B3%E8%BD%AC%E5%AD%90%E7%95%8C%E9%9D%A2%E5%90%8C%E7%90%86"><span class="post-toc-text">2.右键点击跳转找到嵌套内容界面，微前端内跳转子界面同理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%88%91%E4%BB%AC%E7%9C%8B%E4%BB%A5%E4%B8%8Biframe%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="post-toc-text">三、接下来我们看以下iframe常用的属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-src%EF%BC%9A%E8%BF%99%E6%98%AF%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E8%A6%81%E5%8A%A0%E8%BD%BD%E7%9A%84%E6%96%87%E6%A1%A3%E7%9A%84URL%E3%80%82"><span class="post-toc-text">1.src：这是最基本的属性，用于指定要加载的文档的URL。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-width-%E5%92%8C-height%EF%BC%9A%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%94%A8%E4%BA%8E%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%BD%E5%BA%A6%E5%92%8C%E9%AB%98%E5%BA%A6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%98%AF%E5%83%8F%E7%B4%A0%E5%80%BC%E6%88%96%E7%99%BE%E5%88%86%E6%AF%94%E3%80%82"><span class="post-toc-text">2.width 和 height：这两个属性用于定义的宽度和高度，可以是像素值或百分比。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3-frameborder%EF%BC%9A%E6%AD%A4%E5%B1%9E%E6%80%A7%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AE%E5%91%A8%E5%9B%B4%E7%9A%84%E8%BE%B9%E6%A1%86%E3%80%82%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E8%BE%B9%E6%A1%86%E6%98%AF%E5%AD%98%E5%9C%A8%E7%9A%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%8F%AF%E4%BB%A5%E5%B0%86%E5%85%B6%E8%AE%BE%E7%BD%AE%E4%B8%BA0%E6%9D%A5%E7%A7%BB%E9%99%A4%E8%BE%B9%E6%A1%86%E3%80%82"><span class="post-toc-text">3.frameborder：此属性用于设置周围的边框。默认情况下，边框是存在的，但是可以将其设置为0来移除边框。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4-name%EF%BC%9A%E7%94%A8%E4%BA%8E%E7%BB%99%E5%91%BD%E5%90%8D%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E7%9A%84%E7%9B%AE%E6%A0%87%E3%80%82"><span class="post-toc-text">4.name：用于给命名，可以用于表单提交的目标。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#5-allowtransparency%EF%BC%9A%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E8%83%8C%E6%99%AF%E6%98%AF%E5%90%A6%E9%80%8F%E6%98%8E%E3%80%82"><span class="post-toc-text">5.allowtransparency：布尔属性，用于指定背景是否透明。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#6-scrolling%EF%BC%9A%E7%94%A8%E4%BA%8E%E6%8E%A7%E5%88%B6%E5%86%85%E9%83%A8%E9%A1%B5%E9%9D%A2%E6%98%AF%E5%90%A6%E6%98%BE%E7%A4%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%E3%80%82%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E4%B8%BAauto%EF%BC%88%E8%87%AA%E5%8A%A8%EF%BC%89%E3%80%81yes%EF%BC%88%E6%80%BB%E6%98%AF%E6%98%BE%E7%A4%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%EF%BC%89%E6%88%96no%EF%BC%88%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%EF%BC%89%E3%80%82"><span class="post-toc-text">6.scrolling：用于控制内部页面是否显示滚动条。可以设置为auto（自动）、yes（总是显示滚动条）或no（不显示滚动条）。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#7-sandbox%EF%BC%9A%E5%A2%9E%E5%BC%BA%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%80%89%E9%A1%B9%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%99%90%E5%88%B6%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E5%A6%82%E4%B8%8D%E5%85%81%E8%AE%B8%E5%BD%A2%E6%88%90%E5%BC%B9%E7%AA%97%E3%80%81%E4%B8%8D%E5%85%81%E8%AE%B8%E6%8F%90%E4%BA%A4%E8%A1%A8%E5%8D%95%E7%AD%89%E3%80%82"><span class="post-toc-text">7.sandbox：增强的安全性选项，可以限制的内容，如不允许形成弹窗、不允许提交表单等。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#8%E3%80%81loading%EF%BC%9A%E6%8C%87%E7%A4%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%95%E6%97%B6%E5%BC%80%E5%A7%8B%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82%E5%8F%AF%E4%BB%A5%E6%98%AFeager%EF%BC%88%E7%AB%8B%E5%8D%B3%E5%8A%A0%E8%BD%BD%EF%BC%89%E6%88%96lazy%EF%BC%88%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%EF%BC%89"><span class="post-toc-text">8、loading：指示浏览器何时开始加载的内容。可以是eager（立即加载）或lazy（延迟加载）</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#9-referrerpolicy%EF%BC%9A%E5%AE%9A%E4%B9%89%E4%BA%86%E5%BD%93%E8%AF%B7%E6%B1%82%E7%9A%84src%E6%97%B6%EF%BC%8C%E5%BA%94%E8%AF%A5%E5%8F%91%E9%80%81%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84referrer%E5%A4%B4%E3%80%82"><span class="post-toc-text">9.referrerpolicy：定义了当请求的src时，应该发送什么样的referrer头。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#10-allow%EF%BC%9A%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E7%89%B9%E5%AE%9AAPI%EF%BC%8C%E4%BE%8B%E5%A6%82allow-%E2%80%9Dcamera-microphone%E2%80%9D%E3%80%82"><span class="post-toc-text">10.allow：用于指定内容可以使用的特定API，例如allow&#x3D;”camera; microphone”。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8%E5%AE%9E%E7%8E%B0%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="post-toc-text">四、使用实现微前端解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-%E8%BF%98%E4%B8%8D%E6%B8%85%E9%99%A4%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84LOOK%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%BB%E5%BA%94%E7%94%A8%EF%BC%9A%E8%B4%9F%E8%B4%A3%E7%AE%A1%E7%90%86%E5%92%8C%E6%B8%B2%E6%9F%93%E5%90%84%E4%B8%AA%E5%AD%90%E5%BA%94%E7%94%A8%E3%80%82"><span class="post-toc-text">1. 还不清除微前端的LOOK基本概念主应用：负责管理和渲染各个子应用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%AD%90%E5%BA%94%E7%94%A8%EF%BC%9A%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%B0%8F%E5%BA%94%E7%94%A8%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88%E6%88%96%E6%A1%86%E6%9E%B6%E3%80%82"><span class="post-toc-text">子应用：独立的小应用，可以是不同的技术栈或框架。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%EF%BC%9A%E4%B8%BB%E5%BA%94%E7%94%A8%E5%92%8C%E5%AD%90%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E9%9C%80%E8%A6%81%E4%B8%80%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E6%9D%A5%E4%BC%A0%E9%80%92%E6%B6%88%E6%81%AF%E3%80%82"><span class="post-toc-text">通信机制：主应用和子应用之间需要一种通信机制来传递消息。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%88%91%E4%BB%ACLOOK%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="post-toc-text">2. 接下来我们LOOK实现步骤</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h1 id="什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用"><a href="#什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用" class="headerlink" title="什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用"></a>什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</h1><p>非原创 作者:赵要上天 公号:量子前端 发布时间:2024-10-06 16:37 发表于江苏</p>
+        <div class=".article-gallery"><h1 id="什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用"><a href="#什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用" class="headerlink" title="什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用"></a>什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</h1><p>非原创 作者:赵要上天 公号:量子前端 发布时间:2024-10-06 16:37 发表于江苏</p>
 <p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Au5g3YOrpPDk0oXnGJAfWg">什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</a></p>
 <p>iframe（Inline Frame） 是一种 HTML 标签，它允许在一个网页内部嵌套加载另一个网页，从而实现在主页面中展示外部网页内容的功能。iframe 创建了一个独立的浏览上下文，拥有自己的文档对象模型（DOM）和执行环境，这意味着它不会与主页面共享JavaScript变量或CSS样式，提供了较好的隔离性。一、简单使用案列，网站中嵌套 Chatgpt</p>
 <h4 id="一、简单使用案列，网站中嵌套-Chatgpt"><a href="#一、简单使用案列，网站中嵌套-Chatgpt" class="headerlink" title="一、简单使用案列，网站中嵌套 Chatgpt"></a>一、简单使用案列，网站中嵌套 Chatgpt</h4><p><a href="/images/cat.svg" class="gallery-item" style="box-shadow: none;"> <img src="/images/cat.svg"></a></p>
@@ -212,12 +282,7 @@
 <p>[</p>
 <p>极速 JavaScript 打包器：esbuild</p>
 <p>](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&mid=2247491573&idx=1&sn=3a8a698e8c9a8e04a3a04544d3435e82&chksm=cfa1cad8f8d643ced9c32562d9e8608f0a6fabd4134da2c44bc790af7228321bc1a380d9dca5&scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&amp;mid=2247491573&amp;idx=1&amp;sn=3a8a698e8c9a8e04a3a04544d3435e82&amp;chksm=cfa1cad8f8d643ced9c32562d9e8608f0a6fabd4134da2c44bc790af7228321bc1a380d9dca5&amp;scene=21#wechat_redirect</a>)</p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -252,10 +317,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/10/11/%E5%89%8D%E7%AB%AF%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/'>前端的性能优化</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/10/11/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E4%B8%AD%E7%AE%A1%E7%90%86%E5%8D%B1%E9%99%A9%E6%93%8D%E4%BD%9C/">如何在用户界面中管理危险操作</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -278,8 +356,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -322,9 +404,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -345,31 +472,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

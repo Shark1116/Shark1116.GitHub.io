@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            mock.js
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    mock.js
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-13</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：4.1k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：20分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Mock-js%E4%BD%BF%E7%94%A8%E8%AF%A6%E8%A7%A3"><span class="post-toc-text">Mock.js使用详解</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mock-js%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="post-toc-text">Mock.js实现的功能</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mock%E5%AE%89%E8%A3%85"><span class="post-toc-text">Mock安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#cdn%E5%BC%95%E7%94%A8-Mock-js-mockjs-com"><span class="post-toc-text">cdn引用(Mock.js (mockjs.com))</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Node%E4%B8%8B%E4%BD%BF%E7%94%A8"><span class="post-toc-text">Node下使用</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#RequireJS-AMD"><span class="post-toc-text">RequireJS (AMD)</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%AD%E6%B3%95"><span class="post-toc-text">使用语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%94%9F%E6%88%90%E8%A7%84%E5%88%99%E5%92%8C%E7%A4%BA%E4%BE%8B"><span class="post-toc-text">生成规则和示例</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%95%B0%E6%8D%AE%E5%8D%A0%E4%BD%8D%E7%AC%A6%E5%AE%9A%E4%B9%89%E8%A7%84%E8%8C%83"><span class="post-toc-text">数据占位符定义规范</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Mock-mock"><span class="post-toc-text">Mock.mock()</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mock-mock-template"><span class="post-toc-text">Mock.mock( template )</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mock-mock-rurl-template"><span class="post-toc-text">Mock.mock( rurl, template )</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mock-mock-rurl-function-options"><span class="post-toc-text">Mock.mock( rurl, function( options ) )</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mock-setup"><span class="post-toc-text">Mock.setup()</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Mock-Random"><span class="post-toc-text">Mock.Random</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%AE%80%E5%8D%95%E6%9E%84%E5%BB%BA%E4%B8%80%E5%A5%97mock-server"><span class="post-toc-text">简单构建一套mock-server</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#json-server-%E6%90%AD%E9%85%8D-mock-js"><span class="post-toc-text">json-server 搭配 mock.js</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E7%AB%AF%E5%8F%A3%E4%BB%A3%E7%90%86"><span class="post-toc-text">端口代理</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E6%96%87%E4%BB%B6%E6%94%B9%E5%8A%A8%E8%87%AA%E5%8A%A8%E5%88%B7%E6%96%B0"><span class="post-toc-text">文件改动自动刷新</span></a></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><h2 id="Mock-js使用详解"><a href="#Mock-js使用详解" class="headerlink" title="Mock.js使用详解"></a>Mock.js使用详解</h2><h3 id="Mock-js实现的功能"><a href="#Mock-js实现的功能" class="headerlink" title="Mock.js实现的功能"></a>Mock.js实现的功能</h3><ul>
+        <div class=".article-gallery"><h2 id="Mock-js使用详解"><a href="#Mock-js使用详解" class="headerlink" title="Mock.js使用详解"></a>Mock.js使用详解</h2><h3 id="Mock-js实现的功能"><a href="#Mock-js实现的功能" class="headerlink" title="Mock.js实现的功能"></a>Mock.js实现的功能</h3><ul>
 <li>让前端攻城师独立于后端进行开发</li>
 <li>通过随机数据，模拟各种场景</li>
 <li>不需要修改既有代码，就可以拦截 <code>Ajax</code> 请求，返回模拟的响应数据</li>
@@ -373,12 +443,7 @@
 <li>就可以搭建一个随改随变的 <code>mock-server</code> 环境</li>
 </ul>
 <p><strong>完整的代码详情</strong> <a target="_blank" rel="noopener" href="https://github.com/poetries/mock-server">https://github.com/poetries/mock-server</a></p>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -413,10 +478,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/31/1031/'>1031学习记录</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/13/%E5%89%8D%E5%90%8E%E7%AB%AF%E5%88%86%E7%A6%BB/">前后端分离</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -439,8 +517,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -483,9 +565,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -506,31 +633,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

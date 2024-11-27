@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            学习记录 | 低代码平台
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    学习记录 | 低代码平台
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-11-06</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：280</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%B8%8B%E8%BD%BD%E5%92%8C%E8%BF%90%E8%A1%8C"><span class="post-toc-text">项目下载和运行</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Docker%E9%95%9C%E5%83%8F%E5%90%AF%E5%8A%A8%E5%89%8D%E7%AB%AF%EF%BC%88%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F%EF%BC%89"><span class="post-toc-text">Docker镜像启动前端（单体模式）</span></a></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>​	最近修改了页面的一个样式，为了加强对样式的学习和对付比较典型的需求，我寻找到了一个低代码平台的项目：<a target="_blank" rel="noopener" href="https://www.jeecg.com/">JEECG官方网站</a><a target="_blank" rel="noopener" href="https://github.com/jeecgboot/ant-design-vue-jeecg">Github地址</a></p>
+        <div class=".article-gallery"><p>​	最近修改了页面的一个样式，为了加强对样式的学习和对付比较典型的需求，我寻找到了一个低代码平台的项目：<a target="_blank" rel="noopener" href="https://www.jeecg.com/">JEECG官方网站</a><a target="_blank" rel="noopener" href="https://github.com/jeecgboot/ant-design-vue-jeecg">Github地址</a></p>
 <p>​	另外，我还发现了几个样式站：<a target="_blank" rel="noopener" href="https://viserjs.github.io/demo.html#/viser/bar/basic-bar">Viser (viserjs.github.io)</a><a target="_blank" rel="noopener" href="https://antv.antgroup.com/">AntV | 蚂蚁数据可视化 (antgroup.com)</a></p>
 <p><a href="F:\照片\image-20231102154211606.png" title="image-20231102154211606" class="gallery-item" style="box-shadow: none;"> <img src="F:\照片\image-20231102154211606.png" alt="image-20231102154211606"></a></p>
 <h2 id="项目下载和运行"><a href="#项目下载和运行" class="headerlink" title="项目下载和运行"></a><a target="_blank" rel="noopener" href="https://github.com/jeecgboot/ant-design-vue-jeecg#%E9%A1%B9%E7%9B%AE%E4%B8%8B%E8%BD%BD%E5%92%8C%E8%BF%90%E8%A1%8C">项目下载和运行</a></h2><ul>
@@ -175,12 +245,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yarn run lint</span><br></pre></td></tr></table></figure>
 
 <h2 id="Docker镜像启动前端（单体模式）"><a href="#Docker镜像启动前端（单体模式）" class="headerlink" title="Docker镜像启动前端（单体模式）"></a><a target="_blank" rel="noopener" href="https://github.com/jeecgboot/ant-design-vue-jeecg#docker%E9%95%9C%E5%83%8F%E5%90%AF%E5%8A%A8%E5%89%8D%E7%AB%AF%E5%8D%95%E4%BD%93%E6%A8%A1%E5%BC%8F">Docker镜像启动前端（单体模式）</a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># 1.配置host</span><br><span class="line"></span><br><span class="line">   127.0.0.1   jeecg-boot-system</span><br><span class="line">   </span><br><span class="line">   这里在vue.config.js里修改，把target: &#x27;http://localhost:8080&#x27;,改为  target: &#x27;http://127.0.0.1:8080&#x27;</span><br><span class="line"></span><br><span class="line"># 2.修改前端项目的后台域名</span><br><span class="line">   .env.development里的</span><br><span class="line">   VUE_APP_API_BASE_URL=http://localhost:8080/jeecg-boot</span><br><span class="line"></span><br><span class="line">   域名改成： http://jeecg-boot-system:8080/jeecg-boot</span><br><span class="line">   </span><br><span class="line">   </span><br><span class="line">  </span><br><span class="line"># 3.进入项目根目录，执行打包命令</span><br><span class="line"> yarn run build</span><br><span class="line"></span><br><span class="line"># 4.构建镜像</span><br><span class="line"> docker build -t jeecgboot-ui2 .</span><br><span class="line"> </span><br><span class="line"> 停在这步，来活了</span><br><span class="line"></span><br><span class="line"># 5.启动镜像</span><br><span class="line"> docker run --name jeecgboot-ui-vue2 -p 80:80 -d jeecgboot-ui2</span><br><span class="line"></span><br><span class="line"># 6.访问前台项目</span><br><span class="line"> http://localhost</span><br></pre></td></tr></table></figure>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -206,10 +271,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/11/15/%E5%91%BD%E4%BB%A4%E8%A1%8C/'>命令行</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/31/1031/">1031学习记录</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -232,8 +310,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -276,9 +358,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -299,31 +426,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>

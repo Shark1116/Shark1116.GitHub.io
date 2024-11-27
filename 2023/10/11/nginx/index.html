@@ -64,13 +64,47 @@
     
     
    
-<link rel="stylesheet" href="/css/lightgallery.min.css">
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
 <meta name="generator" content="Hexo 7.2.0"></head>
     
     
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
     <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
         
             <div class="left-toc-container">
                 <nav id="toc" class="bs-docs-sidebar"></nav>
@@ -132,12 +166,48 @@
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
+    
 
     
-        <div class="post-main-title">
-            nginx
-        </div>
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    nginx
+                </div>
+            
+        
       
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.3k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：9分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
@@ -146,7 +216,7 @@
                 <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%87%AA%E6%88%91%E6%80%BB%E7%BB%93"><span class="post-toc-text">自我总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nginx%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="post-toc-text">nginx基本配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="post-toc-text">内置变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nginx%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%8E%9F%E7%90%86"><span class="post-toc-text">nginx解决跨域的原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF"><span class="post-toc-text">常见场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AF%B7%E6%B1%82%E8%BF%87%E6%BB%A4"><span class="post-toc-text">请求过滤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="post-toc-text">负载均衡</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#gzip%E5%8E%8B%E7%BC%A9"><span class="post-toc-text">gzip压缩</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E7%89%87%E9%98%B2%E7%9B%97%E9%93%BE"><span class="post-toc-text">图片防盗链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7-%E5%A5%87%E6%80%AA%E7%9A%84%E5%90%8D%E5%AD%97"><span class="post-toc-text">优雅降级-奇怪的名字</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#webp%E6%A0%B9%E6%8D%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E9%99%8D%E7%BA%A7%E4%B8%BApng"><span class="post-toc-text">webp根据浏览器自动降级为png</span></a></li></ol></li></ol></li></ol></li></ol>
             
         
-        <link rel="stylesheet" type="text/css" href="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/css/lightgallery.min.css" /><div class=".article-gallery"><p>了解了一些nginx相关知识，nginx一般用来负载均衡，说白了就是减轻压力。在一些大型项目中对于这种需要用到多节点高可用的情况更多的是通过 <strong>集群</strong> 的方式来解决高可用的问题，业内常用的就是我们常听到的 <code>Kubernetes（k8s）</code>。k8s中默认的网关层 <code>ingress</code> 就是使用 nginx 来搭建的。</p>
+        <div class=".article-gallery"><p>了解了一些nginx相关知识，nginx一般用来负载均衡，说白了就是减轻压力。在一些大型项目中对于这种需要用到多节点高可用的情况更多的是通过 <strong>集群</strong> 的方式来解决高可用的问题，业内常用的就是我们常听到的 <code>Kubernetes（k8s）</code>。k8s中默认的网关层 <code>ingress</code> 就是使用 nginx 来搭建的。</p>
 <p>k8s的搭建貌似是<strong>运维</strong>相关，以后再说吧。</p>
 <p>相关链接：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903793918738440">前端开发者必备的Nginx知识</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7082655545491980301">作为一名前端，该如何理解Nginx？</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7064378702779891749">前端到底用nginx来做啥</a></p>
 <h1 id="自我总结"><a href="#自我总结" class="headerlink" title="自我总结"></a>自我总结</h1><h2 id="nginx基本配置"><a href="#nginx基本配置" class="headerlink" title="nginx基本配置"></a>nginx基本配置</h2><p><strong>“nginx是一个高性能的反向代理服务器”&#x3D;&gt;什么是正向代理与反向代理&#x3D;&gt;nginx配置</strong></p>
@@ -263,12 +333,7 @@
 </ol>
 <p>然后通过nginx检测头部是否支持webp来返回webp图片，不支持的话就返回原图即可。这其中还做了错误拦截，如果<strong>cos桶丢失webp图片及时浏览器支持webp也要降级为png</strong></p>
 <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">  <span class="attribute">include</span>       /etc/nginx/mime.types;</span><br><span class="line">  <span class="attribute">default_type</span>  application/octet-stream;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 设置日志格式</span></span><br><span class="line">  <span class="attribute">log_format</span>  main  <span class="string">&#x27;<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] &quot;<span class="variable">$request</span>&quot; &#x27;</span></span><br><span class="line">  <span class="string">&#x27;<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> &quot;<span class="variable">$http_referer</span>&quot; &#x27;</span></span><br><span class="line">  <span class="string">&#x27;&quot;<span class="variable">$http_user_agent</span>&quot; &quot;<span class="variable">$http_x_forwarded_for</span>&quot;&#x27;</span></span><br><span class="line">  <span class="string">&#x27;&quot;<span class="variable">$proxy_host</span>&quot; &quot;<span class="variable">$upstream_addr</span>&quot;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">access_log</span>  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">sendfile</span>        <span class="literal">on</span>;</span><br><span class="line">  <span class="attribute">keepalive_timeout</span>  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 开启gzip</span></span><br><span class="line">  <span class="attribute">gzip</span> <span class="literal">on</span>;</span><br><span class="line">  <span class="attribute">gzip_vary</span> <span class="literal">on</span>;</span><br><span class="line">  <span class="attribute">gzip_proxied</span> any;</span><br><span class="line">  <span class="attribute">gzip_comp_level</span> <span class="number">6</span>;</span><br><span class="line">  <span class="attribute">gzip_types</span> text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 负载均衡 这里可以是多个cos桶地址即可</span></span><br><span class="line">  <span class="section">upstream</span> static_env &#123;</span><br><span class="line">    <span class="attribute">server</span> xxx;</span><br><span class="line">    <span class="attribute">server</span> xxx;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># map 设置变量映射 第一个变量指的是要通过映射的key值 Accpet 第二个值的是变量别名</span></span><br><span class="line">  <span class="attribute">map</span> <span class="variable">$http_accept</span> <span class="variable">$webp_suffix</span> &#123;</span><br><span class="line">    <span class="comment"># 默认为 空字符串</span></span><br><span class="line">    <span class="attribute">default</span>   <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="comment"># 正则匹配如果Accep含有webp字段 设置为.webp值</span></span><br><span class="line">    &quot;~*webp&quot;  &quot;.webp&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="section">server</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">listen</span> <span class="number">8888</span>;</span><br><span class="line">    <span class="attribute">absolute_redirect</span> <span class="literal">off</span>;    <span class="comment">#取消绝对路径的重定向</span></span><br><span class="line">    <span class="comment">#网站主页路径。此路径仅供参考，具体请您按照实际目录操作。</span></span><br><span class="line">    <span class="attribute">root</span> /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">      <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">      <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">      <span class="attribute">add_header</span> Cache-Control <span class="string">&#x27;no-cache, max-age=0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># favicon.ico</span></span><br><span class="line">    <span class="section">location</span> = /favicon.ico &#123;</span><br><span class="line">      <span class="attribute">log_not_found</span> <span class="literal">off</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># robots.txt</span></span><br><span class="line">    <span class="section">location</span> = /robots.txt &#123;</span><br><span class="line">      <span class="attribute">log_not_found</span> <span class="literal">off</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># </span></span><br><span class="line">    <span class="section">location</span> <span class="regexp">~* .(png|jpe?g)$</span> &#123;</span><br><span class="line">      <span class="comment"># Pass WebP support header to backend</span></span><br><span class="line">      <span class="comment"># 如果header头部中支持webp</span></span><br><span class="line">      <span class="attribute">if</span> (<span class="variable">$webp_suffix</span> <span class="regexp">~* webp)</span> &#123;</span><br><span class="line">        <span class="comment"># 先尝试找是否有webp格式图片</span></span><br><span class="line">        <span class="attribute">rewrite</span><span class="regexp"> ^/(.*).(png|jpe?g)$</span> /<span class="variable">$1</span>.webp <span class="literal">break</span>;</span><br><span class="line">        <span class="comment"># 找不到的话 这里捕获404错误 返回原始错误 注意这里的=号 代表最终返回的是@static_img的状态吗</span></span><br><span class="line">        <span class="attribute">error_page</span> <span class="number">404</span> = <span class="variable">@static_img</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="attribute">proxy_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">      <span class="attribute">add_header</span> Vary Accept;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://static_env;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> <span class="variable">@static_img</span> &#123;</span><br><span class="line">      <span class="comment">#set $complete $schema $server_addr $request_uri;</span></span><br><span class="line">      <span class="attribute">rewrite</span><span class="regexp"> ^/.+$</span> <span class="variable">$request_uri</span> <span class="literal">break</span>;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://static_env;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># assets, media</span></span><br><span class="line">    <span class="section">location</span> <span class="regexp">~* .(?:css(.map)?|js(.map)?|gif|svg|jfif|ico|cur|heic|webp|tiff?|mp3|m4a|aac|ogg|midi?|wav|mp4|mov|webm|mpe?g|avi|ogv|flv|wmv)$</span> &#123;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://static_env;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="attribute">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="section">location</span> = /50x.html &#123;</span><br><span class="line">      <span class="attribute">root</span>   /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</div><script src="https://jsd.onmicrosoft.cn/npm/hexo-theme-a4@latest/source/js/lightgallery.min.js"></script><script>if (typeof lightGallery !== 'undefined') {
-        var options = {
-            selector: '.gallery-item'
-        };
-        lightGallery(document.getElementsByClassName('.article-gallery')[0], options);
-        }</script>
+</div>
     </div>
 
     <div class="post-meta">
@@ -303,10 +368,23 @@
     </div>
     <br>
     
-    <!-- <div class="post-footer-pre-next">
-        <span>上一篇：<a href=""></a></span>
-        <span class="post-footer-pre-next-last-span-right">上一篇：<a href=""></a></span>
-    </div> -->
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/13/%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE/'>一个按钮</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/11/%E5%89%8D%E7%AB%AF%E7%BD%91%E7%BB%9C/">前端网络</a>
+                    </span>
+                
+            </div>
+    
+        
+    
 
     
         
@@ -329,8 +407,12 @@
 
             
         </span>
+       
     
 </div>
+
+
+
 <!--这是指一条线往下的内容-->
 <div class="footer-last">
     
@@ -373,9 +455,54 @@
 
 
 
-<script src="/js/lightgallery.min.js"></script>
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
 
 
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
 
                 </div>
             
@@ -396,31 +523,4 @@
                 </div>
             
     </body>
-
-
-    <!--暗黑模式-->
-    <script src="/js/darkmode-js.min.js"></script>
-    <script>
-        function addDarkmodeWidget() {
-        const options = {
-            bottom: '53px', // default: '32px'
-            right: 'unset', // default: '32px'
-            left: '42px', // default: 'unset'
-            time: '0.3s', // default: '0.3s'
-            mixColor: '#fff', // default: '#fff'
-            backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-            buttonColorDark: '#100f2c',  // default: '#100f2c'
-            buttonColorLight: '#fff', // default: '#fff'
-            saveInCookies: true, // default: true,
-            label: '🌓', // default: ''
-            autoMatchOsTheme: true // default: true
-        }
-    
-        const darkmode = new Darkmode(options);
-        darkmode.showWidget();
-        
-        }
-        window.addEventListener('load', addDarkmodeWidget);
-    </script>
-  
 </html>
