@@ -12,7 +12,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="" />
+    <meta name="description" content="深浅拷贝" />
     <meta name="hexo-theme-A4" content="v1.9.6" />
     <link rel="alternate icon" type="image/webp" href="/images/640.jpg">
     <title>Blog</title>
@@ -143,11 +143,7 @@
             
         
             
-                <li><i>
-                    
-                        <a style="color: #4e7dde;" href="/tags/">🏷️标签</a>
-                    
-                </i></li>
+                <li><a href="/tags/">🏷️标签</a></li>
             
         
             
@@ -161,40 +157,111 @@
                     
 
                     
-                            
-
-
-<div class="archive-list">
-  <ul class="archive">
-
-    
-    <span><span class="darkmode-ignore">📌</span><i>主题</i></span>
- 
-    
-
-    
-    
-
-    
-
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-05-01</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/05/01/update/">update</a>
-        </div>
-        </li>
-    
-  
-  </ul>
-</div>
- 
-                    
                     
                     
                     <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    深浅拷贝
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-11-28</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：265</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E6%B5%85%E6%8B%B7%E8%B4%9D"><span class="post-toc-text">一、浅拷贝</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E6%B5%85%E6%8B%B7%E8%B4%9D%E7%9A%84%E5%AE%9E%E7%8E%B0%E4%B8%8E%E5%8E%9F%E7%90%86"><span class="post-toc-text">浅拷贝的实现与原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#1-obj-assign"><span class="post-toc-text">1.obj.assign</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#2"><span class="post-toc-text">2.</span></a></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h1 id="一、浅拷贝"><a href="#一、浅拷贝" class="headerlink" title="一、浅拷贝"></a>一、浅拷贝</h1><h2 id="浅拷贝的实现与原理"><a href="#浅拷贝的实现与原理" class="headerlink" title="浅拷贝的实现与原理"></a>浅拷贝的实现与原理</h2><p>自己创建一个新的对象，来接受你要重新复制或引用的对象值。如果对象属性是基本的数据类型，复制的就是基本类型的值给新对象；但如果属性是引用数据类型，复制的就是内存中的地址，如果其中一个对象改变了这个内存中的地址，肯定会影响到另一个对象</p>
+<h3 id="1-obj-assign"><a href="#1-obj-assign" class="headerlink" title="1.obj.assign"></a>1.obj.assign</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> target = &#123;&#125;;</span><br><span class="line"><span class="keyword">let</span> source = &#123; <span class="attr">a</span>: &#123; <span class="attr">b</span>: <span class="number">1</span> &#125; &#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(target, source);</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(target); <span class="comment">// &#123; a: &#123; b: 1 &#125; &#125;;</span></span><br></pre></td></tr></table></figure>
+<h3 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> obj1 = &#123; <span class="attr">a</span>:&#123; <span class="attr">b</span>:<span class="number">1</span> &#125;, <span class="attr">sym</span>:<span class="title class_">Symbol</span>(<span class="number">1</span>)&#125;; </span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj1, <span class="string">&#x27;innumerable&#x27;</span> ,&#123;</span><br><span class="line">    <span class="attr">value</span>:<span class="string">&#x27;不可枚举属性&#x27;</span>,</span><br><span class="line">    <span class="attr">enumerable</span>:<span class="literal">false</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="keyword">let</span> obj2 = &#123;&#125;;</span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">assign</span>(obj2,obj1)</span><br><span class="line">obj1.<span class="property">a</span>.<span class="property">b</span> = <span class="number">2</span>;</span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;obj1&#x27;</span>,obj1); <span class="comment">// obj1 &#123; a: &#123; b: 2 &#125;, sym: Symbol(1) &#125;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="string">&#x27;obj2&#x27;</span>,obj2); <span class="comment">// obj2 &#123; a: &#123; b: 2 &#125;, sym: Symbol(1) &#125;</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>它不会拷贝对象的继承属性；</li>
+<li>它不会拷贝对象的不可枚举的属性；</li>
+<li>可以拷贝 <a href="/source/_posts/symbol.md">Symbol</a> 类型的属性。</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-11-28</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/11/28/symbol/'>symbol</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/11/28/%E5%86%85%E5%AD%98%E6%B3%84%E6%BC%8F/">内存泄漏</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
                     
                     
                     <div class="footer">

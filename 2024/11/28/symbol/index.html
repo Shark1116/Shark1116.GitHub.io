@@ -12,7 +12,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="" />
+    <meta name="description" content="symbol" />
     <meta name="hexo-theme-A4" content="v1.9.6" />
     <link rel="alternate icon" type="image/webp" href="/images/640.jpg">
     <title>Blog</title>
@@ -143,11 +143,7 @@
             
         
             
-                <li><i>
-                    
-                        <a style="color: #4e7dde;" href="/tags/">🏷️标签</a>
-                    
-                </i></li>
+                <li><a href="/tags/">🏷️标签</a></li>
             
         
             
@@ -161,40 +157,152 @@
                     
 
                     
-                            
-
-
-<div class="archive-list">
-  <ul class="archive">
-
-    
-    <span><span class="darkmode-ignore">📌</span><i>主题</i></span>
- 
-    
-
-    
-    
-
-    
-
-    
-  
-    
-        <li>
-        <span class="archive-date">2023-05-01</span>
-        <div class="archive-main">
-            <a class="archive-title" href="/2023/05/01/update/">update</a>
-        </div>
-        </li>
-    
-  
-  </ul>
-</div>
- 
-                    
                     
                     
                     <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    symbol
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-11-28</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：434</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E8%A7%81%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="post-toc-text">常见应用场景</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E7%94%A8%E5%BE%97%E5%A4%9A%E5%90%97%EF%BC%9F"><span class="post-toc-text">用得多吗？</span></a></li></ol>
+            
+        
+        <div class=".article-gallery"><p>symbol是es6新出的属性，特点是：<strong>独特且不可变</strong>，你真的懂唯一~的定义<br>es6定制的api：</p>
+<ul>
+<li>Symbol.iterator：定义对象的默认迭代行为。</li>
+<li>Symbol.toStringTag：定制对象的 toString() 输出。</li>
+<li>Symbol.asyncIterator：支持异步迭代。</li>
+</ul>
+<p>主要用于<strong>依赖注入</strong>与<strong>私有属性</strong>（头疼）</p>
+<p>chatgpt：</p>
+<h2 id="常见应用场景"><a href="#常见应用场景" class="headerlink" title="常见应用场景"></a><strong>常见应用场景</strong></h2><ol>
+<li><p><strong>私有属性（模拟）</strong></p>
+<ul>
+<li>在大型项目中，Symbol 常用于模拟对象的私有属性，使这些属性不会意外暴露或被覆盖。</li>
+</ul>
+</li>
+<li><p><strong>依赖注入</strong></p>
+<ul>
+<li>在框架或库中，用 Symbol 定义唯一标识符，用于实现服务或依赖注入机制，避免命名冲突。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">javascript复制代码const SERVICE_TOKEN = Symbol(&#x27;MyService&#x27;);</span><br><span class="line">const container = &#123;</span><br><span class="line">    [SERVICE_TOKEN]: &#123; /* Service Instance */ &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>扩展第三方库或内置对象</strong></p>
+<ul>
+<li><p>避免破坏原有功能，通过 Symbol 添加新特性：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javascript复制代码const myArray = [1, 2, 3];</span><br><span class="line">myArray[Symbol.for(&#x27;sum&#x27;)] = function () &#123;</span><br><span class="line">    return this.reduce((a, b) =&gt; a + b, 0);</span><br><span class="line">&#125;;</span><br><span class="line">console.log(myArray[Symbol.for(&#x27;sum&#x27;)]()); // 6</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>枚举成员的唯一标识</strong></p>
+<ul>
+<li><p>在实现枚举类型时，可以用 Symbol 确保每个枚举值都是唯一的：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">javascript复制代码const Colors = &#123;</span><br><span class="line">    RED: Symbol(&#x27;RED&#x27;),</span><br><span class="line">    GREEN: Symbol(&#x27;GREEN&#x27;),</span><br><span class="line">    BLUE: Symbol(&#x27;BLUE&#x27;)</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p><strong>元编程与协议扩展</strong></p>
+<ul>
+<li>使用 Well-known Symbols 定制和拦截对象行为（如迭代器协议）。</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="用得多吗？"><a href="#用得多吗？" class="headerlink" title="用得多吗？"></a><strong>用得多吗？</strong></h2><ul>
+<li><p><strong>在普通业务代码中：</strong> 使用频率较低，尤其是小型项目或简单应用中，因为其功能更适合特定需求（如依赖注入、扩展库功能）。</p>
+</li>
+<li><p>在框架与库中：</p>
+<p> 使用较为频繁。例如：</p>
+<ul>
+<li>React 使用 Symbol 来区分不同的 React 元素类型。</li>
+<li>Redux 用 Symbol 定义私有属性。</li>
+<li>DI（依赖注入）工具中常用 Symbol 作为唯一标识。</li>
+</ul>
+</li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-11-28</span>
+            
+            
+             
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/11/28/%E6%B7%B1%E6%B5%85%E6%8B%B7%E8%B4%9D/">深浅拷贝</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
                     
                     
                     <div class="footer">
