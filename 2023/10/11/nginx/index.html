@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="nginx" />
+    <meta name="hexo-theme-A4" content="v1.8.9" />
+    <link rel="alternate icon" type="image/webp" href="/images/cat.svg">
+    <title>Blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/cat.svg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Blog</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    nginx
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2023-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.3k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：9分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E8%87%AA%E6%88%91%E6%80%BB%E7%BB%93"><span class="post-toc-text">自我总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#nginx%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="post-toc-text">nginx基本配置</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%86%85%E7%BD%AE%E5%8F%98%E9%87%8F"><span class="post-toc-text">内置变量</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#nginx%E8%A7%A3%E5%86%B3%E8%B7%A8%E5%9F%9F%E7%9A%84%E5%8E%9F%E7%90%86"><span class="post-toc-text">nginx解决跨域的原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%B8%B8%E8%A7%81%E5%9C%BA%E6%99%AF"><span class="post-toc-text">常见场景</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%AF%B7%E6%B1%82%E8%BF%87%E6%BB%A4"><span class="post-toc-text">请求过滤</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="post-toc-text">负载均衡</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#gzip%E5%8E%8B%E7%BC%A9"><span class="post-toc-text">gzip压缩</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E5%9B%BE%E7%89%87%E9%98%B2%E7%9B%97%E9%93%BE"><span class="post-toc-text">图片防盗链</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#%E4%BC%98%E9%9B%85%E9%99%8D%E7%BA%A7-%E5%A5%87%E6%80%AA%E7%9A%84%E5%90%8D%E5%AD%97"><span class="post-toc-text">优雅降级-奇怪的名字</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#webp%E6%A0%B9%E6%8D%AE%E6%B5%8F%E8%A7%88%E5%99%A8%E8%87%AA%E5%8A%A8%E9%99%8D%E7%BA%A7%E4%B8%BApng"><span class="post-toc-text">webp根据浏览器自动降级为png</span></a></li></ol></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><p>了解了一些nginx相关知识，nginx一般用来负载均衡，说白了就是减轻压力。在一些大型项目中对于这种需要用到多节点高可用的情况更多的是通过 <strong>集群</strong> 的方式来解决高可用的问题，业内常用的就是我们常听到的 <code>Kubernetes（k8s）</code>。k8s中默认的网关层 <code>ingress</code> 就是使用 nginx 来搭建的。</p>
+<p>k8s的搭建貌似是<strong>运维</strong>相关，以后再说吧。</p>
+<p>相关链接：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903793918738440">前端开发者必备的Nginx知识</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7082655545491980301">作为一名前端，该如何理解Nginx？</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7064378702779891749">前端到底用nginx来做啥</a></p>
+<h1 id="自我总结"><a href="#自我总结" class="headerlink" title="自我总结"></a>自我总结</h1><h2 id="nginx基本配置"><a href="#nginx基本配置" class="headerlink" title="nginx基本配置"></a>nginx基本配置</h2><p><strong>“nginx是一个高性能的反向代理服务器”&#x3D;&gt;什么是正向代理与反向代理&#x3D;&gt;nginx配置</strong></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">events</span> &#123; </span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="section">http</span> </span><br><span class="line">&#123;</span><br><span class="line">    <span class="section">server</span></span><br><span class="line">    &#123; </span><br><span class="line">        <span class="section">location</span> path</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="section">location</span> path</span><br><span class="line">        &#123;</span><br><span class="line">            ...</span><br><span class="line">        &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">    <span class="section">server</span></span><br><span class="line">    &#123;</span><br><span class="line">        ...</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>main</code>:nginx的全局配置，对全局生效。</li>
+<li><code>events</code>:配置影响nginx服务器或与用户的网络连接。</li>
+<li><code>http</code>：可以嵌套多个server，配置代理，缓存，日志定义等绝大多数功能和第三方模块的配置。</li>
+<li><code>server</code>：配置虚拟主机的相关参数，一个http中可以有多个server。</li>
+<li><code>location</code>：配置请求的路由，以及各种页面的处理情况。</li>
+<li><code>upstream</code>：配置后端服务器具体地址，负载均衡配置不可或缺的部分。</li>
+</ul>
+<h3 id="内置变量"><a href="#内置变量" class="headerlink" title="内置变量"></a>内置变量</h3><p>下面是<code>nginx</code>一些配置中常用的内置全局变量，你可以在配置的任何位置使用它们。</p>
+<table>
+<thead>
+<tr>
+<th>变量名</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>$host</code></td>
+<td>请求信息中的<code>Host</code>，如果请求中没有<code>Host</code>行，则等于设置的服务器名</td>
+</tr>
+<tr>
+<td><code>$request_method</code></td>
+<td>客户端请求类型，如<code>GET</code>、<code>POST</code></td>
+</tr>
+<tr>
+<td><code>$remote_addr</code></td>
+<td>客户端的<code>IP</code>地址</td>
+</tr>
+<tr>
+<td><code>$args</code></td>
+<td>请求中的参数</td>
+</tr>
+<tr>
+<td><code>$content_length</code></td>
+<td>请求头中的<code>Content-length</code>字段</td>
+</tr>
+<tr>
+<td><code>$http_user_agent</code></td>
+<td>客户端agent信息</td>
+</tr>
+<tr>
+<td><code>$http_cookie</code></td>
+<td>客户端cookie信息</td>
+</tr>
+<tr>
+<td><code>$remote_port</code></td>
+<td>客户端的端口</td>
+</tr>
+<tr>
+<td><code>$server_protocol</code></td>
+<td>请求使用的协议，如<code>HTTP/1.0</code>、·HTTP&#x2F;1.1&#96;</td>
+</tr>
+<tr>
+<td><code>$server_addr</code></td>
+<td>服务器地址</td>
+</tr>
+<tr>
+<td><code>$server_name</code></td>
+<td>服务器名称</td>
+</tr>
+<tr>
+<td><code>$server_port</code></td>
+<td>服务器的端口号</td>
+</tr>
+</tbody></table>
+<p><strong>在哪用到&#x3D;&gt;反向代理&#x3D;&gt;跨域</strong></p>
+<h3 id="nginx解决跨域的原理"><a href="#nginx解决跨域的原理" class="headerlink" title="nginx解决跨域的原理"></a>nginx解决跨域的原理</h3><p>例如：</p>
+<ul>
+<li>前端server的域名为：<code>fe.server.com</code></li>
+<li>后端服务的域名为：<code>dev.server.com</code></li>
+</ul>
+<p>现在我在<code>fe.server.com</code>对<code>dev.server.com</code>发起请求一定会出现跨域。</p>
+<p>现在我们只需要启动一个nginx服务器，将<code>server_name</code>设置为<code>fe.server.com</code>,然后设置相应的location以拦截前端需要跨域的请求，最后将请求代理回<code>dev.server.com</code>。如下面的配置：</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">        <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">        <span class="attribute">server_name</span>  fe.server.com;</span><br><span class="line">        <span class="section">location</span> / &#123;</span><br><span class="line">                <span class="attribute">proxy_pass</span> dev.server.com;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这样可以绕过浏览器的同源策略：<code>fe.server.com</code>访问<code>nginx</code>的<code>fe.server.com</code>属于同源访问，而<code>nginx</code>对服务端转发的请求不会触发浏览器的同源策略。</p>
+<h2 id="常见场景"><a href="#常见场景" class="headerlink" title="常见场景"></a>常见场景</h2><h3 id="请求过滤"><a href="#请求过滤" class="headerlink" title="请求过滤"></a>请求过滤</h3><p>根据状态码过滤</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">error_page</span> <span class="number">500</span> <span class="number">501</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> <span class="number">506</span> /50x.html;</span><br><span class="line">    <span class="section">location</span> = /50x.html &#123;</span><br><span class="line">        <span class="comment">#将跟路径改编为存放html的路径。</span></span><br><span class="line">        <span class="attribute">root</span> /root/static/html;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据URL名称过滤，精准匹配URL，不匹配的URL全部重定向到主页。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">location</span> / &#123;</span><br><span class="line">    <span class="attribute">rewrite</span> <span class="regexp"> ^.*$</span> /index.html  <span class="literal">redirect</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>根据请求类型过滤。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">if</span> ( <span class="variable">$request_method</span> !<span class="regexp">~ ^(GET|POST|HEAD)$</span> ) &#123;</span><br><span class="line">        <span class="attribute">return</span> <span class="number">403</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="负载均衡"><a href="#负载均衡" class="headerlink" title="负载均衡"></a>负载均衡</h3><p>这块可以参考之前的[集群](<a target="_blank" rel="noopener" href="https://jiangjiang1116.cn/2023/10/08/%E9%9B%86%E7%BE%A4/">Sinbad (jiangjiang1116.cn)</a>)</p>
+<h3 id="gzip压缩"><a href="#gzip压缩" class="headerlink" title="gzip压缩"></a>gzip压缩</h3><p>缩小<strong>静态资源</strong>体积大小，带来相当可观的流量与带宽节省</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">    <span class="comment"># 开启gzip</span></span><br><span class="line">    <span class="attribute">gzip</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="comment"># 增加响应头”Vary: Accept-Encoding” 用来给浏览器识别</span></span><br><span class="line">    <span class="attribute">gzip_vary</span> <span class="literal">on</span>;</span><br><span class="line">    <span class="comment"># Nginx做为反向代理的时候启用： any – 无条件压缩所有结果数据</span></span><br><span class="line">    <span class="attribute">gzip_proxied</span> any;</span><br><span class="line">    <span class="comment"># 压缩等级</span></span><br><span class="line">    <span class="attribute">gzip_comp_level</span> <span class="number">6</span>;</span><br><span class="line">    <span class="comment"># 需要压缩的资源</span></span><br><span class="line">    <span class="attribute">gzip_types</span> text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="图片防盗链"><a href="#图片防盗链" class="headerlink" title="图片防盗链"></a>图片防盗链</h3><figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">  <span class="attribute">listen</span>       <span class="number">80</span>;</span><br><span class="line">  <span class="attribute">server_name</span>  <span class="regexp">*.sherlocked</span>93.club;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 图片防盗链</span></span><br><span class="line">  <span class="section">location</span> <span class="regexp">~* .(gif|jpg|jpeg|png|bmp|swf)$</span> &#123;</span><br><span class="line">    <span class="attribute">valid_referers</span> <span class="literal">none</span> <span class="literal">blocked</span> <span class="number">172.168.1.1</span>;  <span class="comment"># 只允许本机 IP 外链引用</span></span><br><span class="line">    <span class="attribute">if</span> (<span class="variable">$invalid_referer</span>)&#123;</span><br><span class="line">      <span class="attribute">return</span> <span class="number">403</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="优雅降级-奇怪的名字"><a href="#优雅降级-奇怪的名字" class="headerlink" title="优雅降级-奇怪的名字"></a>优雅降级-奇怪的名字</h3><p>Nginx的”优雅降级”指的是在服务器负载较高或出现问题时，通过一种<strong>平滑、非突然</strong>的方式减少或限制服务的资源使用，以确保系统稳定性和可用性。这种方式被称为”优雅”。</p>
+<p>因为它不会导致服务器立刻停止响应请求，而是逐渐降低服务的负载，确保已经接受的请求能够正常完成，同时不再接受新的请求。</p>
+<p>Nginx支持优雅降级的方式，主要通过以下几个技术来实现：</p>
+<ol>
+<li><strong>平滑重载</strong>: Nginx允许在不停止服务的情况下重新加载配置文件。这意味着您可以修改配置文件，例如调整负载均衡策略，而不需要重启Nginx。这有助于平滑地调整服务器的行为。</li>
+<li><strong>权重调整</strong>: Nginx支持为不同的后端服务器或上游服务器池分配权重，您可以逐渐降低某个服务器的权重，从而逐渐将流量从该服务器中剥离。</li>
+<li><strong>限速和连接限制</strong>: 您可以使用Nginx的限速配置来控制每个客户端的请求速率，以确保不会因过多的请求而导致服务器负载过高。</li>
+<li><strong>故障转移</strong>: Nginx还支持故障转移和健康检查机制，当某个后端服务器出现故障时，它可以自动将流量转移到其他健康的服务器上，而不会影响整个服务。</li>
+</ol>
+<p>SSR服务端渲染由于是依赖服务器资源，在流量过大的情况下，有可能会出现服务不可用的情况，返回特殊的错误码例如500等。这时候我们可以实现优雅降级，利用 nginx 做对应的流量分发，当SSR页面返回异常错误的时候，nginx会将流量导入到CSR页面当中。</p>
+<p>优雅降级需要<code>proxy_intercept_errors</code>来开启自定义错误捕获功能，用<code>error_page</code>指令来手动进行降级指向备用地址。</p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">upstream</span> ssrserver &#123;</span><br><span class="line">    <span class="attribute">server</span> xxx max_fails=<span class="number">1</span> fail_timeout=<span class="number">60</span>;</span><br><span class="line">    <span class="attribute">server</span> xxx max_fails=<span class="number">1</span> fail_timeout=<span class="number">60</span>;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 服务端渲染</span></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  ssr-website.com.com;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://ssrserver;</span><br><span class="line">        <span class="comment"># 开启自定义错误捕获 如果这里不设置为on的话 会走向nginx处理的默认错误页面</span></span><br><span class="line">        <span class="attribute">proxy_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">        <span class="comment"># 捕获500系列错误 如果500错误的话降级为下面的csr渲染</span></span><br><span class="line">        <span class="attribute">error_page</span> <span class="number">500</span> <span class="number">501</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span> = <span class="variable">@csr_location</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># error_page 500 501 502 503 504 = 200 @csr_location</span></span><br><span class="line">        <span class="comment"># 注意这上面的区别 等号前面没有200 表示 最终返回的状态码已 @csr_location为准 加了200的话表示不管@csr_location返回啥都返回200状态码</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location <span class="variable">@csr_location</span> &#123;</span><br><span class="line">        <span class="attribute">proxy_pass</span> http://csr-website.com.com;</span><br><span class="line">        <span class="attribute">rewrite_log</span> <span class="literal">on</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 客户端渲染</span></span><br><span class="line"><span class="section">server</span> &#123;</span><br><span class="line">    <span class="attribute">listen</span> <span class="number">80</span>;</span><br><span class="line">    <span class="attribute">server_name</span>  csr-website.com.com;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">        <span class="attribute">index</span>  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="webp根据浏览器自动降级为png"><a href="#webp根据浏览器自动降级为png" class="headerlink" title="webp根据浏览器自动降级为png"></a>webp根据浏览器自动降级为png</h4><p>这套方案不像常见的由nginx把png转为webp的方案，而是先经由图床系统（node服务）上传两份图片:</p>
+<ol>
+<li>一份是原图png</li>
+<li>一份是png压缩为webp的图片（使用的是imagemin-webp）</li>
+</ol>
+<p>然后通过nginx检测头部是否支持webp来返回webp图片，不支持的话就返回原图即可。这其中还做了错误拦截，如果<strong>cos桶丢失webp图片及时浏览器支持webp也要降级为png</strong></p>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">http</span> &#123;</span><br><span class="line">  <span class="attribute">include</span>       /etc/nginx/mime.types;</span><br><span class="line">  <span class="attribute">default_type</span>  application/octet-stream;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 设置日志格式</span></span><br><span class="line">  <span class="attribute">log_format</span>  main  <span class="string">&#x27;<span class="variable">$remote_addr</span> - <span class="variable">$remote_user</span> [<span class="variable">$time_local</span>] &quot;<span class="variable">$request</span>&quot; &#x27;</span></span><br><span class="line">  <span class="string">&#x27;<span class="variable">$status</span> <span class="variable">$body_bytes_sent</span> &quot;<span class="variable">$http_referer</span>&quot; &#x27;</span></span><br><span class="line">  <span class="string">&#x27;&quot;<span class="variable">$http_user_agent</span>&quot; &quot;<span class="variable">$http_x_forwarded_for</span>&quot;&#x27;</span></span><br><span class="line">  <span class="string">&#x27;&quot;<span class="variable">$proxy_host</span>&quot; &quot;<span class="variable">$upstream_addr</span>&quot;&#x27;</span>;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">access_log</span>  /var/log/nginx/access.log  main;</span><br><span class="line"></span><br><span class="line">  <span class="attribute">sendfile</span>        <span class="literal">on</span>;</span><br><span class="line">  <span class="attribute">keepalive_timeout</span>  <span class="number">65</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 开启gzip</span></span><br><span class="line">  <span class="attribute">gzip</span> <span class="literal">on</span>;</span><br><span class="line">  <span class="attribute">gzip_vary</span> <span class="literal">on</span>;</span><br><span class="line">  <span class="attribute">gzip_proxied</span> any;</span><br><span class="line">  <span class="attribute">gzip_comp_level</span> <span class="number">6</span>;</span><br><span class="line">  <span class="attribute">gzip_types</span> text/plain text/css text/xml application/json application/javascript application/rss+xml application/atom+xml image/svg+xml;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># 负载均衡 这里可以是多个cos桶地址即可</span></span><br><span class="line">  <span class="section">upstream</span> static_env &#123;</span><br><span class="line">    <span class="attribute">server</span> xxx;</span><br><span class="line">    <span class="attribute">server</span> xxx;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment"># map 设置变量映射 第一个变量指的是要通过映射的key值 Accpet 第二个值的是变量别名</span></span><br><span class="line">  <span class="attribute">map</span> <span class="variable">$http_accept</span> <span class="variable">$webp_suffix</span> &#123;</span><br><span class="line">    <span class="comment"># 默认为 空字符串</span></span><br><span class="line">    <span class="attribute">default</span>   <span class="string">&quot;&quot;</span>;</span><br><span class="line">    <span class="comment"># 正则匹配如果Accep含有webp字段 设置为.webp值</span></span><br><span class="line">    &quot;~*webp&quot;  &quot;.webp&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="section">server</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="attribute">listen</span> <span class="number">8888</span>;</span><br><span class="line">    <span class="attribute">absolute_redirect</span> <span class="literal">off</span>;    <span class="comment">#取消绝对路径的重定向</span></span><br><span class="line">    <span class="comment">#网站主页路径。此路径仅供参考，具体请您按照实际目录操作。</span></span><br><span class="line">    <span class="attribute">root</span> /usr/share/nginx/html;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> / &#123;</span><br><span class="line">      <span class="attribute">index</span> index.html index.htm;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$host</span>;</span><br><span class="line">      <span class="attribute">try_files</span> <span class="variable">$uri</span> <span class="variable">$uri</span>/ /index.html;</span><br><span class="line">      <span class="attribute">add_header</span> Cache-Control <span class="string">&#x27;no-cache, max-age=0&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># favicon.ico</span></span><br><span class="line">    <span class="section">location</span> = /favicon.ico &#123;</span><br><span class="line">      <span class="attribute">log_not_found</span> <span class="literal">off</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># robots.txt</span></span><br><span class="line">    <span class="section">location</span> = /robots.txt &#123;</span><br><span class="line">      <span class="attribute">log_not_found</span> <span class="literal">off</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"># </span></span><br><span class="line">    <span class="section">location</span> <span class="regexp">~* .(png|jpe?g)$</span> &#123;</span><br><span class="line">      <span class="comment"># Pass WebP support header to backend</span></span><br><span class="line">      <span class="comment"># 如果header头部中支持webp</span></span><br><span class="line">      <span class="attribute">if</span> (<span class="variable">$webp_suffix</span> <span class="regexp">~* webp)</span> &#123;</span><br><span class="line">        <span class="comment"># 先尝试找是否有webp格式图片</span></span><br><span class="line">        <span class="attribute">rewrite</span><span class="regexp"> ^/(.*).(png|jpe?g)$</span> /<span class="variable">$1</span>.webp <span class="literal">break</span>;</span><br><span class="line">        <span class="comment"># 找不到的话 这里捕获404错误 返回原始错误 注意这里的=号 代表最终返回的是@static_img的状态吗</span></span><br><span class="line">        <span class="attribute">error_page</span> <span class="number">404</span> = <span class="variable">@static_img</span>;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="attribute">proxy_intercept_errors</span> <span class="literal">on</span>;</span><br><span class="line">      <span class="attribute">add_header</span> Vary Accept;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://static_env;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="section">location</span> <span class="variable">@static_img</span> &#123;</span><br><span class="line">      <span class="comment">#set $complete $schema $server_addr $request_uri;</span></span><br><span class="line">      <span class="attribute">rewrite</span><span class="regexp"> ^/.+$</span> <span class="variable">$request_uri</span> <span class="literal">break</span>;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://static_env;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment"># assets, media</span></span><br><span class="line">    <span class="section">location</span> <span class="regexp">~* .(?:css(.map)?|js(.map)?|gif|svg|jfif|ico|cur|heic|webp|tiff?|mp3|m4a|aac|ogg|midi?|wav|mp4|mov|webm|mpe?g|avi|ogv|flv|wmv)$</span> &#123;</span><br><span class="line">      <span class="attribute">proxy_pass</span> http://static_env;</span><br><span class="line">      <span class="attribute">proxy_set_header</span> Host <span class="variable">$http_host</span>;</span><br><span class="line">      <span class="attribute">expires</span> <span class="number">7d</span>;</span><br><span class="line">      <span class="attribute">access_log</span> <span class="literal">off</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="attribute">error_page</span>   <span class="number">500</span> <span class="number">502</span> <span class="number">503</span> <span class="number">504</span>  /50x.html;</span><br><span class="line">    <span class="section">location</span> = /50x.html &#123;</span><br><span class="line">      <span class="attribute">root</span>   /usr/share/nginx/html;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2023-10-11</span>
+            
+                <span>该篇文章被 Jiang Jiang</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E8%BF%90%E7%BB%B4/'>
+                            运维
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/Notes/'>
+                            Notes
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2023/10/13/%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE/'>一个按钮</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/11/%E5%89%8D%E7%AB%AF%E7%BD%91%E7%BB%9C/">前端网络</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>宇宙里有什么不是暂时</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

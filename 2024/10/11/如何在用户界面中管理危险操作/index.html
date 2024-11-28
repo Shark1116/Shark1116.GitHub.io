@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="如何在用户界面中管理危险操作" />
+    <meta name="hexo-theme-A4" content="v1.8.9" />
+    <link rel="alternate icon" type="image/webp" href="/images/cat.svg">
+    <title>Blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/cat.svg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Blog</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    如何在用户界面中管理危险操作
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-10-11</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：6.6k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：22分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E3%80%90%E7%AC%AC3390%E6%9C%9F%E3%80%91%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E4%B8%AD%E7%AE%A1%E7%90%86%E5%8D%B1%E9%99%A9%E6%93%8D%E4%BD%9C"><span class="post-toc-text">【第3390期】如何在用户界面中管理危险操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E5%8D%B1%E9%99%A9%E8%A1%8C%E4%B8%BA%EF%BC%9F"><span class="post-toc-text">什么是危险行为？</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%8D%B1%E9%99%A9%E8%A1%8C%E4%B8%BA%E7%9A%84%E7%A1%AE%E8%AE%A4%E6%93%8D%E4%BD%9C"><span class="post-toc-text">危险行为的确认操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%A8%A1%E6%80%81%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="post-toc-text">模态对话框</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%8D%B1%E9%99%A9%E5%8C%BA%E5%9F%9F"><span class="post-toc-text">危险区域</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%85%A7%E8%81%94%E5%AE%88%E5%8D%AB"><span class="post-toc-text">內联守卫</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%8F%8C%E5%9B%A0%E7%B4%A0%E8%AE%A4%E8%AF%81%EF%BC%882FA%EF%BC%89%E7%A1%AE%E8%AE%A4"><span class="post-toc-text">双因素认证（2FA）确认</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AF%86%E9%92%A5"><span class="post-toc-text">密钥</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E7%AC%AC%E4%BA%8C%E4%BA%BA%E7%A1%AE%E8%AE%A4"><span class="post-toc-text">第二人确认</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E6%88%91%E4%BB%AC%E7%9C%9F%E7%9A%84%E9%9C%80%E8%A6%81%E8%AF%A2%E9%97%AE%E7%94%A8%E6%88%B7%E5%90%97%EF%BC%9F"><span class="post-toc-text">我们真的需要询问用户吗？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%BB%B6%E8%BF%9F"><span class="post-toc-text">延迟</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E6%92%A4%E6%B6%88"><span class="post-toc-text">撤消</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="post-toc-text">结论</span></a></li></ol></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h1 id="【第3390期】如何在用户界面中管理危险操作"><a href="#【第3390期】如何在用户界面中管理危险操作" class="headerlink" title="【第3390期】如何在用户界面中管理危险操作"></a>【第3390期】如何在用户界面中管理危险操作</h1><p>非原创 作者:ikoofe 公号:前端早读课 发布时间:2024-10-11 8:01 发表于福建</p>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Y81cd3jpaXeGFUf89xndJQ">【第3390期】如何在用户界面中管理危险操作</a></p>
+<p>前言</p>
+<p>讨论了如何在用户界面中有效管理危险操作，以防止用户误操作。今日前端早读课文章由 @ikoofe 翻译，公号:ikoofe 授权分享。</p>
+<p>正文从这开始～～</p>
+<p>用户界面是用户与系统之间的交互层，用于实现用户与系统的通信。通常，用户与界面交互时需要执行特定的操作，不同的操作会产生不同的结果。</p>
+<p>良好的用户界面设计至关重要，它应尽可能防止用户犯错。我们要时刻牢记 尼尔森十大设计原则 ，其中在 “错误预防” 原则中提到：好的错误消息很重要，但是最好的设计首先要防止问题发生。要么消除容易出错的条件，要么检查它们并向用户提供确认选项，然后再执行该操作。</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=200233689&idx=1&sn=45fe2de01812fd11d1b6da8894df64c9&chksm=28a08b5d1fd7024b55eb6979cddd7fae38b46163ab5e2ba508f6db937c51b86027f7a264f028&scene=21#wechat_redirect">【第82期】产品中的错误预防机制–“细节：别让我出错”</a></p>
+<h4 id="什么是危险行为？"><a href="#什么是危险行为？" class="headerlink" title="什么是危险行为？"></a>什么是危险行为？</h4><p>“危险行为” 指的是对用户可能产生重大且关键后果的操作行为，并不一定是指删除某些内容的操作。例如在银行应用中，意外点击 “获取资金” 按钮可能导致在非本意的情况下获得贷款，这就是一种危险行为。以下是银行应用程序中的危险操作示例：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdZq1ibna3l9iaDJThdnJEUC0pFIgahu4vFWY1Ll9CZjLkSyBPEyL3d4HA/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&tp=webp" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdZq1ibna3l9iaDJThdnJEUC0pFIgahu4vFWY1Ll9CZjLkSyBPEyL3d4HA/640?wx_fmt=other&from=appmsg&wxfrom=5&wx_lazy=1&wx_co=1&tp=webp"></a></p>
+<p>下面列了一些常见的危险行为：</p>
+<ul>
+<li><p>发送电子邮件</p>
+</li>
+<li><p>下订单</p>
+</li>
+<li><p>发布帖子</p>
+</li>
+<li><p>进行银行交易</p>
+</li>
+<li><p>签署法律文件</p>
+</li>
+<li><p>永久阻止用户</p>
+</li>
+<li><p>授予或撤销权限</p>
+</li>
+</ul>
+<p>本文旨在探讨和明确在特定场景下哪些操作可以被定义为危险行为。</p>
+<h4 id="危险行为的确认操作"><a href="#危险行为的确认操作" class="headerlink" title="危险行为的确认操作"></a>危险行为的确认操作</h4><p>在界面设计中，为了防止用户无意中进行危险操作，需要对此采取一些策略。其中的一种方法是要求用户明确确认他们的操作。</p>
+<h5 id="模态对话框"><a href="#模态对话框" class="headerlink" title="模态对话框"></a>模态对话框</h5><p>首先，我们介绍一下模态对话框和非模态对话框之间的区别：</p>
+<ul>
+<li><p>模态对话框要求用户必须立即进行操作。这意味着在用户对其做出回应之前，不能继续使用应用程序。</p>
+</li>
+<li><p>非模态对话框允许用户不间断地继续使用应用程序。非模态元素的一个常见示例是显示在屏幕一角的 toast 消息，它不需要用户执行任何操作即可继续使用该应用程序。</p>
+</li>
+</ul>
+<p>如果使用得当，模态对话框是防止意外点击危险操作的有效方法。模态对话框的主要问题在于，如果被用于确认日常操作（比如将任务标记为已完成），可能会引起用户的厌烦，并让用户养成在无意识状态下自动确认的习惯。</p>
+<p>然而，这是当下最流行的方法之一。此外，它可以与其他方法结合使用，所以让我们更深入地研究它。</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651273267&idx=2&sn=b14800b2f0df6d52ac31a677c9fa073d&chksm=bd48e1b78a3f68a1df55da5ef06b35843535956f06f2a5d9461d6d0d6be3c3b75e745bf2c118&scene=21#wechat_redirect">【早阅】仅使用CSS和Popover API开发模态框</a></p>
+<p>何时使用模态对话框</p>
+<p>当用户操作将产生严重后果时，尤其是在操作的结果是不可逆的情况下，请使用模态对话框。典型情况包括删除帖子或项目、确认交易等。这取决于用户想要采取什么样的行动，但最关键的是后果是否严重以及行动是否可逆。</p>
+<p>注意事项</p>
+<ul>
+<li><p>避免使用含糊不清的语言。当向用户提出 “您确定吗” 这样的问题时，这样的问题比较模糊和笼统，没有提供具体的信息让用户去思考和产生疑问。在很多情况下，用户可能会习惯性地直接回答 “确定”，而没有真正仔细考虑他们即将进行的操作可能带来的后果。</p>
+</li>
+<li><p>在标题中，指定具体将发生的情况或将受影响的内容（例如，项目名称、用户名、金额）。</p>
+</li>
+<li><p>提供一个图标，指示操作是危险的。图标既增加了用户不自动确认它的可能性，又有利于可访问性（即使色盲人士会注意到该图标，即使它对他们来说是灰色的，这表明它的重要性）。</p>
+</li>
+<li><p>在描述中，要具体并突出显示必要的信息</p>
+</li>
+<li><p>号召性用语按钮（CTA button）还应包含反映操作的词语。不要使用 “是” 或 “确认”，而是使用更具描述性的选项，例如 “删除”，“支付 97 美元”，“进行交易”，“发送消息” 等。按钮中的实体名称或金额也很有帮助。与 “确认” 相比，“支付 97 美元” 要具体得多。</p>
+</li>
+</ul>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdU7icpqeFoUrGVfZwIibWNNqYVcVlSdPibyhxO5NiaAUlYomiagUKYu3LLug/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdU7icpqeFoUrGVfZwIibWNNqYVcVlSdPibyhxO5NiaAUlYomiagUKYu3LLug/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>在特定情况下，可能需要用户进行额外的操作。一种常见的解决办法是让用户输入特定内容（比如项目名称），以便解除对 CTA（号召性用语）按钮的阻止状态。</p>
+<p>额外的用户操作</p>
+<p>在某些场景中，用户仅进行常规操作可能无法触发 CTA 按钮，只有当用户输入了要求的内容后，才能使 CTA 按钮变为可点击状态，从而执行相应的关键操作。例如在某些软件中，当用户想要进行一些重要操作如删除项目时，可能会被要求输入项目名称来确认操作意图，确保操作的准确性和安全性。</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651272110&idx=2&sn=3e0c5910778dc1eca926588c1bd7a5e7&chksm=bd48ea2a8a3f633ca9ee75932729aaddbf8f12dfc4a168d2e780f606778cd34084fc86ecc0b5&scene=21#wechat_redirect">【早阅】使用CSS @starting-style为对话框和弹出框元素添加动画效果</a></p>
+<p>比如，ConvertKit 要求用户在删除订阅者时键入 “DO IT”。请注意，它们将按钮放在了左侧！这是应用邻近法的一个很好的示例。这样是很合理的，因为提交按钮更靠近表单（即使它只包含一个输入）。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md8IfcS7h7RQrZNFsc321jZnjvwE79PcohdkFMibyL7FicBXOyWugmm1bA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md8IfcS7h7RQrZNFsc321jZnjvwE79PcohdkFMibyL7FicBXOyWugmm1bA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>如果用户想删除 API 密钥，Resend 会要求用户键入 “DELETE”。API 密钥可能用于许多应用程序，删除操作可能会产生非常严重的后果。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md0UuzNZKlTic3vticW6S6IdnJxrKibhia60W5zbzib2AwtZ74dufJQq0XDDw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md0UuzNZKlTic3vticW6S6IdnJxrKibhia60W5zbzib2AwtZ74dufJQq0XDDw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>上面这个例子是一个最佳实践：</p>
+<ul>
+<li><p>标题说明了操作是什么 （“Delete API Key”） 。</p>
+</li>
+<li><p>在文本中，他们以粗体和不同的颜色（“Onboarding”）提到了 API 密钥的名称。</p>
+</li>
+<li><p>操作无法撤消的红色标签更清楚地表明这是一项严重的操作。</p>
+</li>
+<li><p>需要执行额外的操作（键入 “DELETE”）。</p>
+</li>
+<li><p>CTA 按钮有一个颜色提示（红色通常用于破坏性操作）和一个适当的标签 — “删除 API 密钥”。不是通用词，例如 “确认” 或 “删除”。</p>
+</li>
+</ul>
+<p>另外，Resend 也将按钮放在左侧，与 ConvertKit 一样。</p>
+<p>通常禁用提交按钮被认为是不好的做法，但这是可以接受的情况之一。对话框的请求在 ConvertKit 和 Resend 示例中都清晰明了。</p>
+<p>省略提交按钮除了禁用提交按钮之外，我们甚至可以完全跳过提交按钮。这适用于要求用户输入 OTP、PIN 或 2FA 代码的情况。例如，我使用的银行应用程序甚至没有登录按钮。一方面，我们仍然要求用户执行额外的操作 （输入代码）。另一方面，它消除了额外点击的需要。比如，银行应用要求用户可以使用验证码登陆，这里并没有提交按钮：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md5jic0LCsbs68mEZiawUdBCkcCfZ6jgEamV4WAZdDVdsjZb5KgQydCSuw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md5jic0LCsbs68mEZiawUdBCkcCfZ6jgEamV4WAZdDVdsjZb5KgQydCSuw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>关于在输入简单的 OTP 时是否包含提交按钮，一直存在争议。这里所说的 “简单” 是指由 4-6 位数字组成的数字。虽然我不是无障碍专家，但我不认为在像这样简单的情况下省略提交按钮有什么重大缺点。</p>
+<p>首先，OTP 步骤通常是用户流的中间部分，这意味着在某个过程中会出现具有 4 个输入的表单。第一个输入会自动聚焦，用户可以使用 Tab 键浏览它们。关键是，由于所需的信息量很少（四位数），因此在输入数字后立即自动提交表格通常是可以接受的，即使出现错误。一方面，如果我们关心可访问性，那么没有什么能阻止我们为用户提供对输入的控制。另一方面，在大多数情况下，自动提交简化了流程，并且在极少数情况下出现错误，用户可以轻松地重新输入数字。</p>
+<p><a target="_blank" rel="noopener" href="http://mp.weixin.qq.com/s?__biz=MjM5MTA1MjAxMQ==&mid=2651254075&idx=1&sn=7a2d42ad18f7f6c91801c7c8dcd38df4&chksm=bd4934bf8a3ebda9c1a91831a3c583a97edf2a3c1cfabdd4709396856928800faaf04821e334&scene=21#wechat_redirect">【第2603期】Web 可访问性与无障碍最佳实践</a></p>
+<h5 id="危险区域"><a href="#危险区域" class="headerlink" title="危险区域"></a>危险区域</h5><p>对于最关键的操作，您可以使用所谓的 “危险区域” 模式。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md6BZ4ZH3vMQqPU9HjRh65hWn9yTMGiaO7DuEcp6WuA2tHib4rHOzVjOaA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md6BZ4ZH3vMQqPU9HjRh65hWn9yTMGiaO7DuEcp6WuA2tHib4rHOzVjOaA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>比如，上面的截图中是 Github 存储库危险区域设置。实现此目的的常见方法是拥有一个专用页面，或将操作集中放在 settings&#x2F;account 页面的底部。它可能包含一个或多个操作，并且通常与其他方法结合使用，例如模态对话框。执行的操作越多，就越有可能需要一个专用页面。比如，Plausible 有一个专门的 Danger 区域页面。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md4Hzqibqo1ibRFiciadvzrSbPVcdK0icSTGyTCefC1BtHlnz4Q1xe6ru38oQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md4Hzqibqo1ibRFiciadvzrSbPVcdK0icSTGyTCefC1BtHlnz4Q1xe6ru38oQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>何时使用危险区域</p>
+<p>使用 Danger Zone 对不可逆或极有可能丢失数据或对用户造成重大后果的操作进行分组。这些操作通常包括帐户删除、数据擦除或权限更改等可能影响用户访问权限或数据的操作。</p>
+<p>注意事项</p>
+<ul>
+<li><p>使用红色、警告图标或边框等颜色在视觉上将 Danger Zone （危险区域） 与页面的其余部分区分开来。</p>
+</li>
+<li><p>危险区域中的每个操作都应该清楚地描述如果用户继续操作会发生什么，以便用户了解潜在的后果。</p>
+</li>
+<li><p>要求用户付出额外的成本。通常，这些操作是不可逆且关键的。在这种情况下，您可以要求用户重复他们的密码或使用 2FA，因为如果其他人可以访问该页面，那么执行有害操作将不是那么容易。</p>
+</li>
+<li><p>只保留真正关键的操作。避免为了拥有危险区域而设立危险区域。</p>
+</li>
+</ul>
+<h5 id="內联守卫"><a href="#內联守卫" class="headerlink" title="內联守卫"></a>內联守卫</h5><p>最近，我发现一些 App 已经开始使用内联确认了。这意味着当您单击危险操作时，它会更改其标签并要求您再次单击。Zapier 和 Typefully 等应用程序使用这种模式。虽然乍一看似乎很方便，但它在 X 和 LinkedIn 上引发了很多讨论和问题。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_gif/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdLoXAbicRy24KBT54d4IxIGFMqdewLk9Rd9lOoxhhXcvm3nhhDWDpjLQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_gif/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdLoXAbicRy24KBT54d4IxIGFMqdewLk9Rd9lOoxhhXcvm3nhhDWDpjLQ/640?wx_fmt=gif&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1"></a></p>
+<p>何时使用内联守卫</p>
+<p>內联守卫适用于可能由于误点击而意外执行的非关键操作。设计人员社区提到了一个问题，即用户仍然能够通过双击来执行操作。但是，需要考虑三件事：</p>
+<ul>
+<li><p>这种确认对于不危险的操作很方便，但同时，最好要求额外的行动。</p>
+</li>
+<li><p>理想情况下，我们应该提供一个选项来撤销操作或将已删除的项目推送到存档页面（以防我们删除了某些内容）。这是确保用户安全的良好组合。</p>
+</li>
+<li><p>內联确认的目的是防止意外点击，这与我们提醒用户其操作的严重后果的情况形成鲜明对比。</p>
+</li>
+</ul>
+<p>尽管雅各布定律说，“用户大部分时间都花在其他网站上。这意味着用户希望您的网站的工作方式与他们已经知道的所有其他网站相同。” 这并不意味着您不能通过引入新模式来促进应用程序的使用。否则，Web 根本不会发展。下面是 Zapier 在删除操作时要求确认操作：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdzHX7a4IFeXmMiaPhQPIzBKJHJDTwJUxOsAcHB5d01xNXpEjGib6Ka2yA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdzHX7a4IFeXmMiaPhQPIzBKJHJDTwJUxOsAcHB5d01xNXpEjGib6Ka2yA/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>当然，也有人试图通过更改第一次单击后出现的内联确认标签的位置来修复意外双击。但这会产生布局偏移。当用户每天使用该应用程序时，它可能会引起更多的干扰而不是帮助。</p>
+<p>在特定情况下，为了解决可能出现的双击问题，可以选择添加一个 100 到 200 毫秒的微小延迟。这样做的目的是防止用户在进行某些操作时，由于快速双击而意外触发不期望的结果。</p>
+<p>了解用户群体也很重要。不同的用户可能有不同的行为习惯，因此在设计产品或考虑交互方式时，需要充分考虑目标用户是谁，他们的行为特点和习惯可能会对产品的使用产生影响。</p>
+<p>对于內联守卫模式，如果目标受众容易出现误操作，那么该确认模式可能就无法发挥应有的作用。但是，对于像 Zapier 或 Typefully 这样的应用程序，我的假设是目标受众可能会从这种模式中受益。</p>
+<h5 id="双因素认证（2FA）确认"><a href="#双因素认证（2FA）确认" class="headerlink" title="双因素认证（2FA）确认"></a>双因素认证（2FA）确认</h5><p>此方法涉及将确认请求（无论是否包含某种验证码）发送到另一个位置，例如：</p>
+<ul>
+<li><p>SMS</p>
+</li>
+<li><p>Email</p>
+</li>
+<li><p>移动设备上的 Authenticator 应用程序</p>
+</li>
+</ul>
+<p>推送通知（例如，您可以选择发送推送通知，而不是发送 SMS）</p>
+<p>用户在使用发送加密货币的应用程序时的一种情况。因为发送加密货币是敏感请求，所以除了在网站上提交申请外，还需要通过电子邮件进行批准。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdoPo0K2LYkMDqicDFQ0ibmub2icfibv15Vl1bicwcgicRaXh7t6hvia4sudghQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdoPo0K2LYkMDqicDFQ0ibmub2icfibv15Vl1bicwcgicRaXh7t6hvia4sudghQ/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>何时使用双因素认证确认</p>
+<p>它可用于汇款、所有权转让和账户删除等操作（即使您有危险区域）。我们大多数人在网上支付时经常使用这种方法，我们的银行会向我们发送 OTP（一次性密码或一次性代码）。它可能会在第一个初始保护方法之后，例如确认对话框。</p>
+<p>这些方法经常被组合使用。我们不应该孤立地考虑它们中的每一个，而应该在整个业务流程的背景下考虑它们。</p>
+<h5 id="密钥"><a href="#密钥" class="headerlink" title="密钥"></a>密钥</h5><p>密钥是一种现代的无密码身份验证方法，旨在增强安全性和用户体验。在双因素认证（2FA）上使用密钥在安全性和用户体验方面具有一些优点。具体如下：</p>
+<ul>
+<li><p>与 2FA 通常需要从其他设备或应用（如短信或身份验证器应用）输入代码不同，密钥简化了确认过程，无需在设备之间切换或等待代码到达，可提供即时身份验证。</p>
+</li>
+<li><p>2FA 虽提供额外保护，但易受网络钓鱼、SIM 卡交换或拦截攻击，而密钥因使用公钥 - 私钥加密，对这类攻击抵抗力更强，且不会通过网络发送密码，使其能抵御网络钓鱼，不依赖可能被泄露的短信或电子邮件。</p>
+</li>
+<li><p>密钥需要用户付出较少脑力劳动，无需记住密码或输入代码，只需用指纹、面部识别或设备特定 PIN 进行身份验证，可减少认知负荷。</p>
+</li>
+<li><p>使用密钥时身份验证过程几乎是即时的，不像 2FA 用户可能需等待代码或切换设备，密钥让用户在不切换上下文的情况下确认操作。</p>
+</li>
+</ul>
+<p>密钥受到广泛支持，越来越多的公司采用它，passkeys.io 的屏幕截图显示了一些已经采用 Passkeys 技术的公司：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdrmdMuLxxVicxgOcOZBStk2jibqWoINx3Ng9c5mibdbyNjGb8dKAoLTOtw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdrmdMuLxxVicxgOcOZBStk2jibqWoINx3Ng9c5mibdbyNjGb8dKAoLTOtw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<h5 id="第二人确认"><a href="#第二人确认" class="headerlink" title="第二人确认"></a>第二人确认</h5><p>“第二人确认” 是一种机制，当流程中涉及两个用户时使用。其中一个用户作为发起者提出执行某些操作的请求，另一个用户作为审批者决定是否确认该请求。</p>
+<p>在两个角色中可以使用确认对话框或其他用户界面模式。其主要目的是分离责任，降低错误决策的概率。例如开发人员提交代码，代码审阅者决定是否合并代码：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md4STiaLUn9wSosSkuANbXMbB7Q4HfUstgkq2b8vHoozYWeShn5HGhDww/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md4STiaLUn9wSosSkuANbXMbB7Q4HfUstgkq2b8vHoozYWeShn5HGhDww/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>何时使用第二人确认</p>
+<p>它最适合需要几个人参与的决策的情况。不过，它也可以看作是一种实现业务逻辑的方法，因为即使有另一个人确认操作，该操作仍可能是危险操作，只是现在由另一个人进行批准。下面是一些使用该模式的示例：</p>
+<ul>
+<li><p>GitHub，如前所述，用于合并拉取请求。</p>
+</li>
+<li><p>Jira 和其他类似应用程序。例如，当您在某个工作流阶段移动问题时，可能需要经理批准。</p>
+</li>
+<li><p>银行应用程序。当您进行高价值交易时，可能需要验证它是否存在法律问题。</p>
+</li>
+<li><p>Deel，这是一个全球招聘和工资单。一部分（例如，雇主）起草了一份合同并将其发送给另一部分（例如，自由职业者），自由职业者接受了它。</p>
+</li>
+</ul>
+<p>从用户界面角度来看，它不是一种完全独立的保护用户不做出错误决策的特定方法，而是一种有助于减少严重错误数量的方法。</p>
+<h4 id="我们真的需要询问用户吗？"><a href="#我们真的需要询问用户吗？" class="headerlink" title="我们真的需要询问用户吗？"></a>我们真的需要询问用户吗？</h4><p>当你让用户去执行某个操作的时候，你必须要清楚这个操作的原本目的是什么。用户在进行某种操作或行动时，并不一定是经过深思熟虑、有意识地去做的。有许多行为现象来自心理学，仅举几例：</p>
+<ul>
+<li><p>惯性思维：一个人常常会倾向于坚持自己熟悉的决定，即便这些决定在当前的实际情况下并不合适。例如，在很多场景下，绝大多数人不会去仔细阅读用户协议，只是因为从法律层面考虑，必须同意这些冗长的文本，所以就直接选择同意，而没有真正思考协议内容是否符合自己当前的具体情况。</p>
+</li>
+<li><p>可得性捷思法：人们在做决定时，往往倾向于依据容易获取或熟悉的信息，而不是花费精力去深入思考。对于用户来说，当他们多次看到相同的确认弹出窗口时，由于之前有过成功点击确认的经验，所以很可能会不假思索地自动接受这些弹出窗口。然而，这种行为方式迟早可能会出现问题，因为盲目接受确认可能会导致不良后果，比如进行了错误的操作、造成数据丢失等。</p>
+</li>
+<li><p>认知的吝啬者：人类的大脑被认为是认知的吝啬者，因为人类倾向于以更简单、更轻松的方式思考和解决问题，而不是以更复杂和费力的方式思考和解决问题，而不管智力如何。这就解释了为什么许多用户只是点击 “是” 或 “同意” 而没有仔细阅读文本。</p>
+</li>
+</ul>
+<p>一个有代表性的例子是 “Banner 广告盲区”。虽然 Banner 广告盲区与确认操作没有直接关系，但是它所涉及的现象与确认相关情况围绕着相同的人类行为特质展开，这些特质包括惯性思维、可得性捷思法、认知的吝啬者等，表现出人类在面对信息时倾向于以简单、不费力的方式思考和解决问题，容易忽略一些信息，例如人们不阅读用户协议而直接同意等行为特点。</p>
+<p>尽管我们无法完全影响用户的行为，但我们可以使用一些策略。</p>
+<h5 id="延迟"><a href="#延迟" class="headerlink" title="延迟"></a>延迟</h5><p>在某些情况下，我们可以人为地以优雅的方式延迟任务的执行。我最喜欢的一个例子是一个名为 Glovo 的应用程序，它是一个食品配送应用程序，它在送餐应用的工作流程中使用了进度错觉。让我们看一下在订购商品时会看到的三个屏幕截图。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdAFnwWVWnxC8IbfQqFcSvpmPd9K5yYYHrM1t9pPd9yeiaeFVia9w9NMJw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdAFnwWVWnxC8IbfQqFcSvpmPd9K5yYYHrM1t9pPd9yeiaeFVia9w9NMJw/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>第一个屏幕是一个购物车，里面有用户选择购买的商品（还有一个烦人的订阅促销活动，占据了屏幕的 1&#x2F;3）</p>
+<p>点击 “确认订单” 按钮后，您将看到第二个屏幕，询问用户是否一切正确。但是，信息会随着淡入动画逐渐显示。此外，您还可以看到有一个进度条，这是一个假的。</p>
+<p>几秒钟后，您将看到另一个屏幕，显示该应用程序正在尝试为您的卡充值；这一次，这是一个真实的过程。交易完成后，您将看到订单状态和大致送达时间。</p>
+<p>专业提示：当用户显示订单状态并直观地突出显示或动画化第一步时，它会使用户更有信心订单将完成。这里使用了一个叫做 「目标梯度假说」 的技巧。</p>
+<p>用户刚刚付款，“有些事情开始发生”（至少在视觉上），这是一个信号 “哦，他们应该已经开始准备我的订单了。太好了！</p>
+<p>在人为延迟之后，则开始真实购买行为：</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md9PHiciaAa3MLwjLsuvJ9ibfdR2GuokjAVBxOiaKL8coNQ29PTic3ZhRQmxg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6md9PHiciaAa3MLwjLsuvJ9ibfdR2GuokjAVBxOiaKL8coNQ29PTic3ZhRQmxg/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>带有虚假进度条页面的目的是让用户验证订单详细信息并确认它们。但这是以一种非常精妙的方式完成的：</p>
+<ul>
+<li><p>在第一屏上，用户单击 “确认订单”。它不会调用任何模态或弹出窗口，例如 “您确定吗？”</p>
+</li>
+<li><p>在第二屏上，用户可以立即看到有关其订单的信息如何显示，并且底部的滚动条更进一步。看起来那个应用程序在做什么，但这是一种错觉。一种错觉，让您再次快速浏览一下您刚刚订购的东西。</p>
+</li>
+</ul>
+<p>在该应用程序的早期版本中，用户甚至无法跳过该过程；你只能取消它。现在他们添加了 “Continue” 按钮，这基本上是 “Yes， I’m sure” 确认。</p>
+<p>经典确认模式的缺点是，用户可以跳过该过程。但这里的方法不同：它是来自应用程序的反馈循环和跳过该过程的组合。</p>
+<p>这种组合使用户至少有时会关注地址、订单和价格，并让他们有时间取消订单，而在经典方法中，确认是 “yes or no？”，这更有可能立即得到确认。</p>
+<h5 id="撤消"><a href="#撤消" class="headerlink" title="撤消"></a>撤消</h5><p>撤消模式允许用户撤消他们刚刚执行的操作，从而提供一个安全网，减少对犯错的焦虑。与中断工作流以请求用户确认的确认模式不同，撤消模式通过允许完成操作并在需要时选择撤消操作，从而提供更流畅的体验。</p>
+<p>何时使用撤消模式</p>
+<p>它非常适合非破坏性、可逆的 action 和 mdashl action ，这些操作不会产生重大和直接的后果：</p>
+<ul>
+<li><p>编辑文档时取消操作（心爱的 ctrl + z 快捷键）;</p>
+</li>
+<li><p>删除文件（如果它先进入垃圾箱）;</p>
+</li>
+<li><p>更改任务的状态（例如，如果您不小心将任务标记为已完成）;</p>
+</li>
+<li><p>删除聊天中的消息；</p>
+</li>
+<li><p>将滤镜应用于照片</p>
+</li>
+</ul>
+<p>与计时器一起使用，可以让撤消适用于更多的场景，因为发送电子邮件或进行汇款等任务可以撤消。</p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdw54zLvSZjG1wic97hH5zTreqCnwIgmHp33DFoQiaf9krI95AxGNPDP8w/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_png/RqbfwXSnN37br7SiaCJITkbMTiaCSzl6mdw54zLvSZjG1wic97hH5zTreqCnwIgmHp33DFoQiaf9krI95AxGNPDP8w/640?wx_fmt=other&from=appmsg&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1"></a></p>
+<p>何时不能使用撤消</p>
+<p>它不适用于具有严重后果的操作，例如：</p>
+<ul>
+<li><p>删除帐户；</p>
+</li>
+<li><p>提交法律文件；</p>
+</li>
+<li><p>购买商品（退款与撤消选项不同）;</p>
+</li>
+<li><p>请求第三方 API（在大多数情况下）。</p>
+</li>
+</ul>
+<p>如何实现撤消</p>
+<ul>
+<li><p>大多数人每天使用的最常见方式是提供快捷方式 （ctrl + z）。但是，它仅限于某些情况，例如文本编辑器、在文件夹之间移动文件等。</p>
+</li>
+<li><p>Toast 可能是实现这些 Web 和移动应用程序的最常用方法。唯一应该记住的是，它应该足够突出以引起注意。将它们隐藏在角落里，并带有不明显的微小信息和颜色可能不起作用，尤其是在宽屏幕上。</p>
+</li>
+<li><p>一个简单的解决方案是简单地有一个执行撤消选项的按钮。最好靠近唤起您要撤消的操作的按钮。</p>
+</li>
+</ul>
+<p>undo 选项与软删除的概念密切相关，软删除在 Laravel 等后端框架中被广泛使用。这个概念意味着，当用户通过 UI 删除某些内容时，它看起来似乎已被删除，但在数据库中，我们保留了数据，但将其标记为已删除。数据不会丢失，这就是为什么可以使用撤消选项的原因，因为我们实际上并没有删除任何内容，而是将其标记为已删除。</p>
+<p>这是确保数据永远不会丢失的好方法。但是，并非每个场景都需要这个。例如，如果您删除了一个帐户并且不希望用户恢复它（可能是由于法律规定），那么您应该完全擦除数据。但在许多情况下，考虑软删除可能是一个好主意。在最坏的情况下，如果由于某种原因无法通过 UI 手动恢复用户数据，您将能够手动恢复用户数据。</p>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>每种场景都是独特的，本文提到的这些方法可能因各种原因有效或失败。用户行为受很多因素影响，关键是要控制好数据和用户，在出现问题时能及时响应。遵循最佳实践很重要，但必须验证其在特定情况下是否适用，就像国际象棋有很多规则也有更多例外。</p>
+<p>关于本文<br>译者：@ikoofe<br>译文：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s//_0U4X0oIrBIU/_zzEofD3zA">https://mp.weixin.qq.com/s/\_0U4X0oIrBIU\_zzEofD3zA</a><br>作者：@Victor<br>原文：<a target="_blank" rel="noopener" href="https://www.smashingmagazine.com/2024/09/how-manage-dangerous-actions-user-interfaces/">https://www.smashingmagazine.com/2024/09/how-manage-dangerous-actions-user-interfaces/</a></p>
+<p><a target="_blank" rel="noopener" href="https://mmbiz.qpic.cn/mmbiz_jpg/meG6Vo0MevgiaJGuXA28v4rRxoibyhrCjcAWn51S1CYXu0S95uXBUZTn6z15bA8ARkzAhdqgwxSBSl3lFCFAPbGg/640?wx_fmt=jpeg" class="gallery-item" style="box-shadow: none;"> <img src="https://mmbiz.qpic.cn/mmbiz_jpg/meG6Vo0MevgiaJGuXA28v4rRxoibyhrCjcAWn51S1CYXu0S95uXBUZTn6z15bA8ARkzAhdqgwxSBSl3lFCFAPbGg/640?wx_fmt=jpeg"></a></p>
+<p>这期前端早读课<br>对你有帮助，帮” 赞 “一下，<br>期待下一期，帮” 在看” 一下 。</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-10-11</span>
+            
+                <span>该篇文章被 Jiang Jiang</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E5%89%8D%E7%AB%AF%E6%97%A9%E8%AF%BB%E8%AF%BE/'>
+                            前端早读课
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E5%89%8D%E7%AB%AF%E6%97%A9%E8%AF%BB%E8%AF%BE/'>
+                            前端早读课
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/10/11/iframe%E7%9A%84%E5%B5%8C%E5%A5%97%E4%BD%BF%E7%94%A8/'>iframe的嵌套使用</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/06/05/cesium%E4%BD%BF%E7%94%A8/">cesium使用</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>宇宙里有什么不是暂时</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>

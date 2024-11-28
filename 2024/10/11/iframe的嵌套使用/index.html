@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="iframe的嵌套使用" />
+    <meta name="hexo-theme-A4" content="v1.8.9" />
+    <link rel="alternate icon" type="image/webp" href="/images/cat.svg">
+    <title>Blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/cat.svg" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Blog</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">首页</a></li>
+            
+        
+            
+                <li><a href="/list/">文章</a></li>
+            
+        
+            
+                <li><a href="/about/">关于</a></li>
+            
+        
+            
+                <li><a href="/tags/">标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    iframe的嵌套使用
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2024-10-12</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：2.5k</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：11分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFiframe%EF%BC%8C%E7%81%AB%E7%88%86%E7%9A%84%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E6%96%B9%E6%A1%88%EF%BC%8C%E6%95%99%E4%BD%A0%E5%BF%AB%E9%80%9F%E7%9C%8B%E6%87%82%E4%BD%BF%E7%94%A8"><span class="post-toc-text">什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%80%E3%80%81%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%A1%88%E5%88%97%EF%BC%8C%E7%BD%91%E7%AB%99%E4%B8%AD%E5%B5%8C%E5%A5%97-Chatgpt"><span class="post-toc-text">一、简单使用案列，网站中嵌套 Chatgpt</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-%E5%AE%83%E5%85%81%E8%AE%B8%E4%BD%A0%E5%9C%A8%E5%BD%93%E5%89%8D%E9%A1%B5%E9%9D%A2%E4%B8%AD%E5%B5%8C%E5%85%A5%E5%8F%A6%E4%B8%80%E4%B8%AAHTML%E6%96%87%E6%A1%A3%E3%80%82%E4%B8%8B%E9%9D%A2%E6%98%AF%E5%A6%82%E4%BD%95%E5%9C%A8Vue%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%AD%A5%E9%AA%A4"><span class="post-toc-text">1.它允许你在当前页面中嵌入另一个HTML文档。下面是如何在Vue中使用的基本步骤</span></a></li></ol></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#%E5%AE%8C%E6%95%B4vue%E4%BB%A3%E7%A0%81%E5%A6%82%E4%B8%8B"><span class="post-toc-text">完整vue代码如下</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BA%8C%E3%80%81%E8%BD%BB%E6%9D%BE%E6%89%BE%E5%88%B0%E7%95%8C%E9%9D%A2%E5%B5%8C%E5%A5%97%E7%BD%91%E5%9D%80"><span class="post-toc-text">二、轻松找到界面嵌套网址</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-%E6%89%93%E5%BC%80F12%E6%89%BE%E5%88%B0iframe%E6%A0%87%E7%AD%BE%E4%B8%AD%E7%9A%84src%E8%B7%AF%E5%BE%84"><span class="post-toc-text">1.打开F12找到iframe标签中的src路径</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-%E5%8F%B3%E9%94%AE%E7%82%B9%E5%87%BB%E8%B7%B3%E8%BD%AC%E6%89%BE%E5%88%B0%E5%B5%8C%E5%A5%97%E5%86%85%E5%AE%B9%E7%95%8C%E9%9D%A2%EF%BC%8C%E5%BE%AE%E5%89%8D%E7%AB%AF%E5%86%85%E8%B7%B3%E8%BD%AC%E5%AD%90%E7%95%8C%E9%9D%A2%E5%90%8C%E7%90%86"><span class="post-toc-text">2.右键点击跳转找到嵌套内容界面，微前端内跳转子界面同理</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%B8%89%E3%80%81%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%88%91%E4%BB%AC%E7%9C%8B%E4%BB%A5%E4%B8%8Biframe%E5%B8%B8%E7%94%A8%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="post-toc-text">三、接下来我们看以下iframe常用的属性</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-src%EF%BC%9A%E8%BF%99%E6%98%AF%E6%9C%80%E5%9F%BA%E6%9C%AC%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E8%A6%81%E5%8A%A0%E8%BD%BD%E7%9A%84%E6%96%87%E6%A1%A3%E7%9A%84URL%E3%80%82"><span class="post-toc-text">1.src：这是最基本的属性，用于指定要加载的文档的URL。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-width-%E5%92%8C-height%EF%BC%9A%E8%BF%99%E4%B8%A4%E4%B8%AA%E5%B1%9E%E6%80%A7%E7%94%A8%E4%BA%8E%E5%AE%9A%E4%B9%89%E7%9A%84%E5%AE%BD%E5%BA%A6%E5%92%8C%E9%AB%98%E5%BA%A6%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%98%AF%E5%83%8F%E7%B4%A0%E5%80%BC%E6%88%96%E7%99%BE%E5%88%86%E6%AF%94%E3%80%82"><span class="post-toc-text">2.width 和 height：这两个属性用于定义的宽度和高度，可以是像素值或百分比。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#3-frameborder%EF%BC%9A%E6%AD%A4%E5%B1%9E%E6%80%A7%E7%94%A8%E4%BA%8E%E8%AE%BE%E7%BD%AE%E5%91%A8%E5%9B%B4%E7%9A%84%E8%BE%B9%E6%A1%86%E3%80%82%E9%BB%98%E8%AE%A4%E6%83%85%E5%86%B5%E4%B8%8B%EF%BC%8C%E8%BE%B9%E6%A1%86%E6%98%AF%E5%AD%98%E5%9C%A8%E7%9A%84%EF%BC%8C%E4%BD%86%E6%98%AF%E5%8F%AF%E4%BB%A5%E5%B0%86%E5%85%B6%E8%AE%BE%E7%BD%AE%E4%B8%BA0%E6%9D%A5%E7%A7%BB%E9%99%A4%E8%BE%B9%E6%A1%86%E3%80%82"><span class="post-toc-text">3.frameborder：此属性用于设置周围的边框。默认情况下，边框是存在的，但是可以将其设置为0来移除边框。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#4-name%EF%BC%9A%E7%94%A8%E4%BA%8E%E7%BB%99%E5%91%BD%E5%90%8D%EF%BC%8C%E5%8F%AF%E4%BB%A5%E7%94%A8%E4%BA%8E%E8%A1%A8%E5%8D%95%E6%8F%90%E4%BA%A4%E7%9A%84%E7%9B%AE%E6%A0%87%E3%80%82"><span class="post-toc-text">4.name：用于给命名，可以用于表单提交的目标。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#5-allowtransparency%EF%BC%9A%E5%B8%83%E5%B0%94%E5%B1%9E%E6%80%A7%EF%BC%8C%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E8%83%8C%E6%99%AF%E6%98%AF%E5%90%A6%E9%80%8F%E6%98%8E%E3%80%82"><span class="post-toc-text">5.allowtransparency：布尔属性，用于指定背景是否透明。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#6-scrolling%EF%BC%9A%E7%94%A8%E4%BA%8E%E6%8E%A7%E5%88%B6%E5%86%85%E9%83%A8%E9%A1%B5%E9%9D%A2%E6%98%AF%E5%90%A6%E6%98%BE%E7%A4%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%E3%80%82%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E4%B8%BAauto%EF%BC%88%E8%87%AA%E5%8A%A8%EF%BC%89%E3%80%81yes%EF%BC%88%E6%80%BB%E6%98%AF%E6%98%BE%E7%A4%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%EF%BC%89%E6%88%96no%EF%BC%88%E4%B8%8D%E6%98%BE%E7%A4%BA%E6%BB%9A%E5%8A%A8%E6%9D%A1%EF%BC%89%E3%80%82"><span class="post-toc-text">6.scrolling：用于控制内部页面是否显示滚动条。可以设置为auto（自动）、yes（总是显示滚动条）或no（不显示滚动条）。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#7-sandbox%EF%BC%9A%E5%A2%9E%E5%BC%BA%E7%9A%84%E5%AE%89%E5%85%A8%E6%80%A7%E9%80%89%E9%A1%B9%EF%BC%8C%E5%8F%AF%E4%BB%A5%E9%99%90%E5%88%B6%E7%9A%84%E5%86%85%E5%AE%B9%EF%BC%8C%E5%A6%82%E4%B8%8D%E5%85%81%E8%AE%B8%E5%BD%A2%E6%88%90%E5%BC%B9%E7%AA%97%E3%80%81%E4%B8%8D%E5%85%81%E8%AE%B8%E6%8F%90%E4%BA%A4%E8%A1%A8%E5%8D%95%E7%AD%89%E3%80%82"><span class="post-toc-text">7.sandbox：增强的安全性选项，可以限制的内容，如不允许形成弹窗、不允许提交表单等。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#8%E3%80%81loading%EF%BC%9A%E6%8C%87%E7%A4%BA%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BD%95%E6%97%B6%E5%BC%80%E5%A7%8B%E5%8A%A0%E8%BD%BD%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82%E5%8F%AF%E4%BB%A5%E6%98%AFeager%EF%BC%88%E7%AB%8B%E5%8D%B3%E5%8A%A0%E8%BD%BD%EF%BC%89%E6%88%96lazy%EF%BC%88%E5%BB%B6%E8%BF%9F%E5%8A%A0%E8%BD%BD%EF%BC%89"><span class="post-toc-text">8、loading：指示浏览器何时开始加载的内容。可以是eager（立即加载）或lazy（延迟加载）</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#9-referrerpolicy%EF%BC%9A%E5%AE%9A%E4%B9%89%E4%BA%86%E5%BD%93%E8%AF%B7%E6%B1%82%E7%9A%84src%E6%97%B6%EF%BC%8C%E5%BA%94%E8%AF%A5%E5%8F%91%E9%80%81%E4%BB%80%E4%B9%88%E6%A0%B7%E7%9A%84referrer%E5%A4%B4%E3%80%82"><span class="post-toc-text">9.referrerpolicy：定义了当请求的src时，应该发送什么样的referrer头。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#10-allow%EF%BC%9A%E7%94%A8%E4%BA%8E%E6%8C%87%E5%AE%9A%E5%86%85%E5%AE%B9%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84%E7%89%B9%E5%AE%9AAPI%EF%BC%8C%E4%BE%8B%E5%A6%82allow-%E2%80%9Dcamera-microphone%E2%80%9D%E3%80%82"><span class="post-toc-text">10.allow：用于指定内容可以使用的特定API，例如allow&#x3D;”camera; microphone”。</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%9B%9B%E3%80%81%E4%BD%BF%E7%94%A8%E5%AE%9E%E7%8E%B0%E5%BE%AE%E5%89%8D%E7%AB%AF%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="post-toc-text">四、使用实现微前端解决方案</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#1-%E8%BF%98%E4%B8%8D%E6%B8%85%E9%99%A4%E5%BE%AE%E5%89%8D%E7%AB%AF%E7%9A%84LOOK%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%BB%E5%BA%94%E7%94%A8%EF%BC%9A%E8%B4%9F%E8%B4%A3%E7%AE%A1%E7%90%86%E5%92%8C%E6%B8%B2%E6%9F%93%E5%90%84%E4%B8%AA%E5%AD%90%E5%BA%94%E7%94%A8%E3%80%82"><span class="post-toc-text">1. 还不清除微前端的LOOK基本概念主应用：负责管理和渲染各个子应用。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E5%AD%90%E5%BA%94%E7%94%A8%EF%BC%9A%E7%8B%AC%E7%AB%8B%E7%9A%84%E5%B0%8F%E5%BA%94%E7%94%A8%EF%BC%8C%E5%8F%AF%E4%BB%A5%E6%98%AF%E4%B8%8D%E5%90%8C%E7%9A%84%E6%8A%80%E6%9C%AF%E6%A0%88%E6%88%96%E6%A1%86%E6%9E%B6%E3%80%82"><span class="post-toc-text">子应用：独立的小应用，可以是不同的技术栈或框架。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%EF%BC%9A%E4%B8%BB%E5%BA%94%E7%94%A8%E5%92%8C%E5%AD%90%E5%BA%94%E7%94%A8%E4%B9%8B%E9%97%B4%E9%9C%80%E8%A6%81%E4%B8%80%E7%A7%8D%E9%80%9A%E4%BF%A1%E6%9C%BA%E5%88%B6%E6%9D%A5%E4%BC%A0%E9%80%92%E6%B6%88%E6%81%AF%E3%80%82"><span class="post-toc-text">通信机制：主应用和子应用之间需要一种通信机制来传递消息。</span></a></li><li class="post-toc-item post-toc-level-6"><a class="post-toc-link" href="#2-%E6%8E%A5%E4%B8%8B%E6%9D%A5%E6%88%91%E4%BB%ACLOOK%E5%AE%9E%E7%8E%B0%E6%AD%A5%E9%AA%A4"><span class="post-toc-text">2. 接下来我们LOOK实现步骤</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h1 id="什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用"><a href="#什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用" class="headerlink" title="什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用"></a>什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</h1><p>非原创 作者:赵要上天 公号:量子前端 发布时间:2024-10-06 16:37 发表于江苏</p>
+<p>原文地址：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/Au5g3YOrpPDk0oXnGJAfWg">什么是iframe，火爆的微前端解决方案方案，教你快速看懂使用</a></p>
+<p>iframe（Inline Frame） 是一种 HTML 标签，它允许在一个网页内部嵌套加载另一个网页，从而实现在主页面中展示外部网页内容的功能。iframe 创建了一个独立的浏览上下文，拥有自己的文档对象模型（DOM）和执行环境，这意味着它不会与主页面共享JavaScript变量或CSS样式，提供了较好的隔离性。一、简单使用案列，网站中嵌套 Chatgpt</p>
+<h4 id="一、简单使用案列，网站中嵌套-Chatgpt"><a href="#一、简单使用案列，网站中嵌套-Chatgpt" class="headerlink" title="一、简单使用案列，网站中嵌套 Chatgpt"></a>一、简单使用案列，网站中嵌套 Chatgpt</h4><p><a href="/images/cat.svg" class="gallery-item" style="box-shadow: none;"> <img src="/images/cat.svg"></a></p>
+<h6 id="1-它允许你在当前页面中嵌入另一个HTML文档。下面是如何在Vue中使用的基本步骤"><a href="#1-它允许你在当前页面中嵌入另一个HTML文档。下面是如何在Vue中使用的基本步骤" class="headerlink" title="1.它允许你在当前页面中嵌入另一个HTML文档。下面是如何在Vue中使用的基本步骤"></a>1.它允许你在当前页面中嵌入另一个HTML文档。下面是如何在Vue中使用的基本步骤</h6><p>基本用法<br>直接在模板中使用 标签：在Vue组件的模板部分，你可以直接插入标签，并设置src属性指向你想要嵌入的页面URL。html```</p>
+<p>2.设置 src 属性：src属性应该包含你希望加载的外部网页的URL。你可以直接硬编码这个URL，或者像上面的例子那样，使用数据属性动态绑定。3.CSS样式：通常，你需要为设置宽度和高度，以确保它能够正确填充其父容器。你可以使用CSS来设置这些样式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   .app-container &#123;</span><br><span class="line">     width: 100%;</span><br><span class="line">     height: 100%; /* 或者具体的像素值 */</span><br><span class="line">   &#125;    iframe &#123;</span><br><span class="line">     width: 100%;</span><br><span class="line">     height: 100%;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.CSS样式：</p>
+<p>通常，你需要为设置宽度和高度，以确保它能够正确填充其父容器。你可以使用CSS来设置这些样式。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">   .app-container &#123;</span><br><span class="line">     width: 100%;</span><br><span class="line">     height: 100%; /* 或者具体的像素值 */</span><br><span class="line">   &#125;    iframe &#123;</span><br><span class="line">     width: 100%;</span><br><span class="line">     height: 100%;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="完整vue代码如下"><a href="#完整vue代码如下" class="headerlink" title="完整vue代码如下"></a>完整vue代码如下</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;app-container&quot;&gt;</span><br><span class="line">    &lt;iframe</span><br><span class="line">        src=&quot;https://app.nextchat.dev/&quot;</span><br><span class="line">        frameborder=&quot;0&quot;</span><br><span class="line">    &gt;&lt;/iframe&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line">&lt;style lang=&quot;scss&quot; scoped&gt;</span><br><span class="line">/** 关闭tag标签  */</span><br><span class="line">.app-container &#123;</span><br><span class="line">  /* 50px = navbar = 50px */</span><br><span class="line">  height: calc(100vh - 50px);</span><br><span class="line">&#125; /** 开启tag标签  */</span><br><span class="line">.hasTagsView &#123;</span><br><span class="line">  .app-container &#123;</span><br><span class="line">    /* 84px = navbar + tags-view = 50px + 34px */</span><br><span class="line">    height: calc(100vh - 84px);</span><br><span class="line">  &#125;</span><br><span class="line">&#125; iframe &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注意事项 1.同源策略：由于浏览器的同源策略限制，只有当嵌入的页面与当前页面具有相同的协议、域名和端口时，才能访问到内的DOM。2.CORS：如果需要与内部的页面进行交互（例如，发送请求或修改内容），则需要确保3.目标页面支持跨源资源共享(CORS)。4.安全性：确保你嵌入的是可信的站点，因为恶意内容可能会危害到你的用户或网站。5.性能：嵌入大型或复杂的页面可能会影响你的网站性能，因此要谨慎选择嵌入的内容。</p>
+<h4 id="二、轻松找到界面嵌套网址"><a href="#二、轻松找到界面嵌套网址" class="headerlink" title="二、轻松找到界面嵌套网址"></a>二、轻松找到界面嵌套网址</h4><h6 id="1-打开F12找到iframe标签中的src路径"><a href="#1-打开F12找到iframe标签中的src路径" class="headerlink" title="1.打开F12找到iframe标签中的src路径"></a>1.打开F12找到iframe标签中的src路径</h6><p><a href="/img/1.other" class="gallery-item" style="box-shadow: none;"> <img src="/img/1.other"></a></p>
+<h6 id="2-右键点击跳转找到嵌套内容界面，微前端内跳转子界面同理"><a href="#2-右键点击跳转找到嵌套内容界面，微前端内跳转子界面同理" class="headerlink" title="2.右键点击跳转找到嵌套内容界面，微前端内跳转子界面同理"></a>2.右键点击跳转找到嵌套内容界面，微前端内跳转子界面同理</h6><p><a href="/img/2.other" class="gallery-item" style="box-shadow: none;"> <img src="/img/2.other"></a></p>
+<h4 id="三、接下来我们看以下iframe常用的属性"><a href="#三、接下来我们看以下iframe常用的属性" class="headerlink" title="三、接下来我们看以下iframe常用的属性"></a>三、接下来我们看以下iframe常用的属性</h4><h6 id="1-src：这是最基本的属性，用于指定要加载的文档的URL。"><a href="#1-src：这是最基本的属性，用于指定要加载的文档的URL。" class="headerlink" title="1.src：这是最基本的属性，用于指定要加载的文档的URL。"></a>1.src：这是最基本的属性，用于指定要加载的文档的URL。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ini</span><br><span class="line"> 代码解读</span><br><span class="line">复制代码</span><br><span class="line"> &lt;iframe src=&quot;https://app.nextchat.dev/&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="2-width-和-height：这两个属性用于定义的宽度和高度，可以是像素值或百分比。"><a href="#2-width-和-height：这两个属性用于定义的宽度和高度，可以是像素值或百分比。" class="headerlink" title="2.width 和 height：这两个属性用于定义的宽度和高度，可以是像素值或百分比。"></a>2.width 和 height：这两个属性用于定义的宽度和高度，可以是像素值或百分比。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &lt;iframe src=&quot;https://app.nextchat.dev/&quot;width=&quot;800&quot; height=&quot;600&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="3-frameborder：此属性用于设置周围的边框。默认情况下，边框是存在的，但是可以将其设置为0来移除边框。"><a href="#3-frameborder：此属性用于设置周围的边框。默认情况下，边框是存在的，但是可以将其设置为0来移除边框。" class="headerlink" title="3.frameborder：此属性用于设置周围的边框。默认情况下，边框是存在的，但是可以将其设置为0来移除边框。"></a>3.frameborder：此属性用于设置周围的边框。默认情况下，边框是存在的，但是可以将其设置为0来移除边框。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">  &lt;iframe src=&quot;https://app.nextchat.dev/&quot;  frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="4-name：用于给命名，可以用于表单提交的目标。"><a href="#4-name：用于给命名，可以用于表单提交的目标。" class="headerlink" title="4.name：用于给命名，可以用于表单提交的目标。"></a>4.name：用于给命名，可以用于表单提交的目标。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   &lt;iframe src=&quot;https://app.nextchat.dev/&quot; name=&quot;myFrame&quot;&gt;&lt;/iframe&gt;  </span><br></pre></td></tr></table></figure>
+
+<h6 id="5-allowtransparency：布尔属性，用于指定背景是否透明。"><a href="#5-allowtransparency：布尔属性，用于指定背景是否透明。" class="headerlink" title="5.allowtransparency：布尔属性，用于指定背景是否透明。"></a>5.allowtransparency：布尔属性，用于指定背景是否透明。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   &lt;iframe src=&quot;https://app.nextchat.dev/&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;  </span><br></pre></td></tr></table></figure>
+
+<h6 id="6-scrolling：用于控制内部页面是否显示滚动条。可以设置为auto（自动）、yes（总是显示滚动条）或no（不显示滚动条）。"><a href="#6-scrolling：用于控制内部页面是否显示滚动条。可以设置为auto（自动）、yes（总是显示滚动条）或no（不显示滚动条）。" class="headerlink" title="6.scrolling：用于控制内部页面是否显示滚动条。可以设置为auto（自动）、yes（总是显示滚动条）或no（不显示滚动条）。"></a>6.scrolling：用于控制内部页面是否显示滚动条。可以设置为auto（自动）、yes（总是显示滚动条）或no（不显示滚动条）。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   &lt;iframe  src=&quot;https://app.nextchat.dev/&quot; allowtransparency=&quot;true&quot;&gt;&lt;/iframe&gt;         </span><br></pre></td></tr></table></figure>
+
+<h6 id="7-sandbox：增强的安全性选项，可以限制的内容，如不允许形成弹窗、不允许提交表单等。"><a href="#7-sandbox：增强的安全性选项，可以限制的内容，如不允许形成弹窗、不允许提交表单等。" class="headerlink" title="7.sandbox：增强的安全性选项，可以限制的内容，如不允许形成弹窗、不允许提交表单等。"></a>7.sandbox：增强的安全性选项，可以限制的内容，如不允许形成弹窗、不允许提交表单等。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &lt;iframe src=&quot;https://app.nextchat.dev/&quot; sandbox=&quot;allow-scripts allow-same-origin&quot;&gt;&lt;/iframe&gt;   </span><br></pre></td></tr></table></figure>
+
+<h6 id="8、loading：指示浏览器何时开始加载的内容。可以是eager（立即加载）或lazy（延迟加载）"><a href="#8、loading：指示浏览器何时开始加载的内容。可以是eager（立即加载）或lazy（延迟加载）" class="headerlink" title="8、loading：指示浏览器何时开始加载的内容。可以是eager（立即加载）或lazy（延迟加载）"></a>8、loading：指示浏览器何时开始加载的内容。可以是eager（立即加载）或lazy（延迟加载）</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"> &lt;iframe src=&quot;https://app.nextchat.dev/&quot; loading=&quot;lazy&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<h6 id="9-referrerpolicy：定义了当请求的src时，应该发送什么样的referrer头。"><a href="#9-referrerpolicy：定义了当请求的src时，应该发送什么样的referrer头。" class="headerlink" title="9.referrerpolicy：定义了当请求的src时，应该发送什么样的referrer头。"></a>9.referrerpolicy：定义了当请求的src时，应该发送什么样的referrer头。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">   &lt;iframe src=&quot;https://app.nextchat.dev/&quot; referrerpolicy=&quot;no-referrer&quot;&gt;&lt;/iframe&gt;    </span><br></pre></td></tr></table></figure>
+
+<h6 id="10-allow：用于指定内容可以使用的特定API，例如allow-”camera-microphone”。"><a href="#10-allow：用于指定内容可以使用的特定API，例如allow-”camera-microphone”。" class="headerlink" title="10.allow：用于指定内容可以使用的特定API，例如allow&#x3D;”camera; microphone”。"></a>10.allow：用于指定内容可以使用的特定API，例如allow&#x3D;”camera; microphone”。</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;iframe  src=&quot;https://app.nextchat.dev/&quot; allow=&quot;camera; microphone&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="四、使用实现微前端解决方案"><a href="#四、使用实现微前端解决方案" class="headerlink" title="四、使用实现微前端解决方案"></a>四、使用实现微前端解决方案</h4><p>微前端架构允许将一个大的应用程序拆分成多个小的子应用，每个子应用可以独立开发、部署和维护。使用作为微前端解决方案是一种简单有效的方法，尤其是在需要隔离子应用的情况下。下面详细介绍如何使用实现微前端解决方案。</p>
+<h6 id="1-还不清除微前端的LOOK基本概念主应用：负责管理和渲染各个子应用。"><a href="#1-还不清除微前端的LOOK基本概念主应用：负责管理和渲染各个子应用。" class="headerlink" title="1. 还不清除微前端的LOOK基本概念主应用：负责管理和渲染各个子应用。"></a>1. 还不清除微前端的LOOK基本概念主应用：负责管理和渲染各个子应用。</h6><h6 id="子应用：独立的小应用，可以是不同的技术栈或框架。"><a href="#子应用：独立的小应用，可以是不同的技术栈或框架。" class="headerlink" title="子应用：独立的小应用，可以是不同的技术栈或框架。"></a>子应用：独立的小应用，可以是不同的技术栈或框架。</h6><h6 id="通信机制：主应用和子应用之间需要一种通信机制来传递消息。"><a href="#通信机制：主应用和子应用之间需要一种通信机制来传递消息。" class="headerlink" title="通信机制：主应用和子应用之间需要一种通信机制来传递消息。"></a>通信机制：主应用和子应用之间需要一种通信机制来传递消息。</h6><h6 id="2-接下来我们LOOK实现步骤"><a href="#2-接下来我们LOOK实现步骤" class="headerlink" title="2. 接下来我们LOOK实现步骤"></a>2. 接下来我们LOOK实现步骤</h6><p>步骤 1: 创建主应用</p>
+<p>主应用负责加载和渲染各个子应用。首先创建一个主应用，开发中一般将系统管理平台设置为主。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div class=&quot;app-container&quot;&gt;</span><br><span class="line">    &lt;h1&gt;主应用&lt;/h1&gt;</span><br><span class="line">    &lt;div v-for=&quot;(subApp, index) in subApps&quot; :key=&quot;index&quot; class=&quot;sub-app-container&quot;&gt;</span><br><span class="line">      &lt;iframe</span><br><span class="line">        :src=&quot;subApp.src&quot;</span><br><span class="line">        frameborder=&quot;0&quot;</span><br><span class="line">        loading=&quot;lazy&quot;</span><br><span class="line">      &gt;&lt;/iframe&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt; &lt;script setup lang=&quot;ts&quot;&gt;</span><br><span class="line">import &#123; ref &#125; from &#x27;vue&#x27;; // 子应用列表</span><br><span class="line">const subApps = ref([</span><br><span class="line">  &#123; src: &#x27;https://subapp1.example.com&#x27; &#125;,</span><br><span class="line">  &#123; src: &#x27;https://subapp2.example.com&#x27; &#125;</span><br><span class="line">]);&lt;/script&gt; &lt;style scoped&gt;</span><br><span class="line">.app-container &#123;</span><br><span class="line">  display: flex;</span><br><span class="line">  flex-direction: column;</span><br><span class="line">  align-items: center;</span><br><span class="line">&#125; .sub-app-container &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 500px;</span><br><span class="line">  margin-bottom: 20px;</span><br><span class="line">&#125; iframe &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>步骤 2: 创建两个子应用</p>
+<p>子应用可以是任何技术栈的应用，例如React、Vue或Angular。每个子应用需要能够在中正常运行。</p>
+<p>子应用代码示例<br>假设你有两个子应用：subapp1和subapp2。<br>子应用1 (subapp1)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;子应用1&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() &#123;</span><br><span class="line">      const rootDiv = document.getElementById(&#x27;root&#x27;);</span><br><span class="line">      const app = document.createElement(&#x27;div&#x27;);</span><br><span class="line">      app.innerHTML = &#x27;&lt;h1&gt;子应用1&lt;/h1&gt;&#x27;;</span><br><span class="line">      rootDiv.appendChild(app);       // 添加监听器以接收主应用的消息</span><br><span class="line">      window.addEventListener(&#x27;message&#x27;, function(event) &#123;</span><br><span class="line">        if (event.origin !== &#x27;https://mainapp.example.com&#x27;) return;</span><br><span class="line">        console.log(&#x27;接收到的消息:&#x27;, event.data);</span><br><span class="line">      &#125;);       // 发送消息给主应用</span><br><span class="line">      window.parent.postMessage(&#123; type: &#x27;hello&#x27;, data: &#x27;子应用1&#x27; &#125;, &#x27;https://mainapp.example.com&#x27;);</span><br><span class="line">    &#125;);&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>子应用2 (subapp2)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">  &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;</span><br><span class="line">  &lt;title&gt;子应用2&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;div id=&quot;root&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    document.addEventListener(&#x27;DOMContentLoaded&#x27;, function() &#123;</span><br><span class="line">      const rootDiv = document.getElementById(&#x27;root&#x27;);</span><br><span class="line">      const app = document.createElement(&#x27;div&#x27;);</span><br><span class="line">      app.innerHTML = &#x27;&lt;h1&gt;子应用2&lt;/h1&gt;&#x27;;</span><br><span class="line">      rootDiv.appendChild(app);       // 添加监听器以接收主应用的消息</span><br><span class="line">      window.addEventListener(&#x27;message&#x27;, function(event) &#123;</span><br><span class="line">        if (event.origin !== &#x27;https://mainapp.example.com&#x27;) return;</span><br><span class="line">        console.log(&#x27;接收到的消息:&#x27;, event.data);</span><br><span class="line">      &#125;);       // 发送消息给主应用</span><br><span class="line">      window.parent.postMessage(&#123; type: &#x27;hello&#x27;, data: &#x27;子应用2&#x27; &#125;, &#x27;https://mainapp.example.com&#x27;);</span><br><span class="line">    &#125;);&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<p>步骤 3: 实现通信机制</p>
+<p>主应用和子应用之间需要一种通信机制来传递消息。通常使用window.postMessage来实现跨域通信。</p>
+<p>主应用通信代码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import &#123; onMounted &#125; from &#x27;vue&#x27;; onMounted(() =&gt; &#123;</span><br><span class="line">  // 监听子应用发来的消息</span><br><span class="line">  window.addEventListener(&#x27;message&#x27;, function(event) &#123;</span><br><span class="line">    if (event.origin !== &#x27;https://subapp1.example.com&#x27; &amp;&amp; event.origin !== &#x27;https://subapp2.example.com&#x27;) return;</span><br><span class="line">    console.log(&#x27;接收到的消息:&#x27;, event.data);</span><br><span class="line">  &#125;);   // 向子应用发送消息</span><br><span class="line">  setTimeout(() =&gt; &#123;</span><br><span class="line">    window.frames[0].contentWindow.postMessage(&#123; type: &#x27;ping&#x27;, data: &#x27;主应用&#x27; &#125;, &#x27;https://subapp1.example.com&#x27;);</span><br><span class="line">    window.frames[1].contentWindow.postMessage(&#123; type: &#x27;ping&#x27;, data: &#x27;主应用&#x27; &#125;, &#x27;https://subapp2.example.com&#x27;);</span><br><span class="line">  &#125;, 3000);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>使用实现微前端解决方案是一种简单有效的方法，特别适用于需要隔离子应用的情况。通过，你可以轻松地将不同的子应用嵌入到主应用中，并通过window.postMessage实现跨域通信。这种方法不仅提高了开发效率，还增强了应用的可维护性和扩展性。</p>
+<p>往期推荐</p>
+<p>[</p>
+<p>深入探讨 React 中的 Context API：状态管理的灵活解决方案</p>
+<p>](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&mid=2247491597&idx=1&sn=65956f9e8af6d50db257e7132647a778&chksm=cfa23520f8d5bc3699c584ae5ae6315944017206d037f75682ae5d630e3157fae6c07aee5f2f&scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&amp;mid=2247491597&amp;idx=1&amp;sn=65956f9e8af6d50db257e7132647a778&amp;chksm=cfa23520f8d5bc3699c584ae5ae6315944017206d037f75682ae5d630e3157fae6c07aee5f2f&amp;scene=21#wechat_redirect</a>)</p>
+<p>[</p>
+<p>Web性能优化之回流重绘 - CSS3硬件加速篇</p>
+<p>](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&mid=2247491587&idx=1&sn=3a27027cd4f6963f5f647ec60491b17d&chksm=cfa2352ef8d5bc383c220cba0a24ee7664c27e2343cf5032b327125b4712174e46788ea3feab&scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&amp;mid=2247491587&amp;idx=1&amp;sn=3a27027cd4f6963f5f647ec60491b17d&amp;chksm=cfa2352ef8d5bc383c220cba0a24ee7664c27e2343cf5032b327125b4712174e46788ea3feab&amp;scene=21#wechat_redirect</a>)</p>
+<p>[</p>
+<p>极速 JavaScript 打包器：esbuild</p>
+<p>](<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&mid=2247491573&idx=1&sn=3a8a698e8c9a8e04a3a04544d3435e82&chksm=cfa1cad8f8d643ced9c32562d9e8608f0a6fabd4134da2c44bc790af7228321bc1a380d9dca5&scene=21#wechat_redirect">https://mp.weixin.qq.com/s?__biz=Mzg4NTk4MjI3NA==&amp;mid=2247491573&amp;idx=1&amp;sn=3a8a698e8c9a8e04a3a04544d3435e82&amp;chksm=cfa1cad8f8d643ced9c32562d9e8608f0a6fabd4134da2c44bc790af7228321bc1a380d9dca5&amp;scene=21#wechat_redirect</a>)</p>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2024-10-11</span>
+            
+                <span>该篇文章被 Jiang Jiang</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/%E9%87%8F%E5%AD%90%E5%89%8D%E7%AB%AF/'>
+                            量子前端
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E9%87%8F%E5%AD%90%E5%89%8D%E7%AB%AF/'>
+                            量子前端
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+                    <span>上一篇：<a href='/2024/10/11/%E5%89%8D%E7%AB%AF%E7%9A%84%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/'>前端的性能优化</a></span>
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/10/11/%E5%A6%82%E4%BD%95%E5%9C%A8%E7%94%A8%E6%88%B7%E7%95%8C%E9%9D%A2%E4%B8%AD%E7%AE%A1%E7%90%86%E5%8D%B1%E9%99%A9%E6%93%8D%E4%BD%9C/">如何在用户界面中管理危险操作</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>宇宙里有什么不是暂时</span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
