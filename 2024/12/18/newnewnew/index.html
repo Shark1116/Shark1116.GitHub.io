@@ -91,24 +91,21 @@
       <a href="https://hugging-face.cn/datasets/Xenova/transformers.js-docs/resolve/main/upload-icon.png" class="gallery-item" style="box-shadow: none;"> <img class="upload-icon" src="https://hugging-face.cn/datasets/Xenova/transformers.js-docs/resolve/main/upload-icon.png" /></a>
       Upload image😶‍🌫️
     </label>
-
-<pre><code>&lt;div class=&quot;options-container&quot;&gt;
-    &lt;label for=&quot;threshold&quot;&gt;😗 Detection Threshold:&lt;/label&gt;
-    &lt;select id=&quot;threshold&quot;&gt;
-      &lt;option value=&quot;0.1&quot;&gt;Very Low (10%)&lt;/option&gt;
-      &lt;option value=&quot;0.3&quot;&gt;Low (30%)&lt;/option&gt;
-      &lt;option value=&quot;0.5&quot; selected&gt;Medium (50%)&lt;/option&gt;
-      &lt;option value=&quot;0.7&quot;&gt;High (70%)&lt;/option&gt;
-      &lt;option value=&quot;0.9&quot;&gt;Very High (90%)&lt;/option&gt;
-      &lt;option value=&quot;custom&quot;&gt;Custom&lt;/option&gt;
-    &lt;/select&gt;
-    &lt;input id=&quot;custom-threshold&quot; type=&quot;number&quot; min=&quot;0.01&quot; max=&quot;1&quot; step=&quot;0.01&quot; placeholder=&quot;Enter value (0.01 - 1)&quot; style=&quot;display: none; width: 120px;&quot;&gt;
-    &lt;span class=&quot;info-tooltip&quot;&gt;Adjusts the confidence level required to detect objects. Higher values reduce false positives.&lt;/span&gt;
-  &lt;/div&gt;      
-
-&lt;div id=&quot;image-container&quot;&gt;&lt;/div&gt;
-&lt;p id=&quot;status&quot;&gt;&lt;/p&gt;
-</code></pre>
+    <div class="options-container">
+        <label for="threshold">😗 Detection Threshold:</label>
+        <select id="threshold">
+          <option value="0.1">Very Low (10%)</option>
+          <option value="0.3">Low (30%)</option>
+          <option value="0.5" selected>Medium (50%)</option>
+          <option value="0.7">High (70%)</option>
+          <option value="0.9">Very High (90%)</option>
+          <option value="custom">Custom</option>
+        </select>
+        <input id="custom-threshold" type="number" min="0.01" max="1" step="0.01" placeholder="Enter value (0.01 - 1)" style="display: none; width: 120px;">
+        <span class="info-tooltip">Adjusts the confidence level required to detect objects. Higher values reduce false positives.</span>
+      </div>      
+    <div id="image-container"></div>
+    <p id="status"></p>
   </main>
 
   <script type="module">
