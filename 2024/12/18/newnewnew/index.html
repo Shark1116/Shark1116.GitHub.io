@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image Object Detection with Transformers.js</title>
+  <title>JiangJiang Detection</title>
   <style>
     html,
     body {
@@ -70,6 +70,17 @@
       overflow: hidden;
       text-overflow: ellipsis;
     }
+    .options-container {
+      margin-top: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .info-tooltip {
+      font-size: 14px;
+      color: gray;
+      margin-left: 10px;
+    }
   </style>
 </head>
 
@@ -78,14 +89,31 @@
     <label class="custom-file-upload">
       <input id="file-upload" type="file" accept="image/*" />
       <a href="https://hugging-face.cn/datasets/Xenova/transformers.js-docs/resolve/main/upload-icon.png" class="gallery-item" style="box-shadow: none;"> <img class="upload-icon" src="https://hugging-face.cn/datasets/Xenova/transformers.js-docs/resolve/main/upload-icon.png" /></a>
-      Upload image
+      Upload image😶‍🌫️
     </label>
-    <div id="image-container"></div>
-    <p id="status"></p>
+
+<pre><code>&lt;div class=&quot;options-container&quot;&gt;
+    &lt;label for=&quot;threshold&quot;&gt;😗 Detection Threshold:&lt;/label&gt;
+    &lt;select id=&quot;threshold&quot;&gt;
+      &lt;option value=&quot;0.1&quot;&gt;Very Low (10%)&lt;/option&gt;
+      &lt;option value=&quot;0.3&quot;&gt;Low (30%)&lt;/option&gt;
+      &lt;option value=&quot;0.5&quot; selected&gt;Medium (50%)&lt;/option&gt;
+      &lt;option value=&quot;0.7&quot;&gt;High (70%)&lt;/option&gt;
+      &lt;option value=&quot;0.9&quot;&gt;Very High (90%)&lt;/option&gt;
+      &lt;option value=&quot;custom&quot;&gt;Custom&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;input id=&quot;custom-threshold&quot; type=&quot;number&quot; min=&quot;0.01&quot; max=&quot;1&quot; step=&quot;0.01&quot; placeholder=&quot;Enter value (0.01 - 1)&quot; style=&quot;display: none; width: 120px;&quot;&gt;
+    &lt;span class=&quot;info-tooltip&quot;&gt;Adjusts the confidence level required to detect objects. Higher values reduce false positives.&lt;/span&gt;
+  &lt;/div&gt;      
+
+&lt;div id=&quot;image-container&quot;&gt;&lt;/div&gt;
+&lt;p id=&quot;status&quot;&gt;&lt;/p&gt;
+</code></pre>
   </main>
 
   <script type="module">
     import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers";
+
     // 禁止使用本地模型
     env.allowLocalModels = false;
 
@@ -93,26 +121,36 @@
     const fileUpload = document.getElementById("file-upload");
     const imageContainer = document.getElementById("image-container");
     const status = document.getElementById("status");
+    const thresholdSelector = document.getElementById("threshold");
+
+    // 默认检测阈值
+    let detectionThreshold = parseFloat(thresholdSelector.value);
+
+    // 监听阈值选择的变化
+    thresholdSelector.addEventListener("change", () => {
+      detectionThreshold = parseFloat(thresholdSelector.value);
+      console.log(`Detection threshold set to: ${detectionThreshold}`);
+    });
 
     // 创建目标检测管道
     let detector;
 
     async function loadModel() {
-        status.textContent = "Loading model...";
-        try {
-            detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
+      status.textContent = "🤔Loading model...";
+      try {
+        detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
 
-            // 检查 detector 是否是函数
-            if (typeof detector !== 'function') {
-                console.error("detector is not a function", detector);
-                status.textContent = "Error loading model!";
-                return;
-            }
-            status.textContent = "Ready";
-        } catch (error) {
-            console.error("Model loading failed:", error);
-            status.textContent = "Error loading model!";
+        // 检查 detector 是否是函数
+        if (typeof detector !== "function") {
+          console.error("detector is not a function", detector);
+          status.textContent = "Error loading model!";
+          return;
         }
+        status.textContent = "🫡Ready";
+      } catch (error) {
+        console.error("Model loading failed:", error);
+        status.textContent = "Error loading model!";
+      }
     }
 
     // 加载模型
@@ -120,74 +158,68 @@
 
     // 处理文件上传
     fileUpload.addEventListener("change", function (e) {
-        const file = e.target.files[0];
-        if (!file) {
-            return;
-        }
+      const file = e.target.files[0];
+      if (!file) {
+        return;
+      }
 
-        const reader = new FileReader();
+      const reader = new FileReader();
 
-        reader.onload = function (e2) {
-            imageContainer.innerHTML = "";
-            const image = document.createElement("img");
-            image.src = e2.target.result;
-            imageContainer.appendChild(image);
-            detect(image);  // 进行检测
-        };
-        reader.readAsDataURL(file);
+      reader.onload = function (e2) {
+        imageContainer.innerHTML = "";
+        const image = document.createElement("img");
+        image.src = e2.target.result;
+        imageContainer.appendChild(image);
+        detect(image); // 进行检测
+      };
+      reader.readAsDataURL(file);
     });
 
     // 执行目标检测
     async function detect(img) {
-        if (!detector) {
-            status.textContent = "Model is not ready yet!";
-            return;
-        }
+      if (!detector) {
+        status.textContent = "Model is not ready yet!";
+        return;
+      }
 
-        status.textContent = "Analysing...";
-        try {
-            const output = await detector(img.src, {
-                threshold: 0.5,
-                percentage: true,
-            });
+      status.textContent = "Analysing...";
+      try {
+        const output = await detector(img.src, {
+          threshold: detectionThreshold,
+          percentage: true,
+        });
 
-            console.log("Detection output:", output);
-            output.forEach(renderBox); // 渲染检测结果
-            status.textContent = "Analysis complete!";
-        } catch (error) {
-            console.error("Error during detection:", error);
-            status.textContent = "Error during analysis!";
-        }
+        console.log("Detection output:", output);
+        output.forEach(renderBox); // 渲染检测结果
+        status.textContent = "江江提示您：Analysis complete!";
+      } catch (error) {
+        console.error("Error during detection:", error);
+        status.textContent = "Error during analysis!";
+      }
     }
 
     // 渲染边界框并显示标签和置信度
     function renderBox({ box, label, score }) {
-        const { xmax, xmin, ymax, ymin } = box;
-        const color = "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, 0);
+      const { xmax, xmin, ymax, ymin } = box;
+      const color = "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, 0);
 
-        const boxElement = document.createElement("div");
-        boxElement.className = "bounding-box";
-        Object.assign(boxElement.style, {
-            borderColor: color,
-            left: 100 * xmin + "%",
-            top: 100 * ymin + "%",
-            width: 100 * (xmax - xmin) + "%",
-            height: 100 * (ymax - ymin) + "%",
-        });
+      const boxElement = document.createElement("div");
+      boxElement.className = "bounding-box";
+      Object.assign(boxElement.style, {
+        borderColor: color,
+        left: 100 * xmin + "%",
+        top: 100 * ymin + "%",
+        width: 100 * (xmax - xmin) + "%",
+        height: 100 * (ymax - ymin) + "%",
+      });
 
-        const labelElement = document.createElement("span");
-        labelElement.textContent = `${label} (${(score * 100).toFixed(2)}%)`;
-        labelElement.className = "bounding-box-label";
-        labelElement.style.backgroundColor = color;
+      const labelElement = document.createElement("span");
+      labelElement.textContent = `${label} (${(score * 100).toFixed(2)}%)`;
+      labelElement.className = "bounding-box-label";
+      labelElement.style.backgroundColor = color;
 
-        boxElement.appendChild(labelElement);
-        imageContainer.appendChild(boxElement);
-
-        // 在页面下方显示标签和置信度
-        const labelContainer = document.createElement("div");
-        labelContainer.className = "label-container";
-        labelContainer.textContent = `${label}: ${(score * 100).toFixed(2)}%`;
-        imageContainer.appendChild(labelContainer);
+      boxElement.appendChild(labelElement);
+      imageContainer.appendChild(boxElement);
     }
   </script>
 </body>
