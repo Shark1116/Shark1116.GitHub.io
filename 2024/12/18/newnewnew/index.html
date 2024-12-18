@@ -1,6 +1,5 @@
 <div class=".article-gallery"><!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -110,19 +109,15 @@
 
   <script type="module">
     import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers";
-
     // 禁止使用本地模型
-    env.allowLocalModels = false;
-
+    env.allowLocalModels = true;
     // 获取 DOM 元素
     const fileUpload = document.getElementById("file-upload");
     const imageContainer = document.getElementById("image-container");
     const status = document.getElementById("status");
     const thresholdSelector = document.getElementById("threshold");
-
     // 默认检测阈值
     let detectionThreshold = parseFloat(thresholdSelector.value);
-
     // 监听阈值选择的变化
     thresholdSelector.addEventListener("change", () => {
       detectionThreshold = parseFloat(thresholdSelector.value);
