@@ -13,11 +13,15 @@
         line-height: 1.5;
       }
       main {
-        max-width: 600px;
+        width: 100%;
+        max-width: 880px;
         margin: 0 auto;
-        padding: 0 16px;
-        box-sizing: border-box;
-        position: relative;
+        padding: 36px 4vw 0px;
+        background: #fff;
+        /* border-radius: 24px; */
+        border-radius: 0px;
+        background: #FFFACD;
+        box-shadow: 0px 5px 13px #616161, -5px -5px 13px #ffffff;
       }
       h1 {
         display: inline-block;
@@ -31,64 +35,92 @@
       </h1>
       <h4>
       作者：zxg_神说要有光</br>
-      链接：https://juejin.cn/post/7007048306438176799</br>
+      链接：<a href="https://juejin.cn/post/7007048306438176799">https://juejin.cn/post/7007048306438176799</a></br>
       来源：稀土掘金
       </h4>
-      <p>最早的时候页面是<strong>服务端渲染</strong>的，也就是 PHP、JSP 那些技术，服务端通过模版引擎填充数据，返回生成的 html,交给浏览器渲染。那时候表单会同步提交，服务端返回结果页面的html。</p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan nisi hendrerit augue molestie tempus.
-        <em>Phasellus</em> purus quam, aliquet nec commodo quis, pharetra ut orci. Donec laoreet ligula nisl, placerat
-        molestie
-        mauris luctus id. Fusce dapibus non libero nec lobortis. Nullam iaculis nisl ac eros consequat, sit amet placerat
-        massa vulputate. Maecenas euismod volutpat ultrices. Pellentesque felis ex, ullamcorper in felis finibus, feugiat
-        dignissim augue. Integer malesuada non eros consectetur interdum. Mauris mollis non urna in porta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan nisi hendrerit augue molestie tempus.
-        <strong>Phasellus</strong> purus quam, aliquet nec commodo quis, pharetra ut orci. Donec laoreet ligula nisl,
-        placerat molestie
-        mauris luctus id. Fusce dapibus non libero nec lobortis. Nullam iaculis nisl ac eros consequat, sit amet placerat
-        massa vulputate. <span>Maecenas euismod volutpat ultrices. Pellentesque felis ex, ullamcorper in felis finibus, feugiat
-        dignissim augue. Integer malesuada non eros consectetur interdum. Mauris mollis non urna in porta.</span>
-      </p>
-      <p id="block">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan nisi hendrerit augue molestie tempus.
-        Phasellus purus quam, aliquet nec commodo quis, pharetra ut orci. Donec laoreet ligula nisl, placerat
-        molestie
-        mauris luctus id. Fusce dapibus non libero nec lobortis. Nullam iaculis nisl ac eros consequat, sit amet placerat
-        massa vulputate. Maecenas euismod volutpat ultrices. Pellentesque felis ex, ullamcorper in felis finibus, feugiat
-        dignissim augue. Integer malesuada non eros consectetur interdum. Mauris mollis non urna in porta.
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan nisi hendrerit augue molestie tempus.
-        Phasellus purus quam, aliquet nec commodo quis, pharetra ut orci. Donec laoreet ligula nisl, placerat
-        molestie
-        mauris luctus id. Fusce dapibus non libero nec lobortis. Nullam iaculis nisl ac eros consequat, sit amet placerat
-        massa vulputate. Maecenas euismod volutpat ultrices. Pellentesque felis ex, ullamcorper in felis finibus, feugiat
-        dignissim augue. Integer malesuada non eros consectetur interdum. Mauris mollis non urna in porta.
-      </p>
-      <p>
-        后来浏览器有了 ajax 技术，可以异步的请求，服务端返回 xml 或者 json。ajax 最早是基于 xml 的，这也是它名字的由来。因为 xml 多了很多没必要的标签，内容比较多，所以后来 json 流行开来。
-      </p>
+      <p>最早的时候页面是<strong>服务端渲染</strong>的，也就是 PHP、JSP 那些技术，服务端通过模版
+      引擎填充数据，返回生成的 html,交给浏览器渲染。那时候表单会同步提交，服务
+      端返回结果页面的html。</p>
+      <p>后来浏览器有了<em>ajax技术，可以异步的请求，服务端返回xml或者json</em>。ajax最早是基于xml的，这也是它名字的由来。因为xml多了很多没必要的标签，内容比较多，所以后来json流行开来。</p>
+      <p>网页和服务端的数据交互变成了异步的，可以服务端返回json数据，浏览器里拼接html，之后渲染（浏览器里面生成dom就等同于渲染）。页面基本没啥刷新的必要了，于是后来就逐渐演变出了<strong>单页应用SPA（singlepageapplication）</strong>。</p>
+      <p>早期开发页面的时候就是基于浏览器的domapi操作dom来做渲染和交互，但是domapi比较啰嗦，而且当时浏览器的兼容性问题也比较麻烦，不同浏览器有不同的写法。为了简化dom操作和更方便的兼容各种浏览器，出现了<strong>jquery</strong>并且迅速流行开来，那个时代jquery是如日中天的。</p>
+      <p>我一直习惯把网页分为物理层和逻辑层，dom就算是物理层，jquery是操作dom的一系列工具函数，也是工作在物理层。</p>
+      <p>网页做的事情基本就是拿到数据渲染dom，并且数据改变之后更新dom，这个流程是通用的，后来逐渐出现了<em>mvvm框架，来自动把数据的变更映射到dom，不</em>
+      <em>再需要手动操作dom</em>。也就是vue、react等现代的前端框架。我把这一层叫做逻辑层。</p>
+      <p id="block">前端框架除了提供了数据驱动视图变化的功能以外，还支持了dom的逻辑划分，可以把一部分dom封装成组件，组件和组件之间相互组合，构成整个界面。物理层依然是dom，只是实现了数据到dom的自动映射之后，我们只需要在逻辑层写组件就可以了。</p>
+      <p>现在前端入门也不会再学物理层的操作dom的jquery了，而是直接从vue、react这种逻辑层的前端框架开始。</p>
+      <p>但是也不是说完全不需要jquery，前端框架主要解决的是数据到dom的绑定，可以变化以后自动更新dom。如果不需要更新，那么直接操作dom即可，比如各种活动页，没啥数据更新，用jquery操作dom还是很方便。</p>
+      <p>前端框架是UI=f(state)这种<strong>声明式</strong>的思想，只需要声明组件的视图、组件的状态数据、组件之间的依赖关系，那么状态改变就会自动的更新dom。而jquery那种直接操作dom的工具函数库则是<strong>命令式</strong>的。</p>
+      <p><em>对于视图的描述这件事react和vue用了不同的方案，react是给js扩展了jsx的</em><em>语法，由babel实现，可以在描述视图的时候直接用js来写逻辑，没啥新语法。</em><em>而vue是实现了一套template的DSL，引入了插值、指令、过滤器等模版语法，相对</em><em>于jsx来说更简洁，template的编译器由vue实现。</em></p>
+      <p>vuetemplate是受限制的，只能访问data，prop、method，可以静态的分析和优化，而react的jsx因为直接是js的语法，动态逻辑比较多，没法静态的做分析和优化。</p>
+      <p>但是vuetemplate也不全是好处，因为和js上下文割裂开来，引入typescript做类型推导的时候就比较困难，需要单独把所有prop、method、data的类型声明一遍才行。而react的jsx本来就是和js同一个上下文，结合typescript就很自然。</p>
+      <p>所以vuetemplate和reactjsx各有优缺点。</p>
+      <p>前端框架都是数据驱动视图变化的，而这个数据分散在每个组件中，怎么在数据变化以后更新dom呢？</p>
+      <p>数据变化的检测基本只有三种方式：<strong>watch、脏检查、不检查。</strong></p>
+      <p><span>vue就是基于数据的watch的，组件级别通过Object.defineProperty监听对象属性的变化，重写数组的api监听数组元素的变化，之后进行dom的更新。</span></p>
+      <p><span>angular则是基于脏检查，在每个可能改变数据的逻辑之后都对比下数据是否变了，变了的话就去更新dom。</span></p>
+      <p><span>react则是不检查，不检查难道每次都渲染全部的dom么？也不是，不检查是因为不直接渲染到dom，而是中间加了一层虚拟dom，每次都渲染成这个虚拟dom，然后diff下渲染出的虚拟dom是否变了，变了的话就去更新对应的dom。</span></p>
+      <p>这就是前端框架的数据驱动视图变化的三种思路。</p>
+      <p>vue是<em>组件级别的数据watch</em>，当组件内部监听数据变化的地方特别多的时候，一次更新可能计算量特别大，计算量大了就可能会导致丢帧，也就是渲染的卡顿。所以vue的优化方式就是把大组件拆成小组件，这样每个数据就不会有太多的watcher了。</p>
+      <p>react并不监听数据的变化，而是渲染出整个虚拟dom，然后diff。基于这种方案的优化方式就是对于不需要重新生成vdom的组件，通过shouldComponentUpdate来跳过渲染。</p>
+      <p>但是当应用的组件树特别大的时候，只是shouldComponentUpdate跳过部分组件渲染，依然可能计算量特别大。计算量大了同样可能导致渲染的卡顿，怎么办呢？</p>
+      <p>树的遍历有深度优先和广度优先两种方式，组件树的渲染就是深度优先的，一般是通过递归来做，但是如果能通过链表记录下路径，就可以变成循环。变成了循环，那么就可以按照时间片分段，让vdom的生成不再阻塞页面渲染，这就像操作系统对多个进程的分时调度一样。</p>
+      <p>这个通过把组件树改成链表，把vdom的生成从递归改循环的功能就是reactfiber。</p>
+      <p>fiber节点相对于之前的组件节点来说，没有了parent、children这种属性，多了child、sibling、return属性。</p>
+      <p>通过fiber链表树，优化了渲染的性能。</p>
+      <p>可以看到vue的性能优化和react的性能优化是不一样的： <span>vue是组件级别的数据监听的方案，问题可能出现在一个属性太多watcher的时候，所以优化思路就是大组件拆分成小组件，保证每个属性不要有太多watcher。 react不监听、不检查数据变化，每次都渲染生成vdom，然后进行vdom的对比，那么优化的思路就是shouldComponentUpdate来跳过部分组件的render，而且react内部也做了组件树的链表化（fiber）来把递归改成可打断的渲染，按照时间片来逐渐生成整个vdom。</span></p>
+      <p>组件之间难免要有逻辑的复用，react和vue有不同的方案： <em>vue的组件是option对</em><em>象的方式，那么逻辑复用方式很自然可以想到通过对象属性的mixin，vue2的组件</em><em>内逻辑复用方案就是mixin，但是mixin很难区分混入的属性、方法的来源，比较</em><em>乱，代码维护性差。但也没有更好的方案。</em></p>
+      <p>react刚开始也是支持mixin的，但后来废弃了。 react的组件是class和function两种形式，那么类似高阶函数的高阶组件（highordercomponent）的方式就比较自然，也就是组件套组件，在父组件里面执行一部分逻辑，然后渲染子组件。 除了多加一层组件的HOC方式以外，没有逻辑的部分可以直接把那部分jsx作为props传入另一个组件来复用，也就是renderprops。</p>
+      <p>HOC和renderprops是react的class组件支持的两种逻辑复用方案。</p>
+      <p>最开始的function组件是没有状态的，只是作为class组件渲染的辅助而存在。</p>
+      <p>但是HOC的逻辑复用方式最终导致了组件嵌套太深，而且class内部生命周期比较多，逻辑都放在一起导致了组件比较大。</p>
+      <p>怎么解决class组件嵌套深和组件大的问题呢？而且还不能引入破坏性的更新，不然下场可能会很惨。</p>
+      <p>于是react团队就瞅准了function组件，能不能在function组件里面也支持state，通过扩展一些api的方式来支持，也不是破坏性的更新。</p>
+      <p>function组件要支持state，那state存在哪里呢？</p>
+      <p>class组件节点有state，变成fiber节点之后依然有，function组件本来就没有state，那么fiber节点中同样也没有。</p>
+      <p>那在function组件的fiber节点中加入state不就行了？</p>
+      <p>于是react就在function组件的fiber节点中加入了memorizedState属性用来存储数据，然后在function组件里面通过api来使用这些数据，这些api被叫做hooksapi。</p>
+      <p>因为是使用fiber节点上的数据，就把api命名为了useXxx。</p>
+      <p>每个hooksapi都要有自己存放数据的地方，怎么组织呢？有两种方案，一种是map，一种是数组。 用map的话那么要hooksapi要指定key，按照key来存取fiber节点中的数据。</p>
+      <p>用数组的话顺序不能变，所以hooksapi不能出现在if等逻辑块中，只能在顶层。 为了简化使用，hooks最终使用了数组的方式。当然，实现起来用的是链表。 每个hooksapi取对应的fiber.memoriedState中的数据来用。 hooksapi可以分为3类： 第一类是数据类的：</p>
+      <p>useState：在fiber.memoriedState的对应元素中存放数据 useMemo：在fiber.memoriedState的对应元素中存放数据，值是缓存的函数计算的结果，在state变化后重新计算值 useCallback：在fiber.memoriedState的对应元素中存放数据，值是函数，在state变化后重新执行函数，是useMemo在值为函数的场景下的简化api，比如useCallback(fn,[a,b])相当于useMemo(()=&gt;fn,[a,b]) useReducer：在fiber.memoriedState的对应元素中存放数据，值为reducer返回的结果，可以通过action来触发值的变更 useRef：在fiber.memoriedState的对应元素中存放数据，值为{current:具体值}的形式，因为对象不变，只是current属性变了，所以不会修改。</p>
+      <p>useState是存储值最简单的方式，useMemo是基于state执行函数并且缓存结果，相当于vue的getter，useCallback是一种针对值为函数的情况的简化，useReducer是通过action来触发值的修改。useRef包了一层对象，每次对比都是同一个，所以可以放一些不变的数据。 不管形式怎么样，这些hooks的api的作用都是返回值的。 第二类是逻辑类的：</p>
+      <p>useEffect：异步执行函数，当依赖state变化之后会再次执行，当组件销毁的时候会调用返回的清理函数 useLayoutEffect：在渲染完成后同步执行函数，可以拿到dom</p>
+      <p>这两个hooksapi都是用于执行逻辑的，不需要等渲染完的逻辑都可以放到useEffect里。 第三类是ref转发专用的： 数据可以通过各种方案共享，但是dom元素这种就得通过ref转发了，所谓的ref转发就是在父组件创建ref，然后子组件把元素传过去。传过去之前想做一些修改，就可以用useImperativeHandle来改。</p>
+      <p>通过这3类hooksapi，以及之后会添加的更多hooksapi，函数组件里面也能做state的存储，也能在一些阶段执行一段逻辑，是可以替代class组件的方案了。 而且更重要的是，hooksapi是传递参数的函数调用的形式，可以对hooksapi进一步封装成功能更强大的函数，也就是自定义hooks。通过这种方式就可以做跨组件的逻辑复用了。 再回头看一下最开始要解决的class组件嵌套过深和组件太大的问题，通过hooks都能解决：</p>
+      <p>逻辑扩展不需要嵌套hoc了，多调用一个自定义的hooks就行 组件的逻辑也不用都写在class里了，完全可以抽离成不同的hooks</p>
+      <p>react通过function组件的hooksapi解决了class组件的逻辑复用方案的问题。（fiber是解决性能问题的，而hooks是解决逻辑复用问题的） vue2中是通过mixin的方式来复用逻辑的，也有组件太大的问题，在vue3中也可以通过类似的思路来解决。</p>
+      <p><em>为了体验和原生更接近，现在基本都是不刷新页面的单页应用</em>，都是从服务端取数据然后驱动dom变化的浏览器渲染(csr)方案。但对于一些<em>低端机</em>，仍然需要服务端渲染(ssr)的方案。但不能回到jsp、php时代的那种模版引擎服务端渲染了，而是要基于同一个组件树，把它渲染成字符串。服务端渲染和浏览器渲染都用同样的组件代码，这就是同构的方案。</p>
+      <p>技术从出现到完善到连带的周边生态的完善是一个轮回，从最开始服务端渲染，到了后来的客户端渲染，然后出现了逻辑层的组件方案，最后又要基于组件方案重新实现服务端渲染。其实物理层的东西一直都没变，只是逻辑层不断的一层添加又一层，目的都是为了提高生产效率，降低开发成本，保证质量，这也是技术发展的趋势。</p>                    
     </main>
     <script type="module">
-      import { annotate } from 'https://unpkg.com/rough-notation?module';
-      const n1 = document.querySelector('em');
-      const n2 = document.querySelector('strong');
-      const n3 = document.querySelector('h1');
-      const n4 = document.querySelector('span');
-      const n5 = document.querySelector('#block');
-      const a1 = annotate(n1, { type: 'underline', color: 'blue' });
-      const a2 = annotate(n2, { type: 'circle', color: 'red', padding: 10 });
-      const a3 = annotate(n3, { type: 'box', color: 'orange' });
-      const a4 = annotate(n4, { type: 'highlight', color: 'yellow', iterations: 1, multiline: true });
-      const a5 = annotate(n5, { type: 'bracket', color: 'red', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 })
-      a1.show();
-      a2.show();
-      a3.show();
-      a4.show();
-      a5.show();
-    </script>
-  </body>
+  import { annotate } from 'https://unpkg.com/rough-notation?module';
+  const n1 = document.querySelectorAll('em');
+  const n2 = document.querySelectorAll('strong');
+  const n3 = document.querySelectorAll('h1');
+  const n4 = document.querySelectorAll('span');
+  const n5 = document.querySelectorAll('#block');
+  n1.forEach(element => {
+    const a1 = annotate(element, { type: 'underline', color: 'blue' });
+    a1.show();
+  });
+  n2.forEach(element => {
+    const a2 = annotate(element, { type: 'circle', color: 'red', padding: 10 });
+    a2.show();
+  });
+  n3.forEach(element => {
+    const a3 = annotate(element, { type: 'box', color: 'orange' });
+    a3.show();
+  });
+  n4.forEach(element => {
+    const a4 = annotate(element, { type: 'highlight', color: 'yellow', iterations: 1, multiline: true });
+    a4.show();
+  });
+  n5.forEach(element => {
+    const a5 = annotate(element, { type: 'bracket', color: 'red', padding: [2, 10], brackets: ['left', 'right'], strokeWidth: 3 });
+    a5.show();
+  });
+</script>
+</body>
 </html>
 </div>
