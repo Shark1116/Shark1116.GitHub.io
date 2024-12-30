@@ -12,7 +12,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="vue" />
+    <meta name="description" content="" />
     <meta name="hexo-theme-A4" content="v1.9.6" />
     <link rel="alternate icon" type="image/webp" href="/images/640.jpg">
     <title>Blog</title>
@@ -167,7 +167,11 @@
             
         
             
-                <li><a href="/tags/">🏷️标签</a></li>
+                <li><i>
+                    
+                        <a style="color: #4e7dde;" href="/tags/">🏷️标签</a>
+                    
+                </i></li>
             
         
             
@@ -181,109 +185,40 @@
                     
 
                     
+                            
+
+
+<div class="archive-list">
+  <ul class="archive">
+
+    
+    <span><span class="darkmode-ignore">📌</span><i>Repository</i></span>
+ 
+    
+
+    
+    
+
+    
+
+    
+  
+    
+        <li>
+        <span class="archive-date">2024-12-30</span>
+        <div class="archive-main">
+            <a class="archive-title" href="/2024/12/30/Repository/">Repository</a>
+        </div>
+        </li>
+    
+  
+  </ul>
+</div>
+ 
+                    
                     
                     
                     <!--说明是文章post页面-->
-                    
-                        <div class="post-main">
-    
-
-    
-        
-            
-                <div class="post-main-title" style="text-align: center;">
-                    vue
-                </div>
-            
-        
-      
-    
-
-    
-
-        
-            <div class="post-head-meta-center">
-        
-                
-                    <span>最近更新：2024-11-28</span> 
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                     <span>字数总计：385</span>
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                    <span>阅读估时：1分钟</span>
-                
-                
-                    
-                        &nbsp; | &nbsp;
-                    
-                    <span id="busuanzi_container_page_pv">
-                        阅读量：<span id="busuanzi_value_page_pv"></span>次
-                    </span>
-                
-            </div>
-    
-
-    <div class="post-md">
-        
-            
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Ant-%E7%BB%84%E4%BB%B6%E5%BA%93"><span class="post-toc-text">Ant 组件库</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#select"><span class="post-toc-text">select</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#key%E8%A6%81%E5%94%AF%E4%B8%80%E6%80%A7%EF%BC%81%EF%BC%81%EF%BC%81"><span class="post-toc-text">key要唯一性！！！</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#v-for-%E9%81%8D%E5%8E%86%E9%81%BF%E5%85%8D%E5%90%8C%E6%97%B6%E4%BD%BF%E7%94%A8-v-if"><span class="post-toc-text">v-for 遍历避免同时使用 v-if</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#a-select%E9%BB%98%E8%AE%A4%E5%80%BC"><span class="post-toc-text">a-select默认值</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#symbol"><span class="post-toc-text">symbol</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#enumerable"><span class="post-toc-text">enumerable</span></a></li></ol>
-            
-        
-        <div class=".article-gallery"><h4 id="Ant-组件库"><a href="#Ant-组件库" class="headerlink" title="Ant 组件库"></a>Ant 组件库</h4><h3 id="select"><a href="#select" class="headerlink" title="select"></a>select</h3><p>label in value属性同时获取显示值和实际值</p>
-<h3 id="key要唯一性！！！"><a href="#key要唯一性！！！" class="headerlink" title="key要唯一性！！！"></a>key要唯一性！！！</h3><p>公司里很多人用index作为key，为什么不好？（重新渲染）</p>
-<h4 id="v-for-遍历避免同时使用-v-if"><a href="#v-for-遍历避免同时使用-v-if" class="headerlink" title="v-for 遍历避免同时使用 v-if"></a>v-for 遍历避免同时使用 v-if</h4><p>为什么？顺序是什么样？在vue2与vue3优先级不一样，是怎么样的？(vue2 v-for高，先遍历生成虚拟dom，再判断是否渲染)</p>
-<h4 id="a-select默认值"><a href="#a-select默认值" class="headerlink" title="a-select默认值"></a>a-select默认值</h4><p>如果在data return里写死defaultValue的参数，没有“选中”这个效果，得写成变量绑定。<br>vue组件初始化会先检查v-modal绑定的变量，并将其值与组件的内部状态同步。如果组件初始化之前被设置，同步过程可能不会立即发生，导致初始状态不对（没有“选中”这个态）</p>
-<h4 id="symbol"><a href="#symbol" class="headerlink" title="symbol"></a>symbol</h4><p><a href="../symbol">symbol</a></p>
-<h4 id="enumerable"><a href="#enumerable" class="headerlink" title="enumerable"></a>enumerable</h4><p>root用户与普通用户的区别<br>JavaScript 内建对象（如 Array、Object 等）中的一些方法是不可枚举的。例如，Array.prototype.length 是不可枚举的，尽管它可以通过 arr.length 访问，但不会通过 for…in 循环遍历出来。<br>不可枚举的属性在对象遍历时不会出现，可以用于隐藏内部属性、保护敏感数据或减少遍历结果的冗余。<br>它适用于模拟私有属性、实现框架的内部机制、控制性能等场景。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="title class_">Object</span>.<span class="title function_">defineProperty</span>(obj, <span class="string">&#x27;hidden&#x27;</span>, &#123;</span><br><span class="line">    <span class="attr">value</span>: <span class="string">&#x27;This is hidden&#x27;</span>,</span><br><span class="line">    <span class="attr">enumerable</span>: <span class="literal">false</span>,  <span class="comment">// 设置为不可枚举</span></span><br><span class="line">    <span class="attr">writable</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">configurable</span>: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(obj.<span class="property">hidden</span>); <span class="comment">// &#x27;This is hidden&#x27;</span></span><br><span class="line"><span class="variable language_">console</span>.<span class="title function_">log</span>(<span class="title class_">Object</span>.<span class="title function_">keys</span>(obj)); <span class="comment">// []  // 不会出现在 keys 中</span></span><br></pre></td></tr></table></figure></div>
-    </div>
-
-    <div class="post-meta">
-        <i>
-        
-            <span>2024-11-28</span>
-            
-            
-             
-        
-        </i>
-    </div>
-    <br>
-    
-    
-        
-            
-    
-            <div class="post-footer-pre-next">
-                
-                    <span>上一篇：<a href='/2024/11/29/HTML-%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5%E6%B5%8B%E8%AF%95/'>HTML 页面嵌入测试</a></span>
-                
-
-                
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2024/11/28/symbol/">symbol</a>
-                    </span>
-                
-            </div>
-    
-        
-    
-
-    
-        
-
-     
-</div>
-
-
-
-                                      
                     
                     
                     <div class="footer">

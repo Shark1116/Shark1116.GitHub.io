@@ -121,14 +121,38 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/640.jpg" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 50%; 
+            }
+            
+            .header-img:hover {
+                animation: rotateAnimation 2s linear infinite; /* 悬停旋转动画 */
+            }
+            @keyframes rotateAnimation {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/640.jpg" 
+        />
         <div class="header-content">
             <a class="logo" href="/">Blog</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
@@ -177,6 +201,20 @@
             </span>
         </li>
         <!--放 文章-->
+        
+            
+            <li>
+              <span class="archive-date">&nbsp;&nbsp;&nbsp;2024/12/30 
+              </span>
+              <div class="archive-main">
+                
+                  <a class="archive-title"  href="/categories/Repository/">
+                    Repository 
+                  </a> | 
+                
+                  <a class="archive-title" href="/2024/12/30/Repository/">Repository</a>
+              </div>
+            </li>
         
             
             <li>
