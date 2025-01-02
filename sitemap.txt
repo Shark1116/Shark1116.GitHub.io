@@ -39,8 +39,8 @@ https://shark1116.github.io/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/
 https://shark1116.github.io/tags/Canvas/
 https://shark1116.github.io/tags/OS/
 https://shark1116.github.io/tags/%E5%89%8D%E7%AB%AF/
-https://shark1116.github.io/tags/SQL/
 https://shark1116.github.io/tags/Repository/
+https://shark1116.github.io/tags/SQL/
 https://shark1116.github.io/tags/coderwhy/
 https://shark1116.github.io/tags/%E5%B7%A5%E5%85%B7/
 https://shark1116.github.io/tags/%E9%87%8F%E5%AD%90%E5%89%8D%E7%AB%AF/
@@ -50,8 +50,8 @@ https://shark1116.github.io/tags/%E4%B8%BB%E9%A2%98/
 https://shark1116.github.io/tags/CSS/
 https://shark1116.github.io/tags/%E7%BD%91%E7%BB%9C/
 https://shark1116.github.io/tags/javascript/
-https://shark1116.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/
 https://shark1116.github.io/tags/%E5%B7%A5%E5%85%B7%E7%AE%B1/
+https://shark1116.github.io/tags/%E5%91%BD%E4%BB%A4%E8%A1%8C/
 https://shark1116.github.io/tags/%E9%9B%86%E7%BE%A4/
 https://shark1116.github.io/categories/Notes/
 https://shark1116.github.io/categories/Document/
