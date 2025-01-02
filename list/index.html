@@ -14,7 +14,7 @@
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="list" />
     <meta name="hexo-theme-A4" content="v1.9.6" />
-    <link rel="alternate icon" type="image/webp" href="/images/640.jpg">
+    <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog</title>
 
     
@@ -121,38 +121,14 @@
 
 <div class="header">
     <div class="header-container">
-        <style>
-            .header-img {
-                width: 56px;
-                height: auto;
-                object-fit: cover; /* 保持图片比例 */
-                transition: transform 0.3s ease-in-out; 
-                border-radius: 50%; 
-            }
-            
-            .header-img:hover {
-                animation: rotateAnimation 2s linear infinite; /* 悬停旋转动画 */
-            }
-            @keyframes rotateAnimation {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
-            }
-            
-        </style>
-        <img 
-            alt="^-^" 
-            cache-control="max-age=86400" 
-            class="header-img" 
-            src="/images/640.jpg" 
-        />
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/640.webp" width="10%"></img>
         <div class="header-content">
             <a class="logo" href="/">Blog</a> 
             <span class="description"></span> 
         </div>
+        
     </div>
     
    
@@ -241,34 +217,6 @@
             </div>
           </li>
       
-
-      <!--rough-notation风格效果-->
-      
-        <script src="/js/roughNotation.js" defer></script>
-        <script>
-          // 浏览器严格模式
-          if (typeof window !== 'undefined') {
-            window.themeConfig = {"menu":{"🧸首页":"/","📜文章":"/list/","🏷️标签":"/tags/","🦕分类":"/categories/"},"showInMenu":["📜文章"],"index":{"header":null,"hitokoto":false,"footer":"宇宙里有什么不是暂时","titlePosition":"left","width":"small"},"footerLink":{"info":"© 1949-2024 China"},"post":{"footer":"宇宙里有什么不是暂时","themeInfo":false,"width":"middle","titlePosition":"center","endContent":"以上"},"favicon":"/images/640.jpg","isRoundedAvatar":true,"isAvatarRotating":true,"tool":{"darkMode":true,"returnToTop":true,"returnToLast":true,"topToc":true,"leftToc":true,"recentUpdatePost":true,"hoverStyle":"underline","hoverColor":null,"animationDuration":800},"indexInfo":{"allWordCount":true,"allViewCount":true},"postInfo":{"updateDate":true,"wordCount":true,"readTime":true,"viewCount":true,"prevAndNextLink":{"status":true,"prevInfo":"上一篇","nextInfo":"下一篇"},"endContent":"以上"},"cdn":{"enable":false,"choose":"zzko"},"color":{"enable":false,"font":"#9e5345","background":"#e8e0c9","indexBackGround":"#efeae2","postBackGround":"#efeae2","codeBackGround":"#e8e0c9","codeFont":"#2e5041","linkBeforeClick":"#2e5041","linkAfterClick":"#9c9caf"},"imageShow":{"enable":false,"background":"/images/favicon.jpg"},"font":{"enable":true,"LXGWWenKai":true},"lightgallery":{"thumbnail":true,"zoom":true,"rotate":true,"autoplay":true,"fullScreen":true,"pager":false},"comment":{"enable":false,"use":"waline","waline":{"serverUrl":null,"lang":"zh-CN","placeholder":"留下你的评论吧。"},"twikoo":{"envId":null,"region":null,"lang":null},"artalk":{"server":null}},"inject":{"css":"/source/css/custom.css"},"version":"v1.9.6"};
-          }
-          document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('.archive-title').forEach(el => {
-              const annotation = RoughNotation.annotate(el, {
-                type: themeConfig?.tool?.hoverStyle || 'underline', // 效果,默认为'underline'
-                color: themeConfig?.tool?.hoverColor || '#4f7dde', // 自定义效果颜色
-                animationDuration: themeConfig?.tool?.animationDuration || 800, // 动画持续时间ms
-              });
-              el.addEventListener('mouseenter', () => {
-                if(annotation){
-                annotation.show();
-            }});
-              el.addEventListener('mouseleave', () => {
-                if(annotation){
-                annotation.hide();
-            }});
-            });
-          });
-        </script>
-        
 
       <!--文章先按照时间排好序-->
       
