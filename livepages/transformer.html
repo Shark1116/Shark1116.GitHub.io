@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <style>
+        body
+        {
+            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
+
+        }
+    </style>
+
+    <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
+    <meta name="description" content="" />
+    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <link rel="alternate icon" type="image/webp" href="/images/640.webp">
+    <title>Blog</title>
+
+    
+        
+<link rel="stylesheet" href="/css/highlight/style1.css">
+
+        
+<link rel="stylesheet" href="/css/reset.css">
+
+        
+<link rel="stylesheet" href="/css/markdown.css">
+
+        
+<link rel="stylesheet" href="/css/fonts.css">
+ 
+         <!--注意：首页既不是post也不是page-->
+        
+        
+        
+<link rel="stylesheet" href="/css/ui.css">
+ 
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+        
+            <!--返回顶部css-->
+            
+<link rel="stylesheet" href="/css/returnToTop.css">
+
+            
+<link rel="stylesheet" href="/css/unicons.css">
+
+        
+        
+            <!--目录-->
+            
+<link rel="stylesheet" href="/css/toc.css">
+
+        
+    
+
+    
+        
+<link rel="stylesheet" href="/css/returnToLastPage.css">
+
+    
+    
+   
+<link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
+
+
+<meta name="generator" content="Hexo 7.2.0"></head>
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+    
+    
+    
+    <body>
+        <script src="/js/darkmode-js.min.js"></script>
+        
+        <script>
+            const options = {
+                bottom: '40px', // default: '32px'
+                right: 'unset', // default: '32px'
+                left: '42px', // default: 'unset'
+                time: '0.3s', // default: '0.3s'
+                mixColor: '#fff', // default: '#fff'
+                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
+                buttonColorDark: '#100f2c',  // default: '#100f2c'
+                buttonColorLight: '#fff', // default: '#fff'
+                saveInCookies: true, // default: true,
+                label: '🌓', // default: ''
+                autoMatchOsTheme: true // default: true
+            }
+            const darkmode = new Darkmode(options);
+            darkmode.showWidget();
+        </script>
+        
+        
+            <div class="left-toc-container">
+                <nav id="toc" class="bs-docs-sidebar"></nav>
+            </div>
+        
+        <div class="paper">
+            
+            
+            
+            
+                <div class="shadow-drop-2-bottom paper-main">
+                    
+
+
+<div class="header">
+    <div class="header-container">
+        <img style="
+        width: 56px;
+        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/640.webp" width="10%"></img>
+        <div class="header-content">
+            <a class="logo" href="/">Blog</a> 
+            <span class="description"></span> 
+        </div>
+        
+    </div>
+    
+   
+    <ul class="nav">
+        
+            
+                <li><a href="/">🧸首页</a></li>
+            
+        
+            
+                <li><a href="/list/">📜文章</a></li>
+            
+        
+            
+                <li><a href="/tags/">🏷️标签</a></li>
+            
+        
+            
+                <li><a href="/categories/">🦕分类</a></li>
+            
+        
+    </ul>
+</div> 
+        
+                    
+                    
+
+                    
+                    
+                    
+                    <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+
+    
+
+    <div class="post-md">
+        
+            
+        
+        <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JiangJiang Detection</title>
+  <style>
+    html {
+      font-size: 16px; /* 设置根字体大小，方便 rem 单位换算 */
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+  .container {
+      margin: 2rem auto; /* 使用 rem 单位 */
+      width: max(38vw, 25rem); /* 最小宽度设置为更合适的值，使用 rem 单位 */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+  .custom-file-upload {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem; /* 使用 rem 单位 */
+      border: 2px solid black;
+      padding: 0.5rem 1rem; /* 使用 rem 单位 */
+      cursor: pointer;
+      border-radius: 0.375rem; /* 使用 rem 单位 */
+    }
+
+    #file-upload {
+      display: none;
+    }
+
+  .upload-icon {
+      width: 1.875rem; /* 使用 rem 单位 */
+    }
+
+    #image-container {
+      width: 100%;
+      margin-top: 1.25rem; /* 使用 rem 单位 */
+      position: relative;
+    }
+
+    #image-container>img {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+  .bounding-box {
+      position: absolute;
+      box-sizing: border-box;
+      border-width: 2px;
+      border-style: solid;
+    }
+
+  .bounding-box-label {
+      color: white;
+      position: absolute;
+      font-size: 0.75rem; /* 使用 rem 单位 */
+      margin-top: -1rem; /* 使用 rem 单位 */
+      margin-left: -0.125rem; /* 使用 rem 单位 */
+      padding: 0.0625rem; /* 使用 rem 单位 */
+    }
+
+  .label-container {
+      position: absolute;
+      bottom: 0.625rem; /* 使用 rem 单位 */
+      left: 0.625rem; /* 使用 rem 单位 */
+      padding: 0.625rem; /* 使用 rem 单位 */
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 0.375rem; /* 使用 rem 单位 */
+      color: white;
+      font-size: 0.875rem; /* 使用 rem 单位 */
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+  .options-container {
+      margin-top: 1.25rem; /* 使用 rem 单位 */
+      display: flex;
+      align-items: center;
+      gap: 0.625rem; /* 使用 rem 单位 */
+    }
+
+  .info-tooltip {
+      font-size: 0.875rem; /* 使用 rem 单位 */
+      color: gray;
+      margin-left: 0.625rem; /* 使用 rem 单位 */
+    }
+
+    /* 媒体查询，针对小屏幕设备（手机）调整样式 */
+    @media (max-width: 480px) {
+    .container {
+        width: 90%;
+      }
+
+    .options-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+    .info-tooltip {
+        margin-top: 0.5rem; /* 使用 rem 单位 */
+      }
+    }
+
+    /* 媒体查询，针对中等屏幕设备（平板）调整样式 */
+    @media (min-width: 481px) and (max-width: 1024px) {
+    .container {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main class="container">
+    <label class="custom-file-upload">
+      <input id="file-upload" type="file" accept="image/*" />
+      Upload image😶‍🌫️
+    </label>
+
+    <div class="options-container">
+      <label for="threshold">😗 Detection Threshold:</label>
+      <select id="threshold">
+        <option value="0.1">Very Low (10%)</option>
+        <option value="0.3">Low (30%)</option>
+        <option value="0.5" selected>Medium (50%)</option>
+        <option value="0.7">High (70%)</option>
+        <option value="0.9">Very High (90%)</option>
+        <option value="custom">Custom</option>
+      </select>
+      <input id="custom-threshold" type="number" min="0.01" max="1" step="0.01" placeholder="Enter value (0.01 - 1)"
+        style="display: none; width: 7.5rem;">
+    </div>
+
+    <div id="image-container"></div>
+    <p id="status"></p>
+    <p id="network-status"></p> <!-- 新增用于显示网络状态的元素 -->
+  </main>
+
+  <script type="module">
+    import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers";
+
+    // 禁止使用本地模型
+    env.allowLocalModels = false;
+
+    // 获取 DOM 元素
+    const fileUpload = document.getElementById("file-upload");
+    const imageContainer = document.getElementById("image-container");
+    const status = document.getElementById("status");
+    const networkStatus = document.getElementById('network-status'); // 获取网络状态元素
+    const thresholdSelector = document.getElementById("threshold");
+
+    // 默认检测阈值
+    let detectionThreshold = parseFloat(thresholdSelector.value);
+
+    // 监听阈值选择的变化
+    thresholdSelector.addEventListener("change", () => {
+      detectionThreshold = parseFloat(thresholdSelector.value);
+      console.log(`Detection threshold set to: ${detectionThreshold}`);
+    });
+
+    // 创建目标检测管道
+    let detector;
+
+    async function loadModel() {
+      status.textContent = "🤔Loading model...";
+      try {
+        detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
+
+        // 检查 detector 是否是函数
+        if (typeof detector!== "function") {
+          console.error("detector is not a function", detector);
+          status.textContent = "Error loading model!";
+          return;
+        }
+        status.textContent = "🫡Ready";
+      } catch (error) {
+        console.error("Model loading failed:", error);
+        status.textContent = "Error loading model!";
+      }
+    }
+
+    // 加载模型
+    loadModel();
+
+    // 检测网络状态并显示相应提示及emoji
+    function checkNetworkStatus() {
+      if (navigator.onLine) {
+        networkStatus.textContent = "在线 🟢";
+      } else {
+        networkStatus.textContent = "离线 🔴";
+      }
+    }
+    checkNetworkStatus(); // 页面加载时先检测一次网络状态
+
+    // 处理文件上传
+    fileUpload.addEventListener("change", function (e) {
+      const file = e.target.files[0];
+      if (!file) {
+        return;
+      }
+
+      const reader = new FileReader();
+
+      reader.onload = function (e2) {
+        imageContainer.innerHTML = "";
+        const image = document.createElement("img");
+        image.src = e2.target.result;
+        imageContainer.appendChild(image);
+        detect(image); // 进行检测
+      };
+      reader.readAsDataURL(file);
+    });
+
+    // 执行目标检测
+    async function detect(img) {
+      if (!detector) {
+        status.textContent = "Model is not ready yet!";
+        return;
+      }
+
+      status.textContent = "Analysing...";
+      try {
+        const output = await detector(img.src, {
+          threshold: detectionThreshold,
+          percentage: true,
+        });
+
+        console.log("Detection output:", output);
+        output.forEach(renderBox); // 渲染检测结果
+        status.textContent = "江江提示您：Analysis complete!";
+      } catch (error) {
+        console.error("Error during detection:", error);
+        status.textContent = "Error during analysis!";
+      }
+    }
+
+    // 渲染边界框并显示标签和置信度
+    function renderBox({ box, label, score }) {
+      const { xmax, xmin, ymax, ymin } = box;
+      const color = "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, 0);
+
+      const boxElement = document.createElement("div");
+      boxElement.className = "bounding-box";
+      Object.assign(boxElement.style, {
+        borderColor: color,
+        left: 100 * xmin + "%",
+        top: 100 * ymin + "%",
+        width: 100 * (xmax - xmin) + "%",
+        height: 100 * (ymax - ymin) + "%",
+      });
+
+      const labelElement = document.createElement("span");
+      labelElement.textContent = `${label} (${(score * 100).toFixed(2)}%)`;
+      labelElement.className = "bounding-box-label";
+      labelElement.style.backgroundColor = color;
+
+      boxElement.appendChild(labelElement);
+      imageContainer.appendChild(boxElement);
+    }
+  </script>
+</body>
+
+</html>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
+                    
+                    
+                    <div class="footer">
+    
+        <span> 
+            © 1949-2024 China 
+
+            
+                
+
+            
+        </span>
+       
+    
+</div>
+
+
+
+<!--这是指一条线往下的内容-->
+<div class="footer-last">
+    
+            <span>宇宙里有什么不是暂时</span>
+            
+                <span class="footer-last-span-right"><i>本站由<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">Hexo</a>驱动｜使用<a target="_blank" rel="noopener" href="https://github.com/HiNinoJay/hexo-theme-A4">Hexo-theme-A4</a>主题</i></span>
+            
+    
+</div>
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+
+    <!--目录-->
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" type="text/javascript" ></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tocify/1.9.0/javascripts/jquery.tocify.min.js" type="text/javascript" ></script>
+        
+<script src="/js/toc.js"></script>
+
+    
+
+    
+<script src="/js/randomHeaderContent.js"></script>
+
+    <!--回到顶部按钮-->
+    
+        
+<script src="/js/returnToTop.js"></script>
+
+    
+
+    
+        
+<script src="/js/returnToLastPage.js"></script>
+
+    
+
+
+
+
+
+<script src="/js/lightgallery/lightgallery.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-thumbnail.umd.min.js"></script>
+
+
+
+<script src="/js/lightgallery/plugins/lg-fullscreen.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-autoplay.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-zoom.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-rotate.umd.min.js"></script>
+
+
+<script src="/js/lightgallery/plugins/lg-paper.umd.min.js"></script>
+
+
+
+
+<script type="text/javascript">
+     
+    if (typeof lightGallery !== "undefined") {
+        var options1 = {
+            selector: '.gallery-item',
+            plugins: [lgThumbnail, lgFullscreen, lgAutoplay, lgZoom, lgRotate, lgPager], // 启用插件
+            thumbnail: true,          // 显示缩略图
+            zoom: true,               // 启用缩放功
+            rotate: true,             // 启用旋转功能能
+            autoplay: true,        // 启用自动播放功能
+            fullScreen: true,      // 启用全屏功能
+            pager: false, //页码,
+            zoomFromOrigin: true,   // 从原始位置缩放
+            actualSize: true,       // 启用查看实际大小的功能
+            enableZoomAfter: 300,    // 延迟缩放，确保图片加载完成后可缩放
+        };
+        lightGallery(document.getElementsByClassName('.article-gallery')[0], options1); // 修复选择器
+    }
+    
+</script>
+
+
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script> 
+
+                </div>
+            
+            
+                <!-- 回到顶部的按钮-->  
+                <div class="progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+            
+                <!-- 返回的按钮-->  
+                <div class="return-to-last-progress-wrap shadow-drop-2-bottom">
+                    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+                        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"/>
+                    </svg>
+                </div>
+            
+    </body>
+</html>
