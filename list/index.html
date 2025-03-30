@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     
-    <style>
-        body
-        {
-            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-
-        }
-    </style>
-
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="list" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog</title>
 
@@ -121,38 +113,30 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/640.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/640.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">Blog</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
     <ul class="nav">
-        
-            
-                <li><a href="/">🧸首页</a></li>
-            
-        
-            
-                <li><i>
-                    
-                        <a style="color: #4e7dde;" href="/list/">📜文章</a>
-                    
-                </i></li>
-            
-        
-            
-                <li><a href="/tags/">🏷️标签</a></li>
-            
-        
-            
-                <li><a href="/categories/">🦕分类</a></li>
-            
         
     </ul>
 </div> 
@@ -195,7 +179,7 @@
             <span class="archive-date"> &nbsp;&nbsp;&nbsp;TOP
             </span>
             <div class="archive-main">
-                <a class="archive-title" href="/2024/10/24/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">持续更新</a>
+                <a class="archive-title" href="/2024/10/24/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/">🧸持续更新</a>
             </div>
           </li>
       
@@ -218,59 +202,59 @@
           </li>
       
 
+      <!--rough-notation风格效果-->
+      
+        <script src="/js/roughNotation.js" defer></script>
+        <script>
+          // 浏览器严格模式
+          if (typeof window !== 'undefined') {
+            window.themeConfig = {"menu":null,"showInMenu":null,"index":{"header":null,"hitokoto":false,"footer":"Email:123456789@gmail.com","titlePosition":"left","width":"small"},"footerLink":{"info":"© 1949-2024 China"},"post":{"footer":"宇宙里有什么不是暂时","themeInfo":true,"width":"middle","titlePosition":"center"},"favicon":"/images/640.webp","isRoundedAvatar":false,"isAvatarRotating":false,"tool":{"darkMode":true,"returnToTop":true,"returnToLast":true,"topToc":true,"leftToc":true,"recentUpdatePost":false,"hoverStyle":"underline","hoverColor":null,"animationDuration":800},"indexInfo":{"allWordCount":true,"allViewCount":true},"postInfo":{"updateDate":true,"wordCount":true,"readTime":true,"viewCount":true,"prevAndNextLink":{"status":true,"prevInfo":"上一篇","nextInfo":"下一篇"},"endContent":"以上"},"cdn":{"enable":false,"choose":"zzko"},"color":{"enable":false,"font":"#9e5345","background":"#e8e0c9","indexBackGround":"#efeae2","postBackGround":"#efeae2","codeBackGround":"#e8e0c9","codeFont":"#2e5041","linkBeforeClick":"#2e5041","linkAfterClick":"#9c9caf"},"imageShow":{"enable":false,"background":"/images/640.webp"},"font":{"enable":false,"LXGWWenKai":true},"lightgallery":{"thumbnail":true,"zoom":true,"rotate":true,"autoplay":true,"fullScreen":true,"pager":false},"comment":{"enable":false,"use":"waline","waline":{"serverUrl":null,"lang":"zh-CN","placeholder":"留下你的评论吧。"},"twikoo":{"envId":null,"region":null,"lang":null},"artalk":{"server":null}},"inject":{"css":"css/custom.css"},"version":"v1.9.7","listInfo":{"enable":true,"hoverStyle":"underline","hoverColor":"#4f7dde","animationDuration":800}};
+          }
+          document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.archive-title').forEach(el => {
+              const annotation = RoughNotation.annotate(el, {
+                type: themeConfig?.tool?.hoverStyle || 'underline', // 效果,默认为'underline'
+                color: themeConfig?.tool?.hoverColor || '#4f7dde', // 自定义效果颜色
+                animationDuration: themeConfig?.tool?.animationDuration || 800, // 动画持续时间ms
+              });
+              el.addEventListener('mouseenter', () => {
+                if(annotation){
+                annotation.show();
+            }});
+              el.addEventListener('mouseleave', () => {
+                if(annotation){
+                annotation.hide();
+            }});
+            });
+          });
+        </script>
+        
+
       <!--文章先按照时间排好序-->
       
       
       <!--再放 最近更新 文章-->
-      
-        <li>
-          <span class="year-font-color">
-            <a class="archive-title"  href="/recent-updates/">Recent-Updates</a>
-          </span>
-        </li>
-        
-        
-          
-          
-          <li>
-            <span class="archive-date">2025/01/03 
-            </span>
-            <div class="archive-main">
-                <a class="archive-title" href="/2025/01/03/tranformer%E5%88%9D%E4%BD%93%E9%AA%8C/">tranformer初体验</a>
-            </div>
-          </li>
-        
-          
-          
-          <li>
-            <span class="archive-date">2024/12/30 
-            </span>
-            <div class="archive-main">
-                <a class="archive-title" href="/2024/12/30/Repository/">Repository</a>
-            </div>
-          </li>
-        
-          
-          
-          <li>
-            <span class="archive-date">2024/12/19 
-            </span>
-            <div class="archive-main">
-                <a class="archive-title" href="/2024/12/17/Notation/">前端框架演变史</a>
-            </div>
-          </li>
-        
       
 
       <!--后放 其他 文章-->
       
         
         <li>
-          <span class="year-font-color">2025[1]
+          <span class="year-font-color">2025[2]
              <span class="darkmode-ignore">🍃</span> 
           </span>
         </li>
         
+        
+          
+          <li>
+            <span class="archive-date">&nbsp;&nbsp;&nbsp;03/30 
+            </span>
+            <div class="archive-main">
+              
+                <a class="archive-title" href="/2025/03/30/%E4%BD%BF%E7%94%A8docxtemplater%E5%AE%9E%E7%8E%B0%E5%89%8D%E7%AB%AF%E5%AF%BC%E5%87%BAword/">使用docxtemplater实现前端导出word</a>
+            </div>
+          </li>
         
           
           <li>
@@ -289,7 +273,7 @@
       
         
         <li>
-          <span class="year-font-color">2024[15]
+          <span class="year-font-color">2024[12]
             
           </span>
         </li>
@@ -311,16 +295,6 @@
         
           
           <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;12/18 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title" href="/2024/12/18/newnewnew/">newnewnew</a>
-            </div>
-          </li>
-        
-          
-          <li>
             <span class="archive-date">&nbsp;&nbsp;&nbsp;12/17 
             </span>
             <div class="archive-main">
@@ -336,16 +310,6 @@
             <div class="archive-main">
               
                 <a class="archive-title" href="/2024/12/02/nest/">nest</a>
-            </div>
-          </li>
-        
-          
-          <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;11/29 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title" href="/2024/11/29/HTML-%E9%A1%B5%E9%9D%A2%E5%B5%8C%E5%85%A5%E6%B5%8B%E8%AF%95/">HTML 页面嵌入测试</a>
             </div>
           </li>
         
@@ -429,16 +393,6 @@
         
           
           <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;09/27 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title" href="/2024/09/27/test/">一个骰子</a>
-            </div>
-          </li>
-        
-          
-          <li>
             <span class="archive-date">&nbsp;&nbsp;&nbsp;06/05 
             </span>
             <div class="archive-main">
@@ -460,7 +414,7 @@
       
         
         <li>
-          <span class="year-font-color">2023[12]
+          <span class="year-font-color">2023[10]
             
           </span>
         </li>
@@ -482,20 +436,6 @@
         
           
           <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;10/31 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title"  href="/categories/Notes/">
-                  Notes 
-                </a> | 
-              
-                <a class="archive-title" href="/2023/10/31/1031/">1031学习记录</a>
-            </div>
-          </li>
-        
-          
-          <li>
             <span class="archive-date">&nbsp;&nbsp;&nbsp;10/13 
             </span>
             <div class="archive-main">
@@ -505,20 +445,6 @@
                 </a> | 
               
                 <a class="archive-title" href="/2023/10/13/mock-js/">mock.js</a>
-            </div>
-          </li>
-        
-          
-          <li>
-            <span class="archive-date">&nbsp;&nbsp;&nbsp;10/13 
-            </span>
-            <div class="archive-main">
-              
-                <a class="archive-title"  href="/categories/CSS/">
-                  CSS 
-                </a> | 
-              
-                <a class="archive-title" href="/2023/10/13/%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE/">一个按钮</a>
             </div>
           </li>
         

@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     
-    <style>
-        body
-        {
-            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-
-        }
-    </style>
-
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="mock.js" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog</title>
 
@@ -121,34 +113,30 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/640.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/640.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">Blog</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
     <ul class="nav">
-        
-            
-                <li><a href="/">🧸首页</a></li>
-            
-        
-            
-                <li><a href="/list/">📜文章</a></li>
-            
-        
-            
-                <li><a href="/tags/">🏷️标签</a></li>
-            
-        
-            
-                <li><a href="/categories/">🦕分类</a></li>
-            
         
     </ul>
 </div> 
@@ -480,11 +468,11 @@
     
             <div class="post-footer-pre-next">
                 
-                    <span>上一篇：<a href='/2023/10/31/1031/'>1031学习记录</a></span>
+                    <span>上一篇：<a href='/2023/11/15/%E5%91%BD%E4%BB%A4%E8%A1%8C/'>命令行</a></span>
                 
 
                 
-                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/13/%E4%B8%80%E4%B8%AA%E6%8C%89%E9%92%AE/">一个按钮</a>
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2023/10/11/nginx/">nginx</a>
                     </span>
                 
             </div>

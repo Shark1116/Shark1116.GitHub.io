@@ -1,19 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
     
-    <style>
-        body
-        {
-            font-family: "Times New Roman", Helvetica, Tahoma, Arial,   LXGW WenKai   "notoserifsc-medium", "Microsoft YaHei", "Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif !important;
-
-        }
-    </style>
-
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="tags" />
-    <meta name="hexo-theme-A4" content="v1.9.6" />
+    <meta name="hexo-theme-A4" content="v1.9.7" />
     <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog</title>
 
@@ -121,38 +113,30 @@
 
 <div class="header">
     <div class="header-container">
-        <img style="
-        width: 56px;
-        height: auto;" alt="^-^" cache-control="max-age=86400" class="header-img" src="/images/640.webp" width="10%"></img>
+        <style>
+            .header-img {
+                width: 56px;
+                height: auto;
+                object-fit: cover; /* 保持图片比例 */
+                transition: transform 0.3s ease-in-out; 
+                border-radius: 0; 
+            }
+            
+        </style>
+        <img 
+            alt="^-^" 
+            cache-control="max-age=86400" 
+            class="header-img" 
+            src="/images/640.webp" 
+        />
         <div class="header-content">
             <a class="logo" href="/">Blog</a> 
             <span class="description"></span> 
         </div>
-        
     </div>
     
    
     <ul class="nav">
-        
-            
-                <li><a href="/">🧸首页</a></li>
-            
-        
-            
-                <li><a href="/list/">📜文章</a></li>
-            
-        
-            
-                <li><i>
-                    
-                        <a style="color: #4e7dde;" href="/tags/">🏷️标签</a>
-                    
-                </i></li>
-            
-        
-            
-                <li><a href="/categories/">🦕分类</a></li>
-            
         
     </ul>
 </div> 
@@ -174,12 +158,12 @@
   
       
         <li class="inline-li">
-            <a href="/tags/ai">ai</a>
+            <a href="/tags/Repository">Repository</a>
             <span><i>1</i></span>
         </li>
     
         <li class="inline-li">
-            <a href="/tags/Repository">Repository</a>
+            <a href="/tags/ai">ai</a>
             <span><i>1</i></span>
         </li>
     
@@ -219,17 +203,7 @@
         </li>
     
         <li class="inline-li">
-            <a href="/tags/%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95">学习记录</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
             <a href="/tags/mock">mock</a>
-            <span><i>1</i></span>
-        </li>
-    
-        <li class="inline-li">
-            <a href="/tags/CSS">CSS</a>
             <span><i>1</i></span>
         </li>
     
