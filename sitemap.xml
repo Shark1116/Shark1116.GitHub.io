@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://shark1116.github.io/about/index.html</loc>
+    <loc>https://shark1116.github.io/2024/10/24/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</loc>
     
     <lastmod>2025-04-01</lastmod>
     
@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://shark1116.github.io/2024/10/24/%E6%8C%81%E7%BB%AD%E6%9B%B4%E6%96%B0/</loc>
+    <loc>https://shark1116.github.io/about/index.html</loc>
     
     <lastmod>2025-04-01</lastmod>
     
@@ -290,7 +290,7 @@
 
   
   <url>
-    <loc>https://shark1116.github.io/tags/OS/</loc>
+    <loc>https://shark1116.github.io/tags/Repository/</loc>
     <lastmod>2025-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -304,7 +304,7 @@
   </url>
   
   <url>
-    <loc>https://shark1116.github.io/tags/Repository/</loc>
+    <loc>https://shark1116.github.io/tags/OS/</loc>
     <lastmod>2025-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -383,14 +383,14 @@
 
   
   <url>
-    <loc>https://shark1116.github.io/categories/Document/</loc>
+    <loc>https://shark1116.github.io/categories/Repository/</loc>
     <lastmod>2025-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://shark1116.github.io/categories/Repository/</loc>
+    <loc>https://shark1116.github.io/categories/Document/</loc>
     <lastmod>2025-04-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
