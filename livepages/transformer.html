@@ -186,273 +186,139 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JiangJiang Detection</title>
-  <style>
-    html {
-      font-size: 16px; /* 设置根字体大小，方便 rem 单位换算 */
-    }
-
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-  .container {
-      margin: 2rem auto; /* 使用 rem 单位 */
-      width: max(38vw, 25rem); /* 最小宽度设置为更合适的值，使用 rem 单位 */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-  .custom-file-upload {
-      display: flex;
-      align-items: center;
-      gap: 0.625rem; /* 使用 rem 单位 */
-      border: 2px solid black;
-      padding: 0.5rem 1rem; /* 使用 rem 单位 */
-      cursor: pointer;
-      border-radius: 0.375rem; /* 使用 rem 单位 */
-    }
-
-    #file-upload {
-      display: none;
-    }
-
-  .upload-icon {
-      width: 1.875rem; /* 使用 rem 单位 */
-    }
-
-    #image-container {
-      width: 100%;
-      margin-top: 1.25rem; /* 使用 rem 单位 */
-      position: relative;
-    }
-
-    #image-container>img {
-      width: 100%;
-      max-width: 100%;
-      height: auto;
-    }
-
-  .bounding-box {
-      position: absolute;
-      box-sizing: border-box;
-      border-width: 2px;
-      border-style: solid;
-    }
-
-  .bounding-box-label {
-      color: white;
-      position: absolute;
-      font-size: 0.75rem; /* 使用 rem 单位 */
-      margin-top: -1rem; /* 使用 rem 单位 */
-      margin-left: -0.125rem; /* 使用 rem 单位 */
-      padding: 0.0625rem; /* 使用 rem 单位 */
-    }
-
-  .label-container {
-      position: absolute;
-      bottom: 0.625rem; /* 使用 rem 单位 */
-      left: 0.625rem; /* 使用 rem 单位 */
-      padding: 0.625rem; /* 使用 rem 单位 */
-      background: rgba(0, 0, 0, 0.5);
-      border-radius: 0.375rem; /* 使用 rem 单位 */
-      color: white;
-      font-size: 0.875rem; /* 使用 rem 单位 */
-      max-width: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-    }
-
-  .options-container {
-      margin-top: 1.25rem; /* 使用 rem 单位 */
-      display: flex;
-      align-items: center;
-      gap: 0.625rem; /* 使用 rem 单位 */
-    }
-
-  .info-tooltip {
-      font-size: 0.875rem; /* 使用 rem 单位 */
-      color: gray;
-      margin-left: 0.625rem; /* 使用 rem 单位 */
-    }
-
-    /* 媒体查询，针对小屏幕设备（手机）调整样式 */
-    @media (max-width: 480px) {
-    .container {
-        width: 90%;
-      }
-
-    .options-container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-    .info-tooltip {
-        margin-top: 0.5rem; /* 使用 rem 单位 */
-      }
-    }
-
-    /* 媒体查询，针对中等屏幕设备（平板）调整样式 */
-    @media (min-width: 481px) and (max-width: 1024px) {
-    .container {
-        width: 80%;
-      }
-    }
-  </style>
+  <meta name="description" content="A brief description of the page content">
+  <meta name="author" content="Your Name">
+  <title>Document Title</title>
+  <!-- 引入外部 CSS 文件 -->
+  <link rel="stylesheet" href="styles.scss">
+  <!-- 引入外部 JavaScript 文件 -->
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
-  <main class="container">
-    <label class="custom-file-upload">
-      <input id="file-upload" type="file" accept="image/*" />
-      Upload image😶‍🌫️
-    </label>
-
-    <div class="options-container">
-      <label for="threshold">😗 Detection Threshold:</label>
-      <select id="threshold">
-        <option value="0.1">Very Low (10%)</option>
-        <option value="0.3">Low (30%)</option>
-        <option value="0.5" selected>Medium (50%)</option>
-        <option value="0.7">High (70%)</option>
-        <option value="0.9">Very High (90%)</option>
-        <option value="custom">Custom</option>
-      </select>
-      <input id="custom-threshold" type="number" min="0.01" max="1" step="0.01" placeholder="Enter value (0.01 - 1)"
-        style="display: none; width: 7.5rem;">
+  <div class="cont s--inactive">
+    <!-- cont inner start -->
+    <div class="cont__inner">
+      <!-- el start -->
+      <div class="el">
+        <div class="el__overflow">
+          <div class="el__inner">
+            <div class="el__bg"></div>
+            <div class="el__preview-cont">
+              <h2 class="el__heading">Section 1</h2>
+            </div>
+            <div class="el__content">
+              <div class="el__text">Whatever</div>
+              <div class="el__close-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="el__index">
+          <div class="el__index-back">1</div>
+          <div class="el__index-front">
+            <div class="el__index-overlay" data-index="1">1</div>
+          </div>
+        </div>
+      </div>
+      <!-- el end -->
+      <!-- el start -->
+      <div class="el">
+        <div class="el__overflow">
+          <div class="el__inner">
+            <div class="el__bg"></div>
+            <div class="el__preview-cont">
+              <h2 class="el__heading">Section 2</h2>
+            </div>
+            <div class="el__content">
+              <div class="el__text">Whatever</div>
+              <div class="el__close-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="el__index">
+          <div class="el__index-back">2</div>
+          <div class="el__index-front">
+            <div class="el__index-overlay" data-index="2">2</div>
+          </div>
+        </div>
+      </div>
+      <!-- el end -->
+      <!-- el start -->
+      <div class="el">
+        <div class="el__overflow">
+          <div class="el__inner">
+            <div class="el__bg"></div>
+            <div class="el__preview-cont">
+              <h2 class="el__heading">Section 3</h2>
+            </div>
+            <div class="el__content">
+              <div class="el__text">Whatever</div>
+              <div class="el__close-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="el__index">
+          <div class="el__index-back">3</div>
+          <div class="el__index-front">
+            <div class="el__index-overlay" data-index="3">3</div>
+          </div>
+        </div>
+      </div>
+      <!-- el end -->
+      <!-- el start -->
+      <div class="el">
+        <div class="el__overflow">
+          <div class="el__inner">
+            <div class="el__bg"></div>
+            <div class="el__preview-cont">
+              <h2 class="el__heading">Section 4</h2>
+            </div>
+            <div class="el__content">
+              <div class="el__text">Whatever</div>
+              <div class="el__close-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="el__index">
+          <div class="el__index-back">4</div>
+          <div class="el__index-front">
+            <div class="el__index-overlay" data-index="4">4</div>
+          </div>
+        </div>
+      </div>
+      <!-- el end -->
+      <!-- el start -->
+      <div class="el">
+        <div class="el__overflow">
+          <div class="el__inner">
+            <div class="el__bg"></div>
+            <div class="el__preview-cont">
+              <h2 class="el__heading">Section 5</h2>
+            </div>
+            <div class="el__content">
+              <div class="el__text">Whatever</div>
+              <div class="el__close-btn"></div>
+            </div>
+          </div>
+        </div>
+        <div class="el__index">
+          <div class="el__index-back">5</div>
+          <div class="el__index-front">
+            <div class="el__index-overlay" data-index="5">5</div>
+          </div>
+        </div>
+      </div>
+      <!-- el end -->
     </div>
+    <!-- cont inner end -->
+  </div>
 
-    <div id="image-container"></div>
-    <p id="status"></p>
-    <p id="network-status"></p> <!-- 新增用于显示网络状态的元素 -->
-  </main>
-
-  <script type="module">
-    import { pipeline, env } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers";
-
-    // 禁止使用本地模型
-    env.allowLocalModels = false;
-
-    // 获取 DOM 元素
-    const fileUpload = document.getElementById("file-upload");
-    const imageContainer = document.getElementById("image-container");
-    const status = document.getElementById("status");
-    const networkStatus = document.getElementById('network-status'); // 获取网络状态元素
-    const thresholdSelector = document.getElementById("threshold");
-
-    // 默认检测阈值
-    let detectionThreshold = parseFloat(thresholdSelector.value);
-
-    // 监听阈值选择的变化
-    thresholdSelector.addEventListener("change", () => {
-      detectionThreshold = parseFloat(thresholdSelector.value);
-      console.log(`Detection threshold set to: ${detectionThreshold}`);
-    });
-
-    // 创建目标检测管道
-    let detector;
-
-    async function loadModel() {
-      status.textContent = "🤔Loading model...";
-      try {
-        detector = await pipeline("object-detection", "Xenova/detr-resnet-50");
-
-        // 检查 detector 是否是函数
-        if (typeof detector!== "function") {
-          console.error("detector is not a function", detector);
-          status.textContent = "Error loading model!";
-          return;
-        }
-        status.textContent = "🫡Ready";
-      } catch (error) {
-        console.error("Model loading failed:", error);
-        status.textContent = "Error loading model!";
-      }
-    }
-
-    // 加载模型
-    loadModel();
-
-    // 检测网络状态并显示相应提示及emoji
-    function checkNetworkStatus() {
-      if (navigator.onLine) {
-        networkStatus.textContent = "在线 🟢";
-      } else {
-        networkStatus.textContent = "离线 🔴";
-      }
-    }
-    checkNetworkStatus(); // 页面加载时先检测一次网络状态
-
-    // 处理文件上传
-    fileUpload.addEventListener("change", function (e) {
-      const file = e.target.files[0];
-      if (!file) {
-        return;
-      }
-
-      const reader = new FileReader();
-
-      reader.onload = function (e2) {
-        imageContainer.innerHTML = "";
-        const image = document.createElement("img");
-        image.src = e2.target.result;
-        imageContainer.appendChild(image);
-        detect(image); // 进行检测
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // 执行目标检测
-    async function detect(img) {
-      if (!detector) {
-        status.textContent = "Model is not ready yet!";
-        return;
-      }
-
-      status.textContent = "Analysing...";
-      try {
-        const output = await detector(img.src, {
-          threshold: detectionThreshold,
-          percentage: true,
-        });
-
-        console.log("Detection output:", output);
-        output.forEach(renderBox); // 渲染检测结果
-        status.textContent = "江江提示您：Analysis complete!";
-      } catch (error) {
-        console.error("Error during detection:", error);
-        status.textContent = "Error during analysis!";
-      }
-    }
-
-    // 渲染边界框并显示标签和置信度
-    function renderBox({ box, label, score }) {
-      const { xmax, xmin, ymax, ymin } = box;
-      const color = "#" + Math.floor(Math.random() * 0xffffff).toString(16).padStart(6, 0);
-
-      const boxElement = document.createElement("div");
-      boxElement.className = "bounding-box";
-      Object.assign(boxElement.style, {
-        borderColor: color,
-        left: 100 * xmin + "%",
-        top: 100 * ymin + "%",
-        width: 100 * (xmax - xmin) + "%",
-        height: 100 * (ymax - ymin) + "%",
-      });
-
-      const labelElement = document.createElement("span");
-      labelElement.textContent = `${label} (${(score * 100).toFixed(2)}%)`;
-      labelElement.className = "bounding-box-label";
-      labelElement.style.backgroundColor = color;
-
-      boxElement.appendChild(labelElement);
-      imageContainer.appendChild(boxElement);
-    }
-  </script>
+  <a href="https://dribbble.com/shots/2802024-Satellite-Website-Prototype" target="_blank" class="icon-link">
+    <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
+  </a>
+  <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
+    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
+  </a>
 </body>
 
 </html>
