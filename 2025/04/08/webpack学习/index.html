@@ -4,7 +4,7 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="" />
+    <meta name="description" content="webpack学习" />
     <meta name="hexo-theme-A4" content="v1.8.9" />
     <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog😄</title>
@@ -164,11 +164,7 @@
             
         
             
-                <li><i>
-                    
-                        <a style="color: #4e7dde;" href="/categories/">😄分类</a>
-                    
-                </i></li>
+                <li><a href="/categories/">😄分类</a></li>
             
         
     </ul>
@@ -179,38 +175,136 @@
 
                     
                     
-                        
-
-<div class="archive-list">
-  <ul class="archive">
-
-    
-    <span><span class="darkmode-ignore">🔖</span><i>测试</i></span>
-          
-    
-
-    
-    
-
-    
-    
-
-  
-    
-        <li>
-          <span class="archive-date">2023/09/21</span>
-          <div class="archive-main">
-              <a class="archive-title" href="/2023/09/21/jmeter%E4%BD%BF%E7%94%A8%E8%AE%B0%E5%BD%95/">工具使用教程&amp;工作记录</a>
-          </div>
-        </li>
-    
-  
-  </ul>
-</div>
- 
-                    
                     
                     <!--说明是文章post页面-->
+                    
+                        <div class="post-main">
+    
+
+    
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    webpack学习
+                </div>
+            
+        
+      
+    
+
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-04-08</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：278</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
+    
+
+    <div class="post-md">
+        
+            
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#vue-cli-%E4%B8%8E-webpack"><span class="post-toc-text">vue-cli 与 webpack</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#%E5%9F%BA%E7%A1%80%E6%A6%82%E5%BF%B5%E4%B8%8E%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F"><span class="post-toc-text">基础概念与配置方式</span></a></li></ol></li></ol>
+            
+        
+        <div class=".article-gallery"><h1 id="vue-cli-与-webpack"><a href="#vue-cli-与-webpack" class="headerlink" title="vue-cli 与 webpack"></a>vue-cli 与 webpack</h1><h2 id="基础概念与配置方式"><a href="#基础概念与配置方式" class="headerlink" title="基础概念与配置方式"></a>基础概念与配置方式</h2><ul>
+<li><p><code>vue-cli</code>是基于 <code>webpack</code>的，同样支持 <code>plugins/module/resolve</code> 等配置项</p>
+</li>
+<li><p>在 vue 里除了自带的 <code>vue.config.j</code>s 里设置，可以安装 webpack，在 <code>webpack.config.js</code>里配置</p>
+</li>
+<li><p>vue.config.js 与 webpack.config.js 冲突，合并时优先会选择 vue.config.js 的，Vue CLI 内部最终会调用 <a href="https://link.juejin.cn/?target=https://github.com/survivejs/webpack-merge">webpack-merge</a> 将 <code>configureWebpack</code> 值与其它上下文配置合并，生成最终的 Webpack 配置信息。</p>
+</li>
+<li><p>Vue CLI 底层依赖于 Webpack 实现编译打包等工程化能力，开发者可通过 <code>configureWebpack</code> 与 <code>chainWebpack</code> 配置项修改 Webpack 配置信息。<br>可使用 <code>inspect</code> 命令<strong>生成完整的 Webpack 配置信息</strong>：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue inspect &gt; output.js</span><br></pre></td></tr></table></figure>
+
+<p>以 <code>configureWebpack</code> 为例，使用时需要在 <code>vue.config.js</code> 文件中写入配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">configureWebpack</span>: &#123;</span><br><span class="line">    <span class="attr">plugins</span>: [<span class="keyword">new</span> <span class="title class_">MyAwesomeWebpackPlugin</span>()],</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p><strong>语法区别</strong>： 区别 <code>chainWebpack</code> 的用法与 <code>configureWebpack</code> 一致，区别仅在于此处支持 <a href="https://link.juejin.cn/?target=https://github.com/neutrinojs/webpack-chain">webpack-chain</a> 语法 —— 即以函数方式链式修改 Webpack 配置：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="variable language_">module</span>.<span class="property">exports</span> = &#123;</span><br><span class="line">  <span class="attr">chainWebpack</span>: <span class="function">(<span class="params">config</span>) =&gt;</span> &#123;</span><br><span class="line">    config.<span class="property">module</span></span><br><span class="line">      .<span class="title function_">rule</span>(<span class="string">&quot;vue&quot;</span>)</span><br><span class="line">      .<span class="title function_">use</span>(<span class="string">&quot;vue-loader&quot;</span>)</span><br><span class="line">      .<span class="title function_">tap</span>(<span class="function">(<span class="params">options</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="comment">// modify the options...</span></span><br><span class="line">        <span class="keyword">return</span> options;</span><br><span class="line">      &#125;);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></li>
+</ul>
+</div>
+    </div>
+
+    <div class="post-meta">
+        <i>
+        
+            <span>2025-04-08</span>
+            
+                <span>该篇文章被 Jiang Jiang</span>
+            
+            
+                <span>打上标签:
+                    
+                    
+                        <a href='/tags/webpack/'>
+                            webpack
+                        </a>
+                    
+                </span>
+             
+             
+                <span>归为分类:
+                    
+                    
+                        <a href='/categories/%E5%89%8D%E7%AB%AF/'>
+                            前端
+                        </a>
+                    
+                </span>
+            
+        
+        </i>
+    </div>
+    <br>
+    
+    
+        
+            
+    
+            <div class="post-footer-pre-next">
+                
+
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/04/02/template/">template</a>
+                    </span>
+                
+            </div>
+    
+        
+    
+
+    
+        
+
+     
+</div>
+
+
+
+                                      
                     
                     
                     <div class="footer">
