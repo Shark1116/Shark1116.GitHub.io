@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
     <meta name="description" content="使用docxtemplater实现前端导出word" />
-    <meta name="hexo-theme-A4" content="v1.8.9" />
+    <meta name="hexo-theme-A4" content="v2.0.1" />
     <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog</title>
 
@@ -21,13 +21,13 @@
 
         
 <link rel="stylesheet" href="/css/fonts.css">
- 
+
          <!--注意：首页既不是post也不是page-->
         
-        
+
         
 <link rel="stylesheet" href="/css/ui.css">
- 
+
         
 <link rel="stylesheet" href="/css/style.css">
 
@@ -42,58 +42,118 @@
     
 
     
+
     
-   
 <link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
-<meta name="generator" content="Hexo 7.2.0"></head>
     
-    
-
-    
-    
-
-
-
-    
-
-    
-    
-
-    
-    
-    
-    <body>
-        <script src="/js/darkmode-js.min.js"></script>
         
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+    
+
+    <!-- <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css" /> -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@chinese-fonts/lxgwwenkai@3.0.0/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        
+        <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.80/darkreader.min.js"></script>
         <script>
-            const options = {
-                bottom: '40px', // default: '32px'
-                right: 'unset', // default: '32px'
-                left: '42px', // default: 'unset'
-                time: '0.3s', // default: '0.3s'
-                mixColor: '#fff', // default: '#fff'
-                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-                buttonColorDark: '#100f2c',  // default: '#100f2c'
-                buttonColorLight: '#fff', // default: '#fff'
-                saveInCookies: true, // default: true,
-                label: '🌓', // default: ''
-                autoMatchOsTheme: true // default: true
+            const drOptions = {
+                brightness: 100,
+                contrast: 95,
+                sepia: 10,
+                darkSchemeTextColor: '#e0e0e0',  // 粉笔白文字
+                darkSchemeBackgroundColor: '#1e1e1e', // 黑板灰背景
+                scrollbarStyle: 'native'
+            };
+
+            const savedTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                DarkReader.enable(drOptions);
             }
-            const darkmode = new Darkmode(options);
-            darkmode.showWidget();
+
+            window.addEventListener('DOMContentLoaded', () => {
+                const btn = document.createElement('button');
+                btn.innerText = '🌓';
+                // 按钮样式：仿照你之前的布局，放在右下角
+                btn.style.cssText = `
+                    position: fixed; 
+                    bottom: 40px; 
+                    left: 42px; 
+                    z-index: 9999;
+                    width: 44px; 
+                    height: 44px; 
+                    border-radius: 50%; 
+                    border: 1px solid #ccc;
+                    background: #f7f5ed; 
+                    color: #000;
+                    font-size: 22px; 
+                    cursor: pointer;
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+                    transition: transform 0.2s, background-color 0.3s;
+                `;
+                // 根据当前状态初始化按钮颜色
+                if (DarkReader.isEnabled()) {
+                    btn.style.backgroundColor = '#1e1e1e';
+                    btn.style.color = '#fff';
+                }
+                btn.onmouseover = () => btn.style.transform = 'scale(1.1)';
+                btn.onmouseout = () => btn.style.transform = 'scale(1)';
+                document.body.appendChild(btn);
+                // 点击切换逻辑
+                btn.addEventListener('click', () => {
+                    if (DarkReader.isEnabled()) {
+                        DarkReader.disable();
+                        localStorage.setItem('theme', 'light');
+                        btn.style.backgroundColor = '#f7f5ed';
+                        btn.style.color = '#000';
+                    } else {
+                        DarkReader.enable(drOptions);
+                        localStorage.setItem('theme', 'dark');
+                        btn.style.backgroundColor = '#1e1e1e';
+                        btn.style.color = '#fff';
+                    }
+                });
+            });
         </script>
         
         
-            <div class="left-toc-container">
-                <nav id="toc" class="bs-docs-sidebar"></nav>
-            </div>
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
         
         <div class="paper">
+
             
-            
-            
+
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
@@ -147,14 +207,14 @@
             
         
     </ul>
-</div> 
-        
+</div>
+
                     
                     
 
                     
                     
-                    
+
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
@@ -177,13 +237,13 @@
             <div class="post-head-meta-center">
         
                 
-                    <span>最近更新：2025-03-30</span> 
+                    <span>最近更新：2026-07-27</span> 
                 
                 
                     
                         &nbsp; | &nbsp;
                     
-                     <span>字数总计：480</span>
+                     <span>字数总计：551</span>
                 
                 
                     
@@ -205,7 +265,7 @@
     <div class="post-md">
         
             
-                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="post-toc-text">代码示例：</span></a></li></ol>
+                <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E4%BB%A3%E7%A0%81%E7%A4%BA%E4%BE%8B%EF%BC%9A"><span class="post-toc-text">代码示例：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#%E5%90%88%E5%B9%B6%E5%8D%95%E5%85%83%E6%A0%BC"><span class="post-toc-text">合并单元格</span></a></li></ol>
             
         
         <div class=".article-gallery"><p>具体 api 请查阅<a target="_blank" rel="noopener" href="https://docxtemplater.com/docs/">docxtemplater 官网网站</a><br>参考依赖：</p>
@@ -220,6 +280,14 @@
 <li>需要导出图片的需要使用到 docxtemplater-image-module-free 模块</li>
 </ul>
 <h4 id="代码示例："><a href="#代码示例：" class="headerlink" title="代码示例："></a>代码示例：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div&gt;</span><br><span class="line">    &lt;button @click=&quot;exportWord&quot;&gt;导出 Word&lt;/button&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import docxtemplater from &quot;docxtemplater&quot;;</span><br><span class="line">import PizZip from &quot;pizzip&quot;;</span><br><span class="line">import JSZipUtils from &quot;jszip-utils&quot;;</span><br><span class="line">import &#123; saveAs &#125; from &quot;file-saver&quot;;</span><br><span class="line"></span><br><span class="line">export default &#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    return &#123;</span><br><span class="line">      // 模拟数据，用于填充 Word 模板</span><br><span class="line">      exportData: &#123;</span><br><span class="line">        name: &quot;张三&quot;,</span><br><span class="line">        items: [</span><br><span class="line">          &#123; name: &quot;项目1&quot;, description: &quot;描述1&quot;, colspan: 2, rowspan: 1 &#125;,</span><br><span class="line">          &#123; name: &quot;项目2&quot;, description: &quot;描述2&quot;, colspan: 1, rowspan: 2 &#125;,</span><br><span class="line">        ],</span><br><span class="line">      &#125;,</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    exportWord() &#123;</span><br><span class="line">      // 指定模板文件路径（放在 public 文件夹中）</span><br><span class="line">      //注意(vue2/public，vue3/static)，如果有qiankun主子应用，请把word模板放在主应用public下</span><br><span class="line">      const templatePath = &quot;/template.docx&quot;;</span><br><span class="line">      // 指定导出的文件名</span><br><span class="line">      const fileName = &quot;output.docx&quot;;</span><br><span class="line"></span><br><span class="line">      // 使用 JSZipUtils 加载模板文件</span><br><span class="line">      JSZipUtils.getBinaryContent(templatePath, (error, content) =&gt; &#123;</span><br><span class="line">        if (error) &#123;</span><br><span class="line">          throw error;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 创建 PizZip 实例</span><br><span class="line">        const zip = new PizZip(content);</span><br><span class="line">        // 创建 docxtemplater 实例</span><br><span class="line">        const doc = new docxtemplater().loadZip(zip);</span><br><span class="line"></span><br><span class="line">        // 设置数据到模板</span><br><span class="line">        doc.setData(this.exportData);</span><br><span class="line"></span><br><span class="line">        try &#123;</span><br><span class="line">          // 渲染模板</span><br><span class="line">          doc.render();</span><br><span class="line">        &#125; catch (error) &#123;</span><br><span class="line">          const e = &#123;</span><br><span class="line">            message: error.message,</span><br><span class="line">            name: error.name,</span><br><span class="line">            stack: error.stack,</span><br><span class="line">            properties: error.properties,</span><br><span class="line">          &#125;;</span><br><span class="line">          console.error(JSON.stringify(&#123; error: e &#125;));</span><br><span class="line">          throw error;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        // 生成 Word 文件</span><br><span class="line">        const out = doc.getZip().generate(&#123;</span><br><span class="line">          type: &quot;blob&quot;,</span><br><span class="line">          mimeType:</span><br><span class="line">            &quot;application/vnd.openxmlformats-officedocument.wordprocessingml.document&quot;,</span><br><span class="line">        &#125;);</span><br><span class="line"></span><br><span class="line">        // 保存文件</span><br><span class="line">        saveAs(out, fileName);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style scoped&gt;</span><br><span class="line">button &#123;</span><br><span class="line">  padding: 10px 20px;</span><br><span class="line">  font-size: 16px;</span><br><span class="line">  cursor: pointer;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="合并单元格"><a href="#合并单元格" class="headerlink" title="合并单元格"></a>合并单元格</h4><p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7299354844455370764">掘金链接</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//数据需要组成：</span><br><span class="line">let data = [</span><br><span class="line">&#123;name:&#x27;xiaochen&#x27;,</span><br><span class="line">list:[</span><br><span class="line">  &#123;&#x27;unit&#x27;:&#x27;chinese&#x27;,score:90&#125;,</span><br><span class="line">  &#123;&#x27;unit&#x27;:&#x27;math&#x27;,score:80&#125;,</span><br><span class="line">]&#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<p>模板：<br>注意，<strong>这里右边的表格<code>&#123;&#35;list&#125;&#123;unit&#125;</code>这行是插入的</strong></p>
+<p><a target="_blank" rel="noopener" href="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0e6007f2f2ae498c8094ff1d920bd513~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=583&h=66&s=2712&e=webp&b=fffefe" title="这是一张示例图片" class="gallery-item" style="box-shadow: none;"> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0e6007f2f2ae498c8094ff1d920bd513~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=583&h=66&s=2712&e=webp&b=fffefe" alt="这是一张示例图片"></a></p>
+<p>结果：</p>
+<p><a target="_blank" rel="noopener" href="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/935823f8a1d741e0a61d653ca4e62607~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=585&h=64&s=1910&e=webp&b=ffffff" title="这是一张示例图片" class="gallery-item" style="box-shadow: none;"> <img src="https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/935823f8a1d741e0a61d653ca4e62607~tplv-k3u1fbpfcp-jj-mark:3024:0:0:0:q75.awebp#?w=585&h=64&s=1910&e=webp&b=ffffff" alt="这是一张示例图片"></a></p>
 </div>
     </div>
 
@@ -261,9 +329,9 @@
 
 
 
-                                      
+
                     
-                    
+
                     <div class="footer">
     
         <span> 
@@ -371,3 +439,9 @@
             
     </body>
 </html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>

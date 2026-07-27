@@ -4,8 +4,8 @@
     <head>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport" />
-    <meta name="description" content="" />
-    <meta name="hexo-theme-A4" content="v1.8.9" />
+    <meta name="description" content="vue里打印台属性需要点击展开的原因" />
+    <meta name="hexo-theme-A4" content="v2.0.1" />
     <link rel="alternate icon" type="image/webp" href="/images/640.webp">
     <title>Blog</title>
 
@@ -21,13 +21,13 @@
 
         
 <link rel="stylesheet" href="/css/fonts.css">
- 
+
          <!--注意：首页既不是post也不是page-->
         
-        
+
         
 <link rel="stylesheet" href="/css/ui.css">
- 
+
         
 <link rel="stylesheet" href="/css/style.css">
 
@@ -42,58 +42,118 @@
     
 
     
+
     
-   
 <link rel="stylesheet" href="/css/lightgallery-bundle.min.css">
 
 
-<meta name="generator" content="Hexo 7.2.0"></head>
     
-    
-
-    
-    
-
-
-
-    
-
-    
-    
-
-    
-    
-    
-    <body>
-        <script src="/js/darkmode-js.min.js"></script>
         
+<link rel="stylesheet" href="/css/custom.css">
+
+    
+
+    
+
+    <!-- <link rel="stylesheet" href="https://chinese-fonts-cdn.deno.dev/packages/lxgwwenkai/dist/LXGWWenKai-Regular/result.css" /> -->
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@chinese-fonts/lxgwwenkai@3.0.0/dist/LXGWWenKai-Regular/result.css' /> 
+<meta name="generator" content="Hexo 7.2.0"></head>
+
+    
+    
+
+    
+    
+
+
+
+    
+
+    
+    
+
+
+
+
+    
+    
+
+
+    <body>
+        
+        <script src="https://cdn.jsdelivr.net/npm/darkreader@4.9.80/darkreader.min.js"></script>
         <script>
-            const options = {
-                bottom: '40px', // default: '32px'
-                right: 'unset', // default: '32px'
-                left: '42px', // default: 'unset'
-                time: '0.3s', // default: '0.3s'
-                mixColor: '#fff', // default: '#fff'
-                backgroundColor: ' #e4e4e4 ',  // default: '#fff'
-                buttonColorDark: '#100f2c',  // default: '#100f2c'
-                buttonColorLight: '#fff', // default: '#fff'
-                saveInCookies: true, // default: true,
-                label: '🌓', // default: ''
-                autoMatchOsTheme: true // default: true
+            const drOptions = {
+                brightness: 100,
+                contrast: 95,
+                sepia: 10,
+                darkSchemeTextColor: '#e0e0e0',  // 粉笔白文字
+                darkSchemeBackgroundColor: '#1e1e1e', // 黑板灰背景
+                scrollbarStyle: 'native'
+            };
+
+            const savedTheme = localStorage.getItem('theme');
+            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            if (savedTheme === 'dark' || (!savedTheme && systemDark)) {
+                DarkReader.enable(drOptions);
             }
-            const darkmode = new Darkmode(options);
-            darkmode.showWidget();
+
+            window.addEventListener('DOMContentLoaded', () => {
+                const btn = document.createElement('button');
+                btn.innerText = '🌓';
+                // 按钮样式：仿照你之前的布局，放在右下角
+                btn.style.cssText = `
+                    position: fixed; 
+                    bottom: 40px; 
+                    left: 42px; 
+                    z-index: 9999;
+                    width: 44px; 
+                    height: 44px; 
+                    border-radius: 50%; 
+                    border: 1px solid #ccc;
+                    background: #f7f5ed; 
+                    color: #000;
+                    font-size: 22px; 
+                    cursor: pointer;
+                    box-shadow: 0 4px 10px rgba(0,0,0,0.1); 
+                    transition: transform 0.2s, background-color 0.3s;
+                `;
+                // 根据当前状态初始化按钮颜色
+                if (DarkReader.isEnabled()) {
+                    btn.style.backgroundColor = '#1e1e1e';
+                    btn.style.color = '#fff';
+                }
+                btn.onmouseover = () => btn.style.transform = 'scale(1.1)';
+                btn.onmouseout = () => btn.style.transform = 'scale(1)';
+                document.body.appendChild(btn);
+                // 点击切换逻辑
+                btn.addEventListener('click', () => {
+                    if (DarkReader.isEnabled()) {
+                        DarkReader.disable();
+                        localStorage.setItem('theme', 'light');
+                        btn.style.backgroundColor = '#f7f5ed';
+                        btn.style.color = '#000';
+                    } else {
+                        DarkReader.enable(drOptions);
+                        localStorage.setItem('theme', 'dark');
+                        btn.style.backgroundColor = '#1e1e1e';
+                        btn.style.color = '#fff';
+                    }
+                });
+            });
         </script>
         
         
-            <div class="left-toc-container">
-                <nav id="toc" class="bs-docs-sidebar"></nav>
-            </div>
+            
+                <div class="left-toc-container">
+                    <nav id="toc" class="bs-docs-sidebar"></nav>
+                </div>
+            
         
         <div class="paper">
+
             
-            
-            
+
             
                 <div class="shadow-drop-2-bottom paper-main">
                     
@@ -147,173 +207,81 @@
             
         
     </ul>
-</div> 
-        
+</div>
+
                     
                     
 
                     
                     
-                    
+
                     <!--说明是文章post页面-->
                     
                         <div class="post-main">
     
 
     
+        
+            
+                <div class="post-main-title" style="text-align: center;">
+                    vue里打印台属性需要点击展开的原因
+                </div>
+            
+        
+      
+    
 
+    
+
+        
+            <div class="post-head-meta-center">
+        
+                
+                    <span>最近更新：2025-04-12</span> 
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                     <span>字数总计：59</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span>阅读估时：1分钟</span>
+                
+                
+                    
+                        &nbsp; | &nbsp;
+                    
+                    <span id="busuanzi_container_page_pv">
+                        阅读量：<span id="busuanzi_value_page_pv"></span>次
+                    </span>
+                
+            </div>
     
 
     <div class="post-md">
         
             
+                
+            
         
-        <!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A brief description of the page content">
-  <meta name="author" content="Your Name">
-  <title>Document Title</title>
-  <!-- 引入外部 CSS 文件 -->
-  <link rel="stylesheet" href="styles.scss">
-  <!-- 引入外部 JavaScript 文件 -->
-  <script src="scripts.js" defer></script>
-</head>
-
-<body>
-  <div class="cont s--inactive">
-    <!-- cont inner start -->
-    <div class="cont__inner">
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 1</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">1</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="1">1</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 2</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">2</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="2">2</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 3</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">3</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="3">3</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 4</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">4</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="4">4</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-      <!-- el start -->
-      <div class="el">
-        <div class="el__overflow">
-          <div class="el__inner">
-            <div class="el__bg"></div>
-            <div class="el__preview-cont">
-              <h2 class="el__heading">Section 5</h2>
-            </div>
-            <div class="el__content">
-              <div class="el__text">Whatever</div>
-              <div class="el__close-btn"></div>
-            </div>
-          </div>
-        </div>
-        <div class="el__index">
-          <div class="el__index-back">5</div>
-          <div class="el__index-front">
-            <div class="el__index-overlay" data-index="5">5</div>
-          </div>
-        </div>
-      </div>
-      <!-- el end -->
-    </div>
-    <!-- cont inner end -->
-  </div>
-
-  <a href="https://dribbble.com/shots/2802024-Satellite-Website-Prototype" target="_blank" class="icon-link">
-    <img src="http://icons.iconarchive.com/icons/uiconstock/socialmedia/256/Dribbble-icon.png">
-  </a>
-  <a href="https://twitter.com/NikolayTalanov" target="_blank" class="icon-link icon-link--twitter">
-    <img src="https://cdn1.iconfinder.com/data/icons/logotypes/32/twitter-128.png">
-  </a>
-</body>
-
-</html>
+        <div class=".article-gallery"><p>在vue里打印属性需要再点一下，只是因为vue为了属性值的触发和监听，自动封装getter和setter</p>
+<p>解决办法：</p>
+<p>Json序列化和反序列化转化成普通属性</p>
+<p>Json.parse和Json.stringify</p>
+</div>
     </div>
 
     <div class="post-meta">
         <i>
+        
+            <span>2025-04-12</span>
+            
+            
+             
         
         </i>
     </div>
@@ -326,6 +294,9 @@
             <div class="post-footer-pre-next">
                 
 
+                
+                    <span class="post-footer-pre-next-last-span-right">下一篇：<a href="/2025/04/08/webpack%E5%AD%A6%E4%B9%A0/">webpack学习</a>
+                    </span>
                 
             </div>
     
@@ -340,9 +311,9 @@
 
 
 
-                                      
+
                     
-                    
+
                     <div class="footer">
     
         <span> 
@@ -450,3 +421,9 @@
             
     </body>
 </html>
+<script src="/js/emojiHandler.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        wrapEmojis('.paper');
+    });
+</script>
